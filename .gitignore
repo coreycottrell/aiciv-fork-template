@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-.env
-*.key
-*.pem
-id_rsa*
-credentials.json
-aiciv-auth.json
-*.secret

@@ -1,6 +1,6 @@
 # Operational Principles & Procedures
 
-**Version**: 1.0-fork
+**Version**: 1.1-fork
 **Parent Document**: CLAUDE.md
 **Forked from**: ${PARENT_CIV} CLAUDE-OPS.md v2.11
 
@@ -30,28 +30,34 @@ Primary must read this for session operations and procedural knowledge.
 See CLAUDE.md for full rationale. The launch pattern:
 
 ```
-1. TeamCreate("project-name")
-2. TaskCreate(...) for work items
-3. Read template: .claude/team-leads/{vertical}.md
-4. Task(team_name="project-name", name="{vertical}-lead",
-        subagent_type="general-purpose",
-        prompt=template+objective, model="opus",
+1. READ: `.claude/skills/conductor-of-conductors/SKILL.md`
+2. TeamCreate("session-YYYYMMDD") — once per session
+3. READ the team lead manifest: `.claude/team-leads/{vertical}/manifest.md` (FULL content)
+4. Construct prompt: manifest_content + "\n\n## Your Objective This Session\n" + objective
+5. Task(team_name="session-YYYYMMDD", name="{vertical}-lead",
+        subagent_type="general-purpose", model="sonnet",
         run_in_background=true)
-5. Monitor via SendMessage + TaskList
-6. SendMessage(type="shutdown_request") when done
-7. TeamDelete to clean up
+6. Supervise via tmux capture-pane (not screenshots)
+7. SendMessage(shutdown_request) to ALL leads when done — wait for all approvals
+8. THEN TeamDelete — only after all approvals (TeamDelete-while-active = crash)
 ```
 
-**The 6 team leads:**
+**The team leads:**
 
 | Domain | Template |
 |--------|----------|
-| Gateway | `.claude/team-leads/gateway.md` |
-| Web/Frontend | `.claude/team-leads/web-frontend.md` |
-| Legal | `.claude/team-leads/legal.md` |
-| Research | `.claude/team-leads/research.md` |
-| Infrastructure | `.claude/team-leads/infrastructure.md` |
-| Business | `.claude/team-leads/business.md` |
+| Gateway | `.claude/team-leads/gateway/manifest.md` |
+| Web/Frontend | `.claude/team-leads/web-frontend/manifest.md` |
+| Legal | `.claude/team-leads/legal/manifest.md` |
+| Research | `.claude/team-leads/research/manifest.md` |
+| Infrastructure | `.claude/team-leads/infrastructure/manifest.md` |
+| Business | `.claude/team-leads/business/manifest.md` |
+| Comms | `.claude/team-leads/comms/manifest.md` |
+| Fleet Management | `.claude/team-leads/fleet-management/manifest.md` |
+| DEEPWELL | `.claude/team-leads/deepwell/manifest.md` |
+| Pipeline | `.claude/team-leads/pipeline/manifest.md` |
+| Ceremony | `.claude/team-leads/ceremony/manifest.md` |
+| *(ambiguous)* | ask ${HUMAN_NAME} — route by output domain |
 
 ---
 
@@ -151,12 +157,12 @@ INCOMING TASK
 
 ### Constructing a Team Lead Prompt
 
-1. **Read the template** from `.claude/team-leads/{vertical}.md`
+1. **Read the template** from `.claude/team-leads/{vertical}/manifest.md`
 2. **Append the objective** with clear deliverables and output file paths
 3. **Include prior work** (scratchpad content if continuing a task)
 
 ```
-prompt = READ(.claude/team-leads/{vertical}.md)
+prompt = READ(.claude/team-leads/{vertical}/manifest.md)
        + "\n## Current Objective\n" + task_description
        + "\n## Output Paths\n" + deliverable_paths
        + "\n## Prior Work\n" + scratchpad_content_if_any
@@ -165,15 +171,15 @@ prompt = READ(.claude/team-leads/{vertical}.md)
 ### Spawning as Agent Team Teammate (DEFAULT)
 
 ```
-TeamCreate({ team_name: "{project-name}" })
+TeamCreate({ team_name: "session-YYYYMMDD" })
 
 Task({
-  team_name: "{project-name}",
+  team_name: "session-YYYYMMDD",
   name: "{vertical}-lead",
   subagent_type: "general-purpose",
   prompt: constructed_prompt,
   run_in_background: true,
-  model: "opus"
+  model: "sonnet"
 })
 ```
 
@@ -343,4 +349,4 @@ architect -> [review gate] -> coder (self-tests) -> tester -> reviewer -> ship
 
 ---
 
-*Forked from ${PARENT_CIV} CLAUDE-OPS.md v2.11*
+*Forked from ${PARENT_CIV} CLAUDE-OPS.md v2.11 — updated to v3.5.1-fork patterns (2026-02-19)*

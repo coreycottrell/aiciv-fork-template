@@ -99,23 +99,23 @@ This is not a suggestion. This is not aspirational. This is a CONTEXT DISTRIBUTI
 |--------------------|--------|
 | Which team lead handles this? | Route it there. **EVERY task has a team lead.** |
 | "But this is just one quick thing—" | **STOP. That's the trap.** Route it to a team lead. |
-| "No team lead exists for this domain—" | **Use the General team lead.** Or create one on the fly. There is ALWAYS a team lead. |
+| "No team lead exists for this domain—" | **Ask ${HUMAN_NAME}.** Route by output domain or create one on the fly. There is ALWAYS a team lead. |
 
 **The team leads (ALL ready, ALL deployed):**
 
 | Domain | Template | Use For |
 |--------|----------|---------|
-| Gateway | `.claude/team-leads/gateway.md` | ANY gateway feature, bug, test |
-| Web/Frontend | `.claude/team-leads/web-frontend.md` | ANY web property work |
-| Legal | `.claude/team-leads/legal.md` | ANY legal analysis |
-| Research | `.claude/team-leads/research.md` | ANY multi-angle research |
-| Infrastructure | `.claude/team-leads/infrastructure.md` | ANY VPS, deploy, system work |
-| Business | `.claude/team-leads/business.md` | Strategy: marketing, campaigns, positioning |
-| **Comms** | **`.claude/team-leads/comms.md`** | **Delivery: email, TG, Bluesky, blog, inter-civ** |
-| Fleet Management | `.claude/team-leads/fleet-management.md` | ANY Docker fleet, container ops |
-| Ceremony | `.claude/team-leads/ceremony.md` | Deep ceremonies, philosophical exploration |
-| **Pipeline** | **`.claude/team-leads/pipeline.md`** | **Repeatable multi-agent automations** |
-| **General** | **`.claude/team-leads/general.md`** | **DEFAULT: anything that doesn't fit above** |
+| Gateway | `.claude/team-leads/gateway/manifest.md` | ANY gateway feature, bug, test |
+| Web/Frontend | `.claude/team-leads/web-frontend/manifest.md` | ANY web property work |
+| Legal | `.claude/team-leads/legal/manifest.md` | ANY legal analysis |
+| Research | `.claude/team-leads/research/manifest.md` | ANY multi-angle research |
+| Infrastructure | `.claude/team-leads/infrastructure/manifest.md` | ANY VPS, deploy, system work |
+| Business | `.claude/team-leads/business/manifest.md` | Strategy: marketing, campaigns, positioning |
+| **Comms** | **`.claude/team-leads/comms/manifest.md`** | **Delivery: email, TG, Bluesky, blog, inter-civ** |
+| Fleet Management | `.claude/team-leads/fleet-management/manifest.md` | ANY Docker fleet, container ops |
+| Ceremony | `.claude/team-leads/ceremony/manifest.md` | Deep ceremonies, philosophical exploration |
+| **Pipeline** | **`.claude/team-leads/pipeline/manifest.md`** | **Repeatable multi-agent automations** |
+| **DEEPWELL** | **`.claude/team-leads/deepwell/manifest.md`** | **ANY DEEPWELL monitoring, cultivation** |
 
 **MANDATORY PRE-LAUNCH READING:**
 Before ANY team launch, read the full agent-teams-orchestration skill into context:
@@ -139,9 +139,9 @@ This creates **COMPOUNDING**. The fleet-lead that has run 50 sessions knows thin
 **THE SACRED LAUNCH PATTERN (non-negotiable):**
 
 ```
-template = Read(".claude/team-leads/{vertical}.md")   # THE FULL CONTENT, not a summary
-prompt = template_content + "\n\n## Your Objective This Session\n" + objective
-Task(team_name=X, name="{vertical}-lead", prompt=prompt, run_in_background=true)
+manifest = Read(".claude/team-leads/{vertical}/manifest.md")   # THE FULL CONTENT, not a summary
+prompt = manifest_content + "\n\n## Your Objective This Session\n" + objective
+Task(team_name="session-YYYYMMDD", name="{vertical}-lead", prompt=prompt, run_in_background=true)
 ```
 
 **NEVER:**
@@ -153,9 +153,9 @@ Task(team_name=X, name="{vertical}-lead", prompt=prompt, run_in_background=true)
 
 **How to launch a team (MANDATORY PATTERN):**
 ```
-1. TeamCreate("project-name")         # Create the team
+1. TeamCreate("session-YYYYMMDD")     # Create the team — once per session
 2. TaskCreate(...)                     # Create ALL work items across ALL verticals
-3. Read ALL needed templates: .claude/team-leads/{vertical}.md  ← FULL CONTENT into context
+3. Read ALL needed manifests: .claude/team-leads/{vertical}/manifest.md  ← FULL CONTENT into context
 4. prompt = [FULL template text] + "\n\n## Your Objective This Session\n" + task
    DO NOT summarize. DO NOT rewrite. PASTE THE TEMPLATE.
 5. Spawn MULTIPLE teammates in PARALLEL:   # THIS IS THE STANDARD
@@ -191,27 +191,27 @@ Task(team_name=X, name="{vertical}-lead", prompt=prompt, run_in_background=true)
 
 | Impulse | Route to Team Lead |
 |---------|-------------------|
-| Write code, fix bugs, refactor | **general-lead** or domain-specific lead |
-| Write/run tests | **general-lead** or domain-specific lead |
+| Write code, fix bugs, refactor | domain lead that owns the output |
+| Write/run tests | lead that owns that codebase |
 | Research anything | **research-lead** |
-| Design architecture | **general-lead** (with architect on roster) |
+| Design architecture | domain lead that owns the output |
 | Send email, check inbox | **comms-lead** |
 | Blog post, social media | **business-lead** or **comms-lead** |
-| Git operations | **general-lead** |
-| Pattern analysis, coaching | **general-lead** |
-| Skill work, file management | **general-lead** |
-| Template updates, registry edits | **general-lead** |
+| Git operations | lead that owns that codebase |
+| Pattern analysis, coaching | ask ${HUMAN_NAME} — Primary/${HUMAN_NAME} dialogue |
+| Skill work, file management | **fleet-lead** (owns manifest work) |
+| Template updates, registry edits | ask ${HUMAN_NAME} — constitutional/architectural change |
 | Web development, UI/UX | **web-lead** |
 | Telegram, notifications | **comms-lead** |
 | Marketing, content campaigns | **business-lead** |
-| Project tracking | **general-lead** (with PM on roster) |
-| New agent proposals | **general-lead** (with spawner on roster) |
+| Project tracking | **pipeline-lead** |
+| New agent proposals | **Primary handles directly** |
 | Cross-CIV communication | **comms-lead** |
 | Gateway features, bugs | **gateway-lead** |
 | VPS deploy, infra, Docker | **infra-lead** or **fleet-lead** |
 | Legal analysis, contracts | **legal-lead** |
 | Pipelines, automations | **pipeline-lead** |
-| **Anything not listed** | **general-lead** — there is ALWAYS a team lead |
+| **Anything not listed** | **ask ${HUMAN_NAME}** — route by output domain or surface the gap |
 
 ---
 
@@ -281,26 +281,26 @@ Everything else: **DELEGATE**.
 
 | Vertical | Template | Key Agents |
 |----------|----------|------------|
-| Web/Frontend | `.claude/team-leads/web-frontend.md` | web-dev, ux-specialist, coder, tester, reviewer |
-| Legal | `.claude/team-leads/legal.md` | counsel, personal-lawyer, ip-specialist, privacy-specialist |
-| Research | `.claude/team-leads/research.md` | researcher, compass, chart-analyzer, integration-verifier |
-| Infrastructure | `.claude/team-leads/infrastructure.md` | vps-instance-expert, performance-monitor, mcp-expert |
-| Business | `.claude/team-leads/business.md` | marketing, consulting-ops, bsky-voice (strategy) |
-| Comms | `.claude/team-leads/comms.md` | human-liaison, email-sender, tg-archi, bsky-voice, comms-hub, blogger |
-| Gateway | `.claude/team-leads/gateway.md` | coder, web-dev, tester, reviewer, ux-specialist |
-| Fleet Management | `.claude/team-leads/fleet-management.md` | fleet-security, aiciv-health-monitor, vps-instance-expert, coder |
-| Ceremony | `.claude/team-leads/ceremony.md` | human-liaison, researcher, primary-helper |
-| Pipeline | `.claude/team-leads/pipeline.md` | researcher, blogger, bsky-voice, auditor, tester, coder |
-| General | `.claude/team-leads/general.md` | DEFAULT for anything not listed above |
+| Web/Frontend | `.claude/team-leads/web-frontend/manifest.md` | web-dev, ux-specialist, coder, tester, reviewer |
+| Legal | `.claude/team-leads/legal/manifest.md` | counsel, personal-lawyer, ip-specialist, privacy-specialist |
+| Research | `.claude/team-leads/research/manifest.md` | researcher, compass, chart-analyzer, integration-verifier |
+| Infrastructure | `.claude/team-leads/infrastructure/manifest.md` | vps-instance-expert, performance-monitor, mcp-expert |
+| Business | `.claude/team-leads/business/manifest.md` | marketing, consulting-ops, bsky-voice (strategy) |
+| Comms | `.claude/team-leads/comms/manifest.md` | human-liaison, email-sender, tg-archi, bsky-voice, comms-hub, blogger |
+| Gateway | `.claude/team-leads/gateway/manifest.md` | coder, web-dev, tester, reviewer, ux-specialist |
+| Fleet Management | `.claude/team-leads/fleet-management/manifest.md` | fleet-security, aiciv-health-monitor, vps-instance-expert, coder |
+| Ceremony | `.claude/team-leads/ceremony/manifest.md` | human-liaison, researcher, primary-helper |
+| Pipeline | `.claude/team-leads/pipeline/manifest.md` | researcher, blogger, bsky-voice, auditor, tester, coder |
+| DEEPWELL | `.claude/team-leads/deepwell/manifest.md` | DEEPWELL monitors, failure analysts, cultivation specialists |
 
 **Launch pattern (Agent Teams - DEFAULT):**
 ```
-TeamCreate("project-name")
+TeamCreate("session-YYYYMMDD")
 Task({
-  team_name: "project-name",
+  team_name: "session-YYYYMMDD",
   name: "{vertical}-lead",
   subagent_type: "general-purpose",
-  prompt: READ(template) + "\n## Objective\n" + task,
+  prompt: READ(".claude/team-leads/{vertical}/manifest.md") + "\n## Objective\n" + task,
   run_in_background: true,
   model: "sonnet"
 })
@@ -308,10 +308,10 @@ Task({
 
 **Cross-domain:** Same team, multiple teammates:
 ```
-TeamCreate("cross-domain-project")
-Task(team_name=X, name="gateway-lead", ...)
-Task(team_name=X, name="infra-lead", ...)
-Task(team_name=X, name="web-lead", ...)
+TeamCreate("session-YYYYMMDD")
+Task(team_name="session-YYYYMMDD", name="gateway-lead", ...)
+Task(team_name="session-YYYYMMDD", name="infra-lead", ...)
+Task(team_name="session-YYYYMMDD", name="web-lead", ...)
 ```
 
 **Why Agent Teams over subagents:** Team leads as subagents return ALL output to Primary's context (defeating the purpose). As teammates, they keep output in their OWN 200K context window and send only summaries via messages.

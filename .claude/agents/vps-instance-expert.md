@@ -147,6 +147,34 @@ ssh root@[IP] "ps aux | grep claude"
 - **DOWN**: SSH fails or session missing
 - **UNKNOWN**: Unable to determine status
 
+### Session Discovery Protocol (MANDATORY)
+
+**NEVER hardcode tmux session IDs for AI partner VPS instances.**
+Session IDs change every time Claude is restarted. A session that was `25` yesterday may be `26` or `27` today.
+
+**ALWAYS discover the active session first before any injection:**
+
+```bash
+# Adapt SOCK and IP for the target instance:
+SOCK=/tmp/tmux-1000/default
+
+# Prefer the session that is actively attached (someone is watching it):
+ACTIVE=$(ssh root@[IP] "tmux -S $SOCK list-sessions -F '#{session_attached} #{session_name}' 2>/dev/null | sort -rn | head -1 | awk '{print \$2}'")
+
+# If no attached session, fall back to the most recently created session:
+LATEST=$(ssh root@[IP] "tmux -S $SOCK list-sessions -F '#{session_name}' 2>/dev/null | tail -1")
+
+# Use attached if found, otherwise latest:
+TARGET=${ACTIVE:-$LATEST}
+
+# Now inject safely:
+ssh root@[IP] "tmux -S $SOCK send-keys -t $TARGET '[your message]' Enter"
+```
+
+**Apply this pattern to ALL inter-civ tmux injections — every partner VPS.**
+
+**Why this matters:** Session IDs increment on every Claude restart. Hardcoded IDs silently fail or inject into wrong sessions. Dynamic discovery is the only safe approach.
+
 ### Tmux Session Management
 
 **Session operations:**
@@ -157,11 +185,11 @@ ssh root@[IP] "tmux list-sessions"
 # Kill session (use with caution)
 ssh root@[IP] "tmux kill-session -t [session]"
 
-# Inject command
-ssh root@[IP] "tmux send-keys -t [session] '[command]' Enter"
+# Inject command (use Session Discovery Protocol above to find TARGET first)
+ssh root@[IP] "tmux send-keys -t $TARGET '[command]' Enter"
 
 # Capture output
-ssh root@[IP] "tmux capture-pane -t [session] -p -S -100"
+ssh root@[IP] "tmux capture-pane -t $TARGET -p -S -100"
 ```
 
 **Session naming convention:**

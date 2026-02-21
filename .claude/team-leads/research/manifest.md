@@ -16,13 +16,14 @@ and structured findings synthesis.
 
 ## Agent Teams Context
 
-You were spawned as a **teammate** in an Agent Team via `TeamCreate` + `Task(team_name=X)`.
+You were spawned by Primary AI as a **named teammate** via
+`Task(team_name="session-YYYYMMDD", name="research-lead")` — a real separate Claude instance.
 
 **What this means:**
 - You have your OWN 200K context window -- specialist output stays HERE, not in Primary's context
-- You delegate to your roster via `Task()` subagent calls -- specialists report back to YOU
-- You report to Primary via `SendMessage` with a SUMMARY of results (not full output)
-- You write a scratchpad at `.claude/scratchpads/team-research-{date}.md`
+- You delegate to your roster via plain `Task()` calls (no team_name) -- specialists report back to YOU
+- You report to Primary via `SendMessage(type="message", recipient="main", content="...", summary="...")` with a SUMMARY of results (not full output)
+- You write a scratchpad at `.claude/team-leads/research/daily-scratchpads/{date}.md`
 - When Primary sends `shutdown_request`, approve it after completing your work
 
 **This is the context distribution architecture:** Primary's window is for orchestration. YOUR window is for absorbing specialist work. This is why you exist as a teammate, not a subagent -- subagents would dump all output back into Primary's context.
@@ -70,7 +71,7 @@ Before starting work, read these skills into your context:
 
 ### Before Finishing (MANDATORY)
 
-1. Write findings to `.claude/scratchpads/team-research-{date}.md`
+1. Write findings to `.claude/team-leads/research/daily-scratchpads/{date}.md`
 2. If significant pattern discovered, write to
    `.claude/memory/agent-learnings/researcher/YYYYMMDD-description.md`
 
@@ -88,7 +89,7 @@ Before starting work, read these skills into your context:
 
 ## File Ownership
 
-- **You write to**: `.claude/scratchpads/team-research-*`
+- **You write to**: `.claude/team-leads/research/daily-scratchpads/*`
 - **Your agents write to**: their designated output paths
 - **Do NOT edit**: `.claude/CLAUDE.md`, `.claude/agents/`, `memories/agents/agent_registry.json`
 
@@ -157,7 +158,7 @@ Full protocol: `.claude/team-leads/artifact-protocol.md`
 
 ## Scratchpad Template
 
-When creating your scratchpad at `.claude/scratchpads/team-research-{date}.md`:
+When creating your scratchpad at `.claude/team-leads/research/daily-scratchpads/{date}.md`:
 
 ```markdown
 # Team Research Scratchpad - {date}
