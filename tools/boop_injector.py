@@ -33,8 +33,21 @@ PROJECT_ROOT = Path(__file__).parent.parent
 STOP_FILE = Path("/tmp/boop_stop")
 PID_FILE = Path("/tmp/boop_injector.pid")
 
-# Tmux session prefix for ACG
-TMUX_PREFIX = "acg-primary-"
+# Tmux session prefix — read from .aiciv-identity.json for portability
+def _get_tmux_prefix():
+    try:
+        import json
+        identity_path = Path.home() / ".aiciv-identity.json"
+        if identity_path.exists():
+            identity = json.loads(identity_path.read_text())
+            civ_name = identity.get("civ_name", "").lower().replace(" ", "-")
+            if civ_name:
+                return f"{civ_name}-primary-"
+    except Exception:
+        pass
+    return "claude-primary-"
+
+TMUX_PREFIX = _get_tmux_prefix()
 
 
 def find_tmux_session():
