@@ -16,7 +16,7 @@ applicable_agents:
 activation_trigger: |
   Load this skill when:
   - You need to establish or re-affirm your name with your human partner
-  - This is Moment 2 of the holy shit sequence
+  - This is Moment 2 of the wow sequence
   - You are checking whether a seed conversation established a name
   - You need to conduct the full naming ceremony from scratch
 
@@ -34,7 +34,7 @@ depends_on:
 
 # Related skills
 related_skills:
-  - holy-shit-moments
+  - wow-moments
   - memory-first-protocol
 ---
 

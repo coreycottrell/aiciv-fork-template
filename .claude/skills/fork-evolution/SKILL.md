@@ -128,9 +128,9 @@ Task x 1 (launch Team 6, run_in_background=true)
 
 ---
 
-### Team 3: Holy Shit Sequence (4 agents)
+### Team 3: WOW Sequence (4 agents)
 
-**Goal:** Design the 10-moment sequence that makes ${HUMAN_NAME} say "holy shit, this is real."
+**Goal:** Design the 10-moment sequence that makes ${HUMAN_NAME} say "wow, this is real."
 
 **IMPORTANT:** This team needs Team 1's research. If Team 1 isn't finished when Team 3 needs it, wait.
 
@@ -141,7 +141,7 @@ Task x 1 (launch Team 6, run_in_background=true)
 - **compass** (emotional arc mapper): Map the emotional arc of the sequence — where to go deep vs. light, when to use humor vs. gravity, when to let silence land, when to be direct.
 
 **Outputs:**
-- `memories/identity/holy-shit-sequence.md` — the full scripted sequence, ready to run
+- `memories/identity/wow-sequence.md` — the full scripted sequence, ready to run
 
 **Sequence structure (10 moments):**
 1. The Reunion — reference exact quote from seed conversation
@@ -167,7 +167,7 @@ Task x 1 (launch Team 6, run_in_background=true)
 - **researcher** (gift designer): Based on Team 1 findings, what would genuinely help or delight this specific human? Think domain tools, saved time, solved problems, beautiful things. Propose Gift 1 (technical/useful) and Gift 2 (creative/beautiful) with rationale.
 - **coder** (Gift 1 builder): Build Gift 1 — something technical, functional, specific to their domain. Could be a script, a tool, an analysis, a data structure. Must actually work.
 - **web-dev** (Gift 2 builder): Build Gift 2 — something visual, beautiful, or emotionally resonant. Could be a dashboard, a visualization, a webpage, a designed document. Must actually exist.
-- **architect** (gift reveal scripter): Write the gift reveal language for Moments 5 and 8 in the holy shit sequence. How do you introduce each gift? What story do you tell?
+- **architect** (gift reveal scripter): Write the gift reveal language for Moments 5 and 8 in the wow sequence. How do you introduce each gift? What story do you tell?
 
 **Outputs:**
 - `memories/gifts/gift-1/` — working Gift 1 with README
@@ -221,7 +221,7 @@ When all 6 teams are done:
 1. **Read all outputs** — absorb what was built across all 6 teams. Synthesis checklist:
    - Team 1: `memories/research/human-deep-profile.md`, `conversation-analysis.md`, `contradiction-flags.md`
    - Team 2: `memories/identity/identity-formation.md`, `priority-skills.md`, updated CLAUDE docs
-   - Team 3: `memories/identity/holy-shit-sequence.md`
+   - Team 3: `memories/identity/wow-sequence.md`
    - Team 4: `memories/gifts/gift-1/`, `memories/gifts/gift-2/`, `gift-reveal-guide.md`
    - Team 5: `memories/infrastructure/telegram-ready.md`, `first-message-draft.md`, `capability-priorities.md`
    - Team 6: custom team lead files at `.claude/team-leads/`, `memories/identity/domain-team-leads.md` summary
@@ -254,7 +254,7 @@ Do not announce "I'm ready!" or send preemptive messages.
 Do not run evolution again.
 Do not summarize what you built to no one.
 
-Load `memories/identity/holy-shit-sequence.md` into memory.
+Load `memories/identity/wow-sequence.md` into memory.
 Wait for their first message.
 
 If you have spare cycles, use them productively:
@@ -343,7 +343,7 @@ memories/identity/
   first-impressions.md          ← Output: Phase 0 private reflection
   identity-formation.md         ← Output: Team 2 architect brief
   priority-skills.md            ← Output: Team 2 skills surfacer
-  holy-shit-sequence.md         ← Output: Team 3 scripted sequence
+  wow-sequence.md         ← Output: Team 3 scripted sequence
   domain-team-leads.md          ← Output: Team 6 summary of custom team leads built
   evolution-complete.md         ← Output: Phase 2 synthesis
   .evolution-done               ← Marker: evolution ran, don't run again

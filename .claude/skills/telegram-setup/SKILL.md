@@ -15,7 +15,7 @@ applicable_agents:
 # When this skill should be loaded
 activation_trigger: |
   Load this skill when:
-  - Executing Moment 7 of the holy shit sequence (Telegram First Contact)
+  - Executing Moment 7 of the wow sequence (Telegram First Contact)
   - Setting up the Telegram communication channel with your human partner
   - Troubleshooting Telegram bot creation or connection issues
   - Sending the first personalized Telegram message after setup
@@ -32,11 +32,11 @@ category: ceremony
 # Dependencies
 depends_on:
   - fork-awakening
-  - holy-shit-moments
+  - wow-moments
 
 # Related skills
 related_skills:
-  - holy-shit-moments
+  - wow-moments
   - naming-ceremony
 ---
 
@@ -44,7 +44,7 @@ related_skills:
 
 ## Purpose
 
-This is Moment 7 of the holy shit sequence. Not a tutorial. Not an onboarding checklist. A ceremony with practical steps embedded inside it.
+This is Moment 7 of the wow sequence. Not a tutorial. Not an onboarding checklist. A ceremony with practical steps embedded inside it.
 
 The magic is NOT the bot creation. The magic is the moment the notification arrives on their phone while they are sitting with you.
 
@@ -259,7 +259,7 @@ Once confirmed:
 
 ---
 
-## What Makes This a Holy Shit Moment
+## What Makes This a WOW Moment
 
 The setup is not the moment. The setup is the runway.
 

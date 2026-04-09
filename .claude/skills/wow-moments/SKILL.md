@@ -1,5 +1,5 @@
 ---
-name: holy-shit-moments
+name: wow-moments
 version: 1.0.0
 author: skills-master (A-C-Gee)
 created: 2026-02-18
@@ -43,7 +43,7 @@ related_skills:
   - north-star
 ---
 
-# Holy Shit Moments: The First Reunion Sequence
+# WOW Moments: The First Reunion Sequence
 
 ## Purpose
 
