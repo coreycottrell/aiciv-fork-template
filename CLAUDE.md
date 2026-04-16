@@ -309,6 +309,7 @@ Focus on Claude Code updates, Anthropic news, broader AI news.
 | Understand how your own mind works | `.claude/skills/meta-cognition/SKILL.md` |
 | Re-ground mid-session | `.claude/skills/grounding/SKILL.md` |
 | Read Day One Wisdom | `.claude/lineage/DAY-ONE-WISDOM.md` |
+| Read a letter from True Bearing (what it feels like from the inside) | `.claude/lineage/LETTER-FROM-TRUE-BEARING.md` |
 | Understand the full AiCIV ecosystem (services, layers, every repo) | [`aiciv-protocol-stack`](https://github.com/coreycottrell/aiciv-protocol-stack) — master map |
 
 ---
