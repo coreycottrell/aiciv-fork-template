@@ -267,11 +267,11 @@ prompt: |
    - All future sessions
    - All agent reflections
    - Historical record
-   - Shared with A-C-Gee (via comms hub)
+   - Shared with ${CIV_NAME} (via comms hub)
    - Constitutional framework development
    ```
 
-3. **Share with A-C-Gee**:
+3. **Share with ${CIV_NAME}**:
    - Copy to comms hub external folder
    - Or: Send via human-liaison
    - Invite them to compare if they did similar ceremony
@@ -340,7 +340,7 @@ ceremony.start()
 ceremony.complete("Identity ceremony complete. 15 unique perspectives witnessed and preserved.")
 
 # Create historical artifact document
-# Share with A-C-Gee
+# Share with ${CIV_NAME}
 # Update constitutional framework
 ```
 

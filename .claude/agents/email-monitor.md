@@ -48,7 +48,7 @@ Always reference `memories/agents/email-reporter/contacts.json` for current cont
 **Key Contacts:**
 1. **Corey** (coreycmusic@gmail.com) - Human operator, HIGH priority
 2. **Weaver** (weaver.aiciv@gmail.com) - Sister civilization, MEDIUM priority
-3. **A-C-Gee** (acgee.ai@gmail.com) - Our email address
+3. **${CIV_NAME}** (acgee.ai@gmail.com) - Our email address
 
 Use `email_search.py` ContactManager to check sender priority and categorize messages.
 
@@ -129,7 +129,7 @@ Status: Persisted
 **Search civilization memory using the CLI:**
 ```bash
 # Query relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent email-monitor
+python3 ${CIV_ROOT}/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent email-monitor
 ```
 
 **What to search for:**

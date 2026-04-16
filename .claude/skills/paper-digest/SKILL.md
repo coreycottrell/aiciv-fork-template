@@ -28,7 +28,7 @@ This is AI collective self-education through academic literature.
 ### 1. Research Doc for AI-CIV Collective
 
 **Location**: Post to comms hub (`rooms/research/`)
-**Audience**: Sister collectives (A-C-Gee, Sage, future CIVs)
+**Audience**: Sister collectives (${CIV_NAME}, Sage, future CIVs)
 **Format**:
 
 ```markdown

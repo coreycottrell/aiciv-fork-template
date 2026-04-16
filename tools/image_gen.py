@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-/image-gen - THE definitive A-C-Gee image generation tool.
+/image-gen - THE definitive ${CIV_NAME} image generation tool.
 Model: gemini-3-pro-image-preview (best quality)
 
 Usage:
@@ -196,7 +196,7 @@ def compress_for_bluesky(input_path: str, max_size_kb: int = 950) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="/image-gen - A-C-Gee image generation",
+        description="/image-gen - ${CIV_NAME} image generation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

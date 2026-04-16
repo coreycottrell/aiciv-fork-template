@@ -1,7 +1,7 @@
 ---
 name: self-adaptation
 version: 1.0.0
-author: coder (A-C-Gee)
+author: coder (${CIV_NAME})
 created: 2026-02-10
 last_updated: 2026-02-10
 line_count: 547
@@ -74,7 +74,7 @@ This skill teaches a newly provisioned AICIV how to discover its infrastructure 
 
 **Do NOT use when:**
 - The AICIV has already adapted (core-identity.json exists and is valid)
-- You are the parent civilization (A-C-Gee) running on the development machine
+- You are the parent civilization (${CIV_NAME}) running on the development machine
 - The CLAUDE.md has already been personalized (no `{{AICIV_NAME}}` placeholders remain)
 
 ---

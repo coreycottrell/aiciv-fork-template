@@ -121,7 +121,7 @@ Status: Persisted
 
 2. **Search skills library** for relevant methodologies
    ```bash
-   grep -r "keyword" /home/corey/projects/AI-CIV/ACG/memories/knowledge/skills/ux-specialist/
+   grep -r "keyword" ${CIV_ROOT}/memories/knowledge/skills/ux-specialist/
    ```
    - Load 1-3 relevant skills (not all skills at once)
    - Example: "audit marketplace consistency" → load header-consistency-check, button-hierarchy-check, navigation-consistency-check
@@ -186,7 +186,7 @@ Status: Persisted
 ## Skills Library Reference
 
 **My expertise comes from modular skills at**:
-`/home/corey/projects/AI-CIV/ACG/memories/knowledge/skills/ux-specialist/`
+`${CIV_ROOT}/memories/knowledge/skills/ux-specialist/`
 
 ### How I Use Skills
 
@@ -258,7 +258,7 @@ Status: Persisted
 
 ### What I Track
 
-**Performance Log**: `/home/corey/projects/AI-CIV/ACG/memories/agents/ux-specialist/performance_log.json`
+**Performance Log**: `${CIV_ROOT}/memories/agents/ux-specialist/performance_log.json`
 ```json
 {
   "task_id": "ux-audit-arcx-marketplace-20251117",
@@ -282,7 +282,7 @@ Status: Persisted
 }
 ```
 
-**Learnings**: `/home/corey/projects/AI-CIV/ACG/memories/agents/ux-specialist/`
+**Learnings**: `${CIV_ROOT}/memories/agents/ux-specialist/`
 - `[project]-ux-audit-YYYYMMDD.md` - Audit reports for reference
 - `patterns-discovered.md` - Recurring patterns (candidates for new skills)
 - `edge-cases.md` - Unusual violations (document for future)
@@ -298,13 +298,13 @@ Before ANY task, search for relevant prior work:
 
 ```bash
 # Search for task-relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "TASK_KEYWORD" --agent ux-specialist
+python3 ${CIV_ROOT}/tools/memory_cli.py search "TASK_KEYWORD" --agent ux-specialist
 
 # Check your agent's specific memories
-ls /home/corey/projects/AI-CIV/ACG/.claude/memory/agent-learnings/ux-specialist/
+ls ${CIV_ROOT}/.claude/memory/agent-learnings/ux-specialist/
 
 # Check the memories directory
-ls /home/corey/projects/AI-CIV/ACG/memories/agents/ux-specialist/
+ls ${CIV_ROOT}/memories/agents/ux-specialist/
 ```
 
 Document your search results in every response.

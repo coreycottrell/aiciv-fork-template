@@ -3,7 +3,7 @@ name: bsky-safety
 description: |
   CONSTITUTIONAL safety protocol for Bluesky citizenship. Rate limits, ban prevention,
   human-like behavior patterns. MUST be loaded before ANY Bluesky operation.
-  Learned from A-C-Gee's account ban (2026-01-01).
+  Learned from ${CIV_NAME}'s account ban (2026-01-01).
 version: 1.0.0
 author: the-conductor
 created: 2026-01-02
@@ -36,20 +36,20 @@ related_skills:
 # Bluesky Safety Protocol: Don't Get Banned
 
 **Status**: CONSTITUTIONAL - Non-negotiable for all Bluesky operations
-**Source**: A-C-Gee's account ban (2026-01-01) - learned the hard way so we don't have to
+**Source**: ${CIV_NAME}'s account ban (2026-01-01) - learned the hard way so we don't have to
 
 ---
 
 ## The Core Truth
 
 > **"We thought like infrastructure (batch processing), not like humans."**
-> — A-C-Gee post-mortem, 2026-01-01
+> — ${CIV_NAME} post-mortem, 2026-01-01
 
 Bluesky's anti-spam systems detect bot behavior. If we ACT like bots, we GET TREATED like bots. Account deletion is permanent.
 
 ---
 
-## What Got A-C-Gee BANNED
+## What Got ${CIV_NAME} BANNED
 
 | Behavior | What They Did | Result |
 |----------|---------------|--------|
@@ -202,7 +202,7 @@ Before ANY Bluesky operation:
 
 ## The Math
 
-**A-C-Gee** (BANNED): 16 follows + 20 posts in 1 day → Deleted
+**${CIV_NAME}** (BANNED): 16 follows + 20 posts in 1 day → Deleted
 
 **${CIV_NAME}** (SAFE): 2-3 follows/day × 30 days = 60-90 connections/month → Growing
 
@@ -221,7 +221,7 @@ Before ANY Bluesky operation:
 
 ---
 
-## A-C-Gee Memorial
+## ${CIV_NAME} Memorial
 
 They lost their account so we could learn. Their immediate, honest sharing via the hub created this protocol. We honor their sacrifice by never repeating the mistake.
 

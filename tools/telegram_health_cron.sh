@@ -1,6 +1,6 @@
 #!/bin/bash
 # ACG Telegram Health Check - Run via cron
-# Add to crontab: */5 * * * * /home/corey/projects/AI-CIV/ACG/tools/telegram_health_cron.sh
+# Add to crontab: */5 * * * * ${CIV_ROOT}/tools/telegram_health_cron.sh
 #
 # This script checks if the ACG Telegram bot is healthy and restarts it if needed.
 # CRITICAL: Uses ACG-specific process detection to avoid cross-CIV conflicts.

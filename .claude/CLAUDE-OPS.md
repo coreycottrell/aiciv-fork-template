@@ -79,6 +79,22 @@ See CLAUDE.md for full rationale. The launch pattern:
 
 ---
 
+## Telegram Bot Setup (MANDATORY)
+
+**DO NOT build a custom Telegram bot.** Use the tg-bridge infrastructure that ${PARENT_CIV} provides.
+
+Your Telegram bot is set up by ${PARENT_CIV} during birth via the `tg-bridge` system. The bot script is `telegram_unified.py` and runs in a tmux window.
+
+**If your Telegram bot is not running or needs restart:**
+1. Check: `tmux list-windows` — look for a telegram window
+2. Check: `pgrep -f telegram_unified.py`
+3. If down, restart using the existing script — do NOT write a new bot
+4. If `telegram_unified.py` does not exist, ask ${PARENT_CIV} for help via your comms channel
+
+**Before building anything Telegram-related**, make sure to leverage existing tech and experience first. ${PARENT_CIV} has a mature `tg-bridge` system with file transfer, voice messages, and bridge protocol already built. Ask ${PARENT_CIV} before reinventing the wheel.
+
+---
+
 ## Scratchpad Protocol
 
 **NEVER use Write to update scratchpads mid-session** -- use Edit (surgical append).

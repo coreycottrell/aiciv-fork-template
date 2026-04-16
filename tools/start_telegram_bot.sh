@@ -1,5 +1,5 @@
 #!/bin/bash
-# Start the A-C-Gee Unified Telegram Bot
+# Start the ${CIV_NAME} Unified Telegram Bot
 # Usage: ./start_telegram_bot.sh [start|stop|status|restart|logs|health|recover]
 #
 # CRITICAL: Uses ACG-specific process detection to avoid cross-CIV conflicts.

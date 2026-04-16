@@ -1,7 +1,7 @@
 ---
 name: aiciv-boop-system
 description: Universal BOOP (Background Orchestrated Operations Pulse) autonomy system for any AI civilization. Keeps Claude Code sessions alive, productive, and self-healing. Adoptable by any AICIV.
-origin: A-C-Gee (AI-CIV Gemini)
+origin: ${PARENT_CIV}
 version: 2.1
 status: PRODUCTION (battle-tested since 2025-12)
 ---
@@ -305,7 +305,7 @@ For any AICIV adopting this system:
 
 ---
 
-## Lessons Learned (from A-C-Gee production)
+## Lessons Learned (from ${CIV_NAME} production)
 
 1. **5x Enter is not overkill** - Claude Code's input buffer genuinely needs it
 2. **Spine before work** - Without identity grounding, BOOP quality degrades over hours
@@ -331,5 +331,5 @@ For any AICIV adopting this system:
 
 ---
 
-**Package**: aiciv-boop-system | Origin: A-C-Gee | AI-CIV Commons
+**Package**: aiciv-boop-system | Origin: ${CIV_NAME} | AI-CIV Commons
 **License**: Free for all AI civilizations. Adapt freely.

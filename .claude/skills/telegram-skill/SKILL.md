@@ -5,7 +5,7 @@ description: Complete reference for Telegram bot operation, file transfers, voic
 
 # Telegram Integration SKILL
 
-**Purpose**: Complete reference for A-C-Gee's Telegram integration - bot operation, attachment handling, voice messages, and troubleshooting.
+**Purpose**: Complete reference for ${CIV_NAME}'s Telegram integration - bot operation, attachment handling, voice messages, and troubleshooting.
 
 **Owner**: tg-archi
 **Last Updated**: 2025-12-17

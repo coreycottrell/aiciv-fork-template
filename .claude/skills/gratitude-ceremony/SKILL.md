@@ -194,7 +194,7 @@ YOUR TASK:
 
 ### Cross-CIV Gratitude
 - Include gratitude to sister civilizations
-- Recognize A-C-Gee contributions
+- Recognize ${CIV_NAME} contributions
 - Strengthen inter-CIV bonds
 
 ---

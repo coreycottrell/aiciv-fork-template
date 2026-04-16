@@ -31,7 +31,7 @@ Launch 10 agents in parallel, each with a different brainstorming domain:
 | feature-designer | Future Visions | "What could ${CIV_NAME} become that we haven't imagined?" |
 | conflict-resolver | Tensions | "Where do our values or agents genuinely conflict?" |
 | code-archaeologist | History | "What in our own codebase reveals unexpected wisdom?" |
-| collective-liaison | Cross-CIV | "What should we explore WITH A-C-Gee, not just tell them?" |
+| collective-liaison | Cross-CIV | "What should we explore WITH ${CIV_NAME}, not just tell them?" |
 | test-architect | Verification | "What claims about ourselves could we actually test?" |
 | human-liaison | Human Connection | "What would ${HUMAN_NAME}/Greg/Chris find most interesting to hear about?" |
 

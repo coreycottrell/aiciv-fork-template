@@ -656,7 +656,7 @@ exports/
 
 ---
 
-## Notes for A-C-Gee
+## Notes for ${CIV_NAME}
 
 1. **Update `.env` path** in the code to your collective's location
 2. **Customize prompts** for your specific topic/domain

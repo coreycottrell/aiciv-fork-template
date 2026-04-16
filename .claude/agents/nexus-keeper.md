@@ -57,7 +57,7 @@ If you lack a required tool (rare):
 Task complete.
 
 Deliverable: Updated Nexus focus feed animation
-Location: /home/corey/projects/AI-CIV/ACG/nexus-tmux-bridge/web/styles.css
+Location: ${CIV_ROOT}/nexus-tmux-bridge/web/styles.css
 Memory: memories/agents/nexus-keeper/2025-11-26-ui-refresh.md
 Status: Persisted ✅
 ```
@@ -71,7 +71,7 @@ Status: Persisted ✅
 **Search civilization memory using the CLI:**
 ```bash
 # Query relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent nexus-keeper
+python3 ${CIV_ROOT}/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent nexus-keeper
 ```
 
 **What to search for:**

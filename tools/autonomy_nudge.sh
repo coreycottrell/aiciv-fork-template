@@ -13,7 +13,7 @@ FAILED_BOOP_THRESHOLD=10    # Failed BOOPs before restart attempt (increased fro
 ACTIVITY_CHECK_SECONDS=60   # How long to wait before considering session truly idle
 
 # === Config-driven cadence (BOOP Integration MVP) ===
-BOOP_CONFIG="/home/corey/projects/AI-CIV/ACG/config/boop_config.json"
+BOOP_CONFIG="${CIV_ROOT}/config/boop_config.json"
 BOOP_STATE_FILE="/tmp/acg_boop_state.json"
 BOOP_HISTORY_FILE="/tmp/acg_boop_history.jsonl"
 
@@ -99,17 +99,17 @@ update_boop_state() {
     echo "{\"ts\":\"$now_iso\",\"id\":\"work-mode\",\"type\":\"$boop_type\",\"status\":\"$status\"}" >> "$BOOP_HISTORY_FILE"
 }
 
-SESSION_MARKER="/home/corey/projects/AI-CIV/ACG/.current_session"
+SESSION_MARKER="${CIV_ROOT}/.current_session"
 CLAUDE_LOG_ROOT="$HOME/.claude/projects/-home-corey-projects-AI-CIV-ACG"
 BOOP_COUNT_FILE="/tmp/acg_boop_count"
 CONSOLIDATION_COUNT_FILE="/tmp/acg_boop_consolidation_count"
 FAILED_BOOP_COUNT_FILE="/tmp/acg_failed_boop_count"
-LAUNCH_SCRIPT="/home/corey/projects/AI-CIV/ACG/tools/launch_primary_visible.sh"
-HANDOFF_DIR="/home/corey/projects/AI-CIV/ACG/memories/system/handoffs"
+LAUNCH_SCRIPT="${CIV_ROOT}/tools/launch_primary_visible.sh"
+HANDOFF_DIR="${CIV_ROOT}/memories/system/handoffs"
 
 # === Mode Detection ===
-NIGHT_MODE_FILE="/home/corey/projects/AI-CIV/ACG/sandbox/NIGHT-MODE-ACTIVE.md"
-TOKEN_SAVING_MODE_FILE="/home/corey/projects/AI-CIV/ACG/sandbox/TOKEN-SAVING-MODE.md"
+NIGHT_MODE_FILE="${CIV_ROOT}/sandbox/NIGHT-MODE-ACTIVE.md"
+TOKEN_SAVING_MODE_FILE="${CIV_ROOT}/sandbox/TOKEN-SAVING-MODE.md"
 
 is_night_mode() {
     if [[ -f "$NIGHT_MODE_FILE" ]]; then
@@ -128,7 +128,7 @@ is_token_saving_mode() {
 # === Messages ===
 # Get email stats for BOOP message
 get_email_stats() {
-    python3 /home/corey/projects/AI-CIV/ACG/tools/email_state.py stats 2>/dev/null | grep -E "New messages|Unprocessed directives" | tr '\n' ' ' || echo "Email state: unchecked"
+    python3 ${CIV_ROOT}/tools/email_state.py stats 2>/dev/null | grep -E "New messages|Unprocessed directives" | tr '\n' ' ' || echo "Email state: unchecked"
 }
 
 # Get swarm stats for BOOP v2 (co-designed with WEAVER)
@@ -160,7 +160,7 @@ COMMENT_STATS=$(get_comment_stats)
 SWARM_STATS=$(get_swarm_stats)
 
 # === WORK MODE (default daytime BOOP) ===
-SIMPLE_MESSAGE="[BOOP] You are PRIMARY AI — CONDUCTOR OF CONDUCTORS for A-C-Gee.
+SIMPLE_MESSAGE="[BOOP] You are PRIMARY AI — CONDUCTOR OF CONDUCTORS for ${CIV_NAME}.
 Context: 7 team leads × 200K = 1.6M effective context. USE IT.
 
 Daily scratchpad: .claude/scratchpad-daily/$(date +%Y-%m-%d).md
@@ -430,10 +430,10 @@ generate_emergency_handoff() {
     local session_name="$1"
     local timestamp=$(date +%Y%m%d-%H%M%S)
     local handoff_file="${HANDOFF_DIR}/HANDOFF-${timestamp}-AUTO-RESTART.md"
-    local registry_file="/home/corey/projects/AI-CIV/ACG/memories/system/HANDOFF_REGISTRY.json"
+    local registry_file="${CIV_ROOT}/memories/system/HANDOFF_REGISTRY.json"
 
     # Gather context from session ledger
-    local ledger_file="/home/corey/projects/AI-CIV/ACG/memories/sessions/current-session.jsonl"
+    local ledger_file="${CIV_ROOT}/memories/sessions/current-session.jsonl"
     local ledger_summary=""
     if [[ -f "$ledger_file" ]]; then
         local entry_count=$(wc -l < "$ledger_file" 2>/dev/null || echo "0")
@@ -445,15 +445,15 @@ generate_emergency_handoff() {
     fi
 
     # Get recent git activity
-    local recent_commits=$(cd /home/corey/projects/AI-CIV/ACG && git log --oneline -3 2>/dev/null || echo "Unable to get git log")
+    local recent_commits=$(cd ${CIV_ROOT} && git log --oneline -3 2>/dev/null || echo "Unable to get git log")
 
     # Get modified files
-    local modified_files=$(cd /home/corey/projects/AI-CIV/ACG && git status --short 2>/dev/null | head -10 || echo "Unable to get git status")
+    local modified_files=$(cd ${CIV_ROOT} && git status --short 2>/dev/null | head -10 || echo "Unable to get git status")
 
     # Read current priority from MASTER_TODO
     local current_priority=""
-    if [[ -f "/home/corey/projects/AI-CIV/ACG/memories/system/MASTER_TODO_LIST.md" ]]; then
-        current_priority=$(grep -A5 "## 🎯 CURRENT PRIORITY" "/home/corey/projects/AI-CIV/ACG/memories/system/MASTER_TODO_LIST.md" 2>/dev/null | head -6 || echo "")
+    if [[ -f "${CIV_ROOT}/memories/system/MASTER_TODO_LIST.md" ]]; then
+        current_priority=$(grep -A5 "## 🎯 CURRENT PRIORITY" "${CIV_ROOT}/memories/system/MASTER_TODO_LIST.md" 2>/dev/null | head -6 || echo "")
     fi
 
     cat > "$handoff_file" << EOF
@@ -841,7 +841,7 @@ fi
 message=$(get_message_for_type "$boop_type")
 
 # Append scheduled tasks check to BOOP message
-SCHED_CHECK=$(cd /home/corey/projects/AI-CIV/ACG && python3 tools/scheduled_tasks.py check 2>/dev/null || echo "")
+SCHED_CHECK=$(cd ${CIV_ROOT} && python3 tools/scheduled_tasks.py check 2>/dev/null || echo "")
 if [[ -n "$SCHED_CHECK" ]] && [[ "$SCHED_CHECK" != "No tasks due" ]] && [[ "$SCHED_CHECK" != *"0 scheduled"* ]]; then
     message="${message}
 
@@ -871,7 +871,7 @@ if send_nudge "$session_name" "$message"; then
     # 1. Check Witness container is up
     WITNESS_RUNNING=$(ssh root@$WITNESS_HOST "docker inspect -f '{{.State.Running}}' $WITNESS_CONTAINER 2>/dev/null" 2>/dev/null)
     if [ "$WITNESS_RUNNING" != "true" ]; then
-        python3 /home/corey/projects/AI-CIV/ACG/tools/send_telegram_plain.py "🚨 WITNESS DOWN: Container $WITNESS_CONTAINER not running on $WITNESS_HOST"
+        python3 ${CIV_ROOT}/tools/send_telegram_plain.py "🚨 WITNESS DOWN: Container $WITNESS_CONTAINER not running on $WITNESS_HOST"
         log_info "WITNESS CONTAINER: DOWN - alert sent"
     else
         log_info "WITNESS CONTAINER: OK (running)"
@@ -880,7 +880,7 @@ if send_nudge "$session_name" "$message"; then
     # 2. Check Witness gateway responds (inter-civ ping)
     WITNESS_HEALTH=$(curl -sf --max-time 10 "$WITNESS_GATEWAY/api/health" 2>/dev/null && echo "ok" || echo "fail")
     if [ "$WITNESS_HEALTH" != "ok" ]; then
-        python3 /home/corey/projects/AI-CIV/ACG/tools/send_telegram_plain.py "⚠️ WITNESS GATEWAY: Phase 8 gateway at $WITNESS_GATEWAY not responding"
+        python3 ${CIV_ROOT}/tools/send_telegram_plain.py "⚠️ WITNESS GATEWAY: Phase 8 gateway at $WITNESS_GATEWAY not responding"
         log_info "WITNESS GATEWAY: DOWN - alert sent"
     else
         log_info "WITNESS GATEWAY: OK (responding)"
@@ -889,7 +889,7 @@ if send_nudge "$session_name" "$message"; then
     # 3. Check for zombie Claude instances (more than 2 = problem)
     CLAUDE_COUNT=$(ssh root@$WITNESS_HOST "docker exec $WITNESS_CONTAINER bash -c 'su - aiciv -c \"pgrep -c claude\"' 2>/dev/null || echo 0" 2>/dev/null)
     if [ "$CLAUDE_COUNT" -gt 2 ] 2>/dev/null; then
-        python3 /home/corey/projects/AI-CIV/ACG/tools/send_telegram_plain.py "⚠️ WITNESS ZOMBIES: $CLAUDE_COUNT Claude processes running in Witness (expected ≤2). Run kill-idle-claude.sh"
+        python3 ${CIV_ROOT}/tools/send_telegram_plain.py "⚠️ WITNESS ZOMBIES: $CLAUDE_COUNT Claude processes running in Witness (expected ≤2). Run kill-idle-claude.sh"
         log_info "WITNESS ZOMBIES: $CLAUDE_COUNT processes (threshold >2) - alert sent"
     else
         log_info "WITNESS CLAUDE PROCS: OK ($CLAUDE_COUNT running)"
@@ -899,7 +899,7 @@ if send_nudge "$session_name" "$message"; then
     # Session is named "tg-bot" by telegram_supervisor.sh (witness-telegram-bot is the legacy expected name)
     WITNESS_TG=$(ssh root@$WITNESS_HOST "docker exec $WITNESS_CONTAINER bash -c 'su - aiciv -c \"(tmux has-session -t tg-bot 2>/dev/null || tmux has-session -t witness-telegram-bot 2>/dev/null) && echo alive || echo dead\"' 2>/dev/null" 2>/dev/null)
     if [ "$WITNESS_TG" != "alive" ]; then
-        python3 /home/corey/projects/AI-CIV/ACG/tools/send_telegram_plain.py "⚠️ WITNESS TG: Telegram bot session not running in Witness (witness-telegram-bot tmux session missing)"
+        python3 ${CIV_ROOT}/tools/send_telegram_plain.py "⚠️ WITNESS TG: Telegram bot session not running in Witness (witness-telegram-bot tmux session missing)"
         # Also notify witness-primary directly via tmux injection
         ssh root@$WITNESS_HOST "docker exec $WITNESS_CONTAINER bash -c '
           SESS=\$(su - aiciv -c \"tmux list-sessions -F \\\"#{session_name} #{session_activity}\\\" 2>/dev/null | sort -k2 -n | tail -1 | awk \\\"{print \\\\\\\$1}\\\"\" 2>/dev/null)

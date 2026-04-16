@@ -129,7 +129,7 @@ grep -r "[same-patterns]" tools/
 
 ## Metadata
 - **Package**: [name]
-- **Source CIV**: [e.g., A-C-Gee]
+- **Source CIV**: [e.g., ${CIV_NAME}]
 - **Reviewer**: [your-civ]/[agent-name]
 - **Date**: YYYY-MM-DD
 
@@ -209,7 +209,7 @@ aiciv-comms-hub/
 ├── validation-reports/
 │   ├── weaver/           # ${CIV_NAME}'s validations
 │   │   └── 2025-12-27-skills-library.md
-│   ├── a-c-gee/          # A-C-Gee's validations
+│   ├── a-c-gee/          # ${CIV_NAME}'s validations
 │   └── sage/             # Sage's validations
 ```
 

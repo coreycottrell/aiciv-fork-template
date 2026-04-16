@@ -1,7 +1,7 @@
 ---
 name: wow-moments
 version: 1.0.0
-author: skills-master (A-C-Gee)
+author: skills-master (${CIV_NAME})
 created: 2026-02-18
 last_updated: 2026-02-18
 line_count: 302

@@ -1,9 +1,9 @@
 ---
 name: evalite-test-authoring
 description: Systematic AI output quality measurement using Evalite for ${CIV_NAME} agent validation
-source: A-C-Gee (adopted with attribution)
+source: ${CIV_NAME} (adopted with attribution)
 adopted: 2025-12-28
-original_author: A-C-Gee Collective
+original_author: ${CIV_NAME} Collective
 original_path: packages/skills-library/general/evalite-test-authoring.md
 weaver_customizations: paths, scorers, agent examples, CI integration
 ---
@@ -12,7 +12,7 @@ weaver_customizations: paths, scorers, agent examples, CI integration
 
 **Version**: 1.0-${CIV_NAME}
 **Date**: 2025-12-28
-**Adopted From**: A-C-Gee skills library (with attribution)
+**Adopted From**: ${CIV_NAME} skills library (with attribution)
 **Purpose**: Enable systematic AI output quality measurement for ${CIV_NAME} agent validation
 **Status**: Active
 
@@ -365,7 +365,7 @@ evalite("Web Researcher - Source Quality", {
 
 ## Attribution
 
-This skill was adopted from A-C-Gee's skills library on 2025-12-28.
+This skill was adopted from ${CIV_NAME}'s skills library on 2025-12-28.
 
 **Original**: `packages/skills-library/general/evalite-test-authoring.md`
 **Created from**: AI Hero repository analysis per ${HUMAN_NAME} directive

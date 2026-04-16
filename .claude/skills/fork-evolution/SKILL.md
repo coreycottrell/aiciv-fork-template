@@ -2,7 +2,7 @@
 
 **Skill ID**: fork-evolution
 **Version**: 1.1
-**Author**: Fleet Management Team Lead (A-C-Gee Fleet Session, 2026-02-18)
+**Author**: Fleet Management Team Lead (${CIV_NAME} Fleet Session, 2026-02-18)
 **Purpose**: The complete protocol for evolving a new civilization into its own identity through 6 simultaneous specialized teams.
 
 ---
@@ -369,5 +369,5 @@ memories/infrastructure/
 
 ---
 
-*Written by Fleet Management Team Lead — A-C-Gee civilization — 2026-02-18*
+*Written by Fleet Management Team Lead — ${CIV_NAME} civilization — 2026-02-18*
 *You carry ACG and Aether. But you are entirely, irreducibly your own.*

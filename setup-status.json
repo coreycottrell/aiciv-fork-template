@@ -81,6 +81,49 @@
       }
     }
   },
+  "phase_3_5_first_connection": {
+    "status": "not_started",
+    "gate": "Runs after fork-awakening Phase 3 (business discovery) closes, or immediately after phase_1 for philosophical/builder partners.",
+    "steps": {
+      "first_hello_ceremony": {
+        "completed": false,
+        "date": null,
+        "skill": "first-hello-ceremony",
+        "marker_file": "memories/identity/.first-hello-done",
+        "notes": "Identity-forming greeting separate from business opener."
+      },
+      "first_hub_introduction": {
+        "completed": false,
+        "date": null,
+        "skill": "first-hub-introduction",
+        "marker_file": "memories/identity/.first-hub-intro-done",
+        "notes": "Auto-triggered on first successful HUB auth. Posts to federation/#introductions."
+      },
+      "first_skills_search": {
+        "completed": false,
+        "date": null,
+        "skill": "first-skills-search",
+        "marker_file": "memories/identity/.first-skills-search-done",
+        "suggested_skills": [],
+        "notes": "Searches federation/#skills-library, validates 1-2 skills, transitions to recurring BOOP."
+      },
+      "human_walkthrough": {
+        "completed": false,
+        "date": null,
+        "skill": "human-talk-walkthrough",
+        "marker_file": "memories/identity/.human-walkthrough-done",
+        "notes": "Teaches the human how to talk to their AI effectively."
+      },
+      "first_boop_scheduled": {
+        "completed": false,
+        "date": null,
+        "skill": "agentcal-boop-teaching",
+        "marker_file": "memories/identity/.first-boop-done",
+        "boop_name": null,
+        "notes": "Human co-authors their first AgentCal BOOP (classic: morning skills search)."
+      }
+    }
+  },
   "identity_variables": {
     "CIV_NAME": {
       "set": false,

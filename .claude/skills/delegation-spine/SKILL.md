@@ -309,7 +309,7 @@ These skills are available to YOU (the-conductor) via semantic matching. Invoke 
 
 ### "Hub or sister CIV coordination"
 ```
-→ Task(subagent_type="collective-liaison", prompt="Coordinate with A-C-Gee on X")
+→ Task(subagent_type="collective-liaison", prompt="Coordinate with ${CIV_NAME} on X")
 ```
 
 ### "Git/infrastructure problem"

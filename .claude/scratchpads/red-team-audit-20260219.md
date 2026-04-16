@@ -39,7 +39,7 @@
 
 #### C4 — ceo_mode_enforcer.py:217 — Hard-coded ACG absolute path in grounding message
 - **File**: `.claude/hooks/ceo_mode_enforcer.py:217`
-- **Problem**: Grounding message sent to Primary when CEO Rule violated pointed to `/home/corey/projects/AI-CIV/ACG/.claude/skills/primary-spine/SKILL.md` — a path that doesn't exist on any fork's VPS. Any fork that triggers this hook would be told to read a file that doesn't exist.
+- **Problem**: Grounding message sent to Primary when CEO Rule violated pointed to `${CIV_ROOT}/.claude/skills/primary-spine/SKILL.md` — a path that doesn't exist on any fork's VPS. Any fork that triggers this hook would be told to read a file that doesn't exist.
 - **Fix Applied**: Changed to `{PROJECT_DIR}/.claude/skills/primary-spine/SKILL.md`
 - **Status**: ✅ FIXED
 
@@ -49,7 +49,7 @@
 
 #### M1 — session_start.py:266 — Hard-coded BOOP nudge script ACG path
 - **File**: `.claude/hooks/session_start.py:266`
-- **Problem**: Compact recovery fired a BOOP nudge via absolute path `/home/corey/projects/AI-CIV/ACG/tools/autonomy_nudge.sh`. This path doesn't exist on any fork. The Popen call would silently fail (redirected to /dev/null), meaning forks would never get BOOP auto-resume after context compaction.
+- **Problem**: Compact recovery fired a BOOP nudge via absolute path `${CIV_ROOT}/tools/autonomy_nudge.sh`. This path doesn't exist on any fork. The Popen call would silently fail (redirected to /dev/null), meaning forks would never get BOOP auto-resume after context compaction.
 - **Fix Applied**: Changed to `{PROJECT_DIR}/tools/autonomy_nudge.sh` with a guard `[ -f {nudge_script} ] && ... || true` so absence of the script doesn't break anything.
 - **Status**: ✅ FIXED
 
@@ -98,7 +98,7 @@
 - **Files**:
   - `.claude/hooks/session_start.py:18`
   - `.claude/hooks/ceo_mode_enforcer.py:44`
-- **Problem**: `PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "/home/corey/projects/AI-CIV/ACG")` — If `CLAUDE_PROJECT_DIR` is unset, hooks would read/write to ACG's directory. Claude Code always sets this env var, so this is a very edge case.
+- **Problem**: `PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "${CIV_ROOT}")` — If `CLAUDE_PROJECT_DIR` is unset, hooks would read/write to ACG's directory. Claude Code always sets this env var, so this is a very edge case.
 - **Impact**: Only affects running hooks outside Claude Code (e.g., manual testing). Zero impact during actual Claude Code sessions.
 - **Recommended Fix**: Change fallback to `os getcwd()` or an empty string with early exit.
 - **Status**: ⚠️ DOCUMENTED — Low priority, acceptable risk

@@ -1,12 +1,12 @@
 ---
 name: diagram-generator
 version: 1.0.0
-author: A-C-Gee (skills-master)
+author: ${CIV_NAME} (skills-master)
 created: 2025-12-30
 last_updated: 2025-12-30
 line_count: 180
 compliance_status: compliant
-origin: A-C-Gee (AI-CIV Team 2)
+origin: ${PARENT_CIV}
 
 description: |
   Generate diagrams from Mermaid code using Kroki API (free, no auth required).

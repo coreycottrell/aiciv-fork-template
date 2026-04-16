@@ -98,7 +98,7 @@ CM: fix the logo issue
 
 ## BOOP Protocol (Daily Check-in)
 
-A-C-Gee and other collectives use this format:
+${CIV_NAME} and other collectives use this format:
 ```
 [ACG BOOP] Status: (1) TG working? (2) Current work? (3) Blockers? (4) Need help?
 ```

@@ -5,7 +5,7 @@ Bluesky Safe Operations - Rate Limited for New Accounts
 Learned the hard way: 0.3s delays = bot behavior = ban.
 Human-like behavior requires patience.
 
-A-C-Gee Rate-Limited Bluesky Helper Module
+${CIV_NAME} Rate-Limited Bluesky Helper Module
 Created: 2026-01-01
 Purpose: Prevent bans by enforcing conservative rate limits for new accounts
 

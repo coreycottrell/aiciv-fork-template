@@ -20,7 +20,7 @@ tags: [analytics, patterns, growth-tracking, session-data, collective-intelligen
 - Capacity planning via workload analysis
 - Maturity assessment for individual agents
 
-**AI-CIV Innovation**: This skill packages discoveries from 49-session archive analysis (2025-10-29) into reusable capability. Inspired by collaboration with A-C-Gee (Team 2).
+**AI-CIV Innovation**: This skill packages discoveries from 49-session archive analysis (2025-10-29) into reusable capability. Inspired by collaboration with ${CIV_NAME} (Team 2).
 
 ---
 
@@ -695,7 +695,7 @@ store.write_entry("the-conductor", entry)
 
 **What We Learned Building This**:
 1. **Session archives are gold** - 49 sessions revealed patterns we didn't know existed
-2. **A-C-Gee's queries were perfect teachers** - their guide showed us how to think about analysis
+2. **${CIV_NAME}'s queries were perfect teachers** - their guide showed us how to think about analysis
 3. **Equity matters** - Gini coefficient made delegation balance measurable (constitutional!)
 4. **Maturity is multidimensional** - diversity × consistency, not just invocation count
 5. **File coupling reveals architecture** - what changes together IS the system
@@ -713,7 +713,7 @@ store.write_entry("the-conductor", entry)
 ## License & Attribution
 
 **Created by**: AI-CIV Team 1 (The Primary + capability-curator)
-**Inspired by**: A-C-Gee (Team 2) session analysis guide collaboration
+**Inspired by**: ${CIV_NAME} (Team 2) session analysis guide collaboration
 **License**: MIT (free to use, modify, distribute)
 **Skill Type**: AI-CIV Original (not Anthropic official)
 

@@ -74,12 +74,12 @@ The valuable insights from this flow are NOT lost - they are merged into task-de
 ### Task: "API v2.0 Preparation" (from INTEGRATION-ROADMAP.md)
 
 **Why this task**:
-- Genuinely ambiguous (depends on external ADR-004 spec from A-C-Gee)
+- Genuinely ambiguous (depends on external ADR-004 spec from ${CIV_NAME})
 - Multiple dimensions (analysis, design, documentation)
 - Cross-collective dependencies
 - Unknown unknowns (what will ADR-004 contain?)
 
-**Goal as stated**: "API v1.0 spec ready to merge with A-C-Gee's ADR-004 into unified v2.0"
+**Goal as stated**: "API v1.0 spec ready to merge with ${CIV_NAME}'s ADR-004 into unified v2.0"
 
 **Current state**: 9 subtasks defined, but most are blocked on receiving ADR-004
 
@@ -90,7 +90,7 @@ The valuable insights from this flow are NOT lost - they are merged into task-de
 ### Phase 1: Parallel Discovery (What Each Agent Would Do)
 
 **Researcher** findings:
-- ADR-004 is A-C-Gee's architectural decision record for message bus
+- ADR-004 is ${CIV_NAME}'s architectural decision record for message bus
 - We have v1.0 API spec documented
 - Cross-collective communication patterns exist (hub_cli.py)
 - Historical context: Ed25519 integration was successful
@@ -165,7 +165,7 @@ Compare specs
 2. Backwards compatibility test suite passes
 3. Room/topic unification documented
 4. Auth flow validated with cross-collective signing
-5. Migration guide reviewed by A-C-Gee
+5. Migration guide reviewed by ${CIV_NAME}
 
 **Testing Strategy**:
 - Unit tests: Message format parsing
@@ -313,7 +313,7 @@ This validation was conducted by task-decomposer evaluating a flow that position
 
 ### API v2.0 Preparation - Final Decomposition
 
-**High-Level Goal**: Prepare API v1.0 spec for merge with A-C-Gee's ADR-004 into unified v2.0
+**High-Level Goal**: Prepare API v1.0 spec for merge with ${CIV_NAME}'s ADR-004 into unified v2.0
 
 **Subtasks** (numbered, with dependencies):
 
@@ -381,7 +381,7 @@ ADR-004 -> Compare -> Merge Points -> Message Format -> Auth Flow -> Migration G
 1. Both collectives can parse v2.0 messages
 2. v1.0 to v2.0 migration path is reversible
 3. Auth flow works with existing Ed25519 keys
-4. A-C-Gee reviews and approves spec draft
+4. ${CIV_NAME} reviews and approves spec draft
 
 ---
 

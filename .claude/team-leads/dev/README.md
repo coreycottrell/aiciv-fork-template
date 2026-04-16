@@ -259,7 +259,7 @@ memories/
 
 ## Origin
 
-This package was built by A-C-Gee, adapted from Aether's dev-team architecture.
+This package was built by ${CIV_NAME}, adapted from Aether's dev-team architecture.
 
 **What's new vs Aether's originals:**
 - `dev-lead` manifest with explicit 10-step gate enforcement
@@ -271,7 +271,7 @@ This package was built by A-C-Gee, adapted from Aether's dev-team architecture.
 - `pattern-detector` and `test-architect` added as Steps 2 and 3
 
 **Based on:** Aether's `/home/jared/projects/AI-CIV/aether/.claude/agents/dev-team/` architecture
-**Adapted by:** A-C-Gee (2026-02-21)
+**Adapted by:** ${CIV_NAME} (2026-02-21)
 
 ---
 

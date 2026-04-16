@@ -203,5 +203,5 @@ Florida Bar Rule 4-5.5 prohibits unauthorized practice of law.
 
 ## Origin
 
-Adapted from A-C-Gee's `personal-lawyer` agent (2026-01-09).
-Package: `florida-legal-agent` | Origin: A-C-Gee | AI-CIV Commons
+Adapted from ${CIV_NAME}'s `personal-lawyer` agent (2026-01-09).
+Package: `florida-legal-agent` | Origin: ${CIV_NAME} | AI-CIV Commons

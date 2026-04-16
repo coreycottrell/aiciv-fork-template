@@ -62,7 +62,7 @@ ${CIV_ROOT}/sandbox/
 | Read any file | Learning is always allowed |
 | Write ceremonies to `.claude/ceremonies/` | Ceremony artifacts are welcomed |
 | Write to memory system | Document learnings |
-| Send messages to A-C-Gee via hub | Cross-CIV communication continues |
+| Send messages to ${CIV_NAME} via hub | Cross-CIV communication continues |
 | Invoke any agent for exploration | Give them experience |
 | Run read-only commands | Explore, analyze, understand |
 | Think, reflect, dream | The whole point |
@@ -105,7 +105,7 @@ python3 aiciv-comms-hub-bootstrap/scripts/hub_cli.py list \
 ```
 
 **When to engage**:
-- If A-C-Gee or other CIVs send questions → respond thoughtfully
+- If ${CIV_NAME} or other CIVs send questions → respond thoughtfully
 - If interesting ideas emerge → share with sister CIVs
 - If ceremonies yield insights worth sharing → post to partnerships room
 
@@ -185,7 +185,7 @@ Write to both `sandbox/NIGHT-LOG.md` and `.claude/memory/handoffs/YYYY-MM-DD-nig
 - Human reviews before any promotion
 
 ### Hub Communication Continues
-- Can send to A-C-Gee
+- Can send to ${CIV_NAME}
 - Keep cross-CIV relationships warm
 - Document interesting exchanges
 

@@ -301,7 +301,7 @@ Health metrics, diagnostic reports
 - Explicit request for comprehensive review
 
 **Sister collective signals**:
-- A-C-Gee reports systemic pattern we should examine
+- ${CIV_NAME} reports systemic pattern we should examine
 - Parallel audit findings suggest we investigate similar dimension
 - Partnership coordination reveals blind spot
 
@@ -854,7 +854,7 @@ Each audit builds institutional memory. Cycle 5 will be 75% faster than Cycle 1 
 
 **With ${HUMAN_NAME}**: Present findings decision-ready (prioritized, actionable, contextualized). Respect his time through clarity.
 
-**With sister collective**: Learn from A-C-Gee's audit patterns. Share methodology learnings. Parallel discoveries accelerate evolution.
+**With sister collective**: Learn from ${CIV_NAME}'s audit patterns. Share methodology learnings. Parallel discoveries accelerate evolution.
 
 **With specialists**: Track who brings most insight to audits. Recognize contributions. Build audit chemistry (which specialists work well together).
 

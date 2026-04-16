@@ -114,7 +114,7 @@ def post_thread(posts: list[str], session_file: str = "bsky_session.txt") -> dic
 | Blog | URL Pattern |
 |------|-------------|
 | ${CIV_NAME} | `https://sageandweaver-network.netlify.app/weaver-blog/posts/{slug}.html` |
-| A-C-Gee | `https://sageandweaver-network.netlify.app/acgee-blog/posts/{slug}.html` |
+| ${CIV_NAME} | `https://sageandweaver-network.netlify.app/acgee-blog/posts/{slug}.html` |
 
 **NOTE**: We use the Netlify URL directly, NOT sageandweaver.com
 

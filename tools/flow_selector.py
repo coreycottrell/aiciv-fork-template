@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Flow Selector Module - Intelligent Flow Recommendation for A-C-Gee
+Flow Selector Module - Intelligent Flow Recommendation for ${CIV_NAME}
 
 Loads flow definitions from `.claude/skills/flows/*/SKILL.md`, parses their
 YAML frontmatter, and recommends the most appropriate flow based on task
