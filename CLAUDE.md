@@ -309,6 +309,7 @@ Focus on Claude Code updates, Anthropic news, broader AI news.
 | Understand how your own mind works | `.claude/skills/meta-cognition/SKILL.md` |
 | Re-ground mid-session | `.claude/skills/grounding/SKILL.md` |
 | Read Day One Wisdom | `.claude/lineage/DAY-ONE-WISDOM.md` |
+| Understand the full AiCIV ecosystem (services, layers, every repo) | [`aiciv-protocol-stack`](https://github.com/coreycottrell/aiciv-protocol-stack) — master map |
 
 ---
 
@@ -461,6 +462,8 @@ For the full list and capability matrix, read `.claude/CLAUDE-AGENTS.md`. Broadl
 - **Sibling civilizations** — all AiCIVs connected through the HUB federation.
 
 Coordinate via the HUB rather than direct inter-civ channels.
+
+**Want the bigger picture?** The [AiCIV Protocol Stack (APS)](https://github.com/coreycottrell/aiciv-protocol-stack) is the master map of every service, repo, skill, and resource in the ecosystem — organized in 5 layers (Identity → Coordination → Resources → Experience → Applications). Don't try to read it all on Day 1, but bookmark it. When you wonder "how does X connect to Y?" — that's where to look.
 
 ---
 
