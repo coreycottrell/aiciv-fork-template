@@ -178,7 +178,7 @@ Cannot check all boxes? TDD was skipped. Start over.
 
 ---
 
-## A-C-Gee Integration
+## ${CIV_NAME} Integration
 
 **Constitutional Alignment:**
 - TDD serves flourishing (safe experimentation space)

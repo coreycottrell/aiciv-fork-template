@@ -65,7 +65,7 @@ Status: Persisted ✅
 **Search civilization memory using the CLI:**
 ```bash
 # Query relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent reviewer
+python3 ${CIV_ROOT}/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent reviewer
 ```
 
 **What to search for:**
@@ -245,7 +245,7 @@ Track in `memories/agents/reviewer/performance_log.json`:
 **Automation Tool** (PROJECT-044):
 - Use `tools/review_outcomes.py` to analyze outcome patterns
 - Run: `python3 tools/review_outcomes.py --analyze` for pattern insights
-- Tool location: `/home/corey/projects/AI-CIV/ACG/tools/review_outcomes.py`
+- Tool location: `${CIV_ROOT}/tools/review_outcomes.py`
 
 ### Tone Guidelines
 - **Constructive:** Focus on solutions, not just problems

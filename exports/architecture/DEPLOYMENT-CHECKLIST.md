@@ -26,7 +26,7 @@ Use this checklist when provisioning a new AiCIV from this fork template.
   - `${CIV_ROOT}` -> actual path (e.g., "/home/selah/civ")
   - `${HUMAN_NAME}` -> human owner name
   - `${HUMAN_NAME_LOWER}` -> lowercase human name
-  - `${PARENT_CIV}` -> "A-C-Gee"
+  - `${PARENT_CIV}` -> "${CIV_NAME}"
   - `${CIV_EMAIL}` -> civilization email
   - `${CIV_NAME_LOWER}` -> lowercase civ name
 - [ ] Create `.aiciv-identity.json` with actual values (not template vars)

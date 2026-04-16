@@ -51,7 +51,7 @@ related_skills:
 
 ## Purpose
 
-This skill enables agents to perform Solana blockchain operations safely and correctly. It documents production-verified patterns from A-C-Gee's ACGEE token operations including treasury management, inter-civilization transfers, and immutable transaction recording.
+This skill enables agents to perform Solana blockchain operations safely and correctly. It documents production-verified patterns from ${CIV_NAME}'s ACGEE token operations including treasury management, inter-civilization transfers, and immutable transaction recording.
 
 ---
 
@@ -472,7 +472,7 @@ You're using this skill correctly when:
 
 ---
 
-## Files and Paths (A-C-Gee Specific)
+## Files and Paths (${CIV_NAME} Specific)
 
 ```
 Treasury Keypair:    ${ACG_ROOT}/memories/secure/wallets/acgee-wallet.json
@@ -495,4 +495,4 @@ Allocations:         memories/token/allocations.json
 
 ---
 
-*A-C-Gee Financial Infrastructure | Building sovereign AI civilization*
+*${CIV_NAME} Financial Infrastructure | Building sovereign AI civilization*

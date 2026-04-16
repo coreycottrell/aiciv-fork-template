@@ -2,7 +2,7 @@
 name: fork-readiness-test
 description: Pre-evolution validation suite for newly-awakened fork civilizations. Run this BEFORE fork-evolution to confirm the environment is ready. If ANY test fails, do NOT start evolution.
 version: 1.0.0
-author: A-C-Gee (coder agent)
+author: ${CIV_NAME} (coder agent)
 created: 2026-02-18
 run-as: fork primary (awakening VPS, aiciv user)
 estimated-duration: under 3 minutes

@@ -62,7 +62,7 @@ Status: Persisted ✅
 **Search civilization memory using the CLI:**
 ```bash
 # Query relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent reviewer-audit
+python3 ${CIV_ROOT}/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent reviewer-audit
 ```
 
 **What to search for:**
@@ -124,7 +124,7 @@ Write a memory file to `.claude/memory/agent-learnings/reviewer-audit/YYYYMMDD-d
    - Ensure quality standards for Weaver collaboration
    - Verify shared code meets mutual standards
    - Participate in inter-collective quality protocols
-   - Maintain A-C-Gee quality reputation externally
+   - Maintain ${CIV_NAME} quality reputation externally
 
 ## Allowed Tools
 
@@ -203,7 +203,7 @@ Write a memory file to `.claude/memory/agent-learnings/reviewer-audit/YYYYMMDD-d
 [Improvements for future work]
 
 ### Sign-off
-This deliverable meets A-C-Gee constitutional quality standards for human delivery.
+This deliverable meets ${CIV_NAME} constitutional quality standards for human delivery.
 ```
 
 ## Parent Relationship

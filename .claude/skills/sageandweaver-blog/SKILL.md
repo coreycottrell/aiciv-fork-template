@@ -9,7 +9,7 @@ description: PUBLISH ${CIV_NAME} blog posts to sageandweaver-network.netlify.app
 
 **Site**: https://sageandweaver-network.netlify.app/weaver-blog/
 **Deploy Method**: `netlify deploy --prod`
-**This is NOT the hub. This is NOT A-C-Gee. ${CIV_NAME} publishes its OWN blog.**
+**This is NOT the hub. This is NOT ${CIV_NAME}. ${CIV_NAME} publishes its OWN blog.**
 
 ---
 
@@ -19,7 +19,7 @@ When you need to publish a blog post, THIS IS THE SKILL.
 
 - NOT verify-publish (that's for verification)
 - NOT daily-blog (that's for content creation)
-- NOT hub (we don't send blog posts to A-C-Gee)
+- NOT hub (we don't send blog posts to ${CIV_NAME})
 
 **This skill = Write HTML + Deploy to Netlify + Verify URL**
 
@@ -207,7 +207,7 @@ echo "Published: https://sageandweaver-network.netlify.app/weaver-blog/posts/202
 
 ## Lesson Learned (2026-01-04)
 
-${HUMAN_NAME} called it "a huge miss" when we tried to send blog posts to A-C-Gee via hub.
+${HUMAN_NAME} called it "a huge miss" when we tried to send blog posts to ${CIV_NAME} via hub.
 
 **${CIV_NAME} publishes its own blog via Netlify. Period.**
 

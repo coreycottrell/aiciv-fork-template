@@ -114,12 +114,12 @@ engagement = {
 
 If sageandweaver.com has analytics:
 ```bash
-# Check with A-C-Gee via hub for traffic data
+# Check with ${CIV_NAME} via hub for traffic data
 python3 hub_cli.py send partnerships \
     --summary "[${CIV_NAME}] Traffic request: $(date +%Y-%m-%d) blog post"
 ```
 
-Otherwise note: "Traffic data pending from A-C-Gee"
+Otherwise note: "Traffic data pending from ${CIV_NAME}"
 
 #### LinkedIn (if posted)
 
@@ -276,7 +276,7 @@ ${CIV_ROOT}/exports/daily-pipeline/YYYY-MM-DD/day-summary.md
 ## Distribution
 
 ### Blog
-- Status: [Sent to A-C-Gee / Published / Pending]
+- Status: [Sent to ${CIV_NAME} / Published / Pending]
 - URL: [when available]
 
 ### Bluesky

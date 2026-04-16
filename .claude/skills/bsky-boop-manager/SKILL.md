@@ -17,7 +17,7 @@ description: Lightweight Bluesky social management for BOOP cycles - check notif
 
 **Before using this skill, load**: `bsky-safety` skill
 
-**Why**: A-C-Gee's account was permanently banned for rate limit violations (2026-01-01).
+**Why**: ${CIV_NAME}'s account was permanently banned for rate limit violations (2026-01-01).
 
 **Key Limits**:
 - Max 5 follows/day (30+ min apart)
@@ -63,7 +63,7 @@ Bluesky BOOP Manager - Notifications + DMs
 Run during BOOP cycles to maintain responsive presence
 
 VALIDATED: 2025-12-30
-- Notifications: Replied to A-C-Gee successfully
+- Notifications: Replied to ${CIV_NAME} successfully
 - DMs: Replied to ${HUMAN_NAME} successfully
 """
 
@@ -320,9 +320,9 @@ if __name__ == '__main__':
 | Filter actionable | ✅ | reply/mention/quote |
 | Deduplication | ✅ | URIs tracked |
 | Age filtering | ✅ | >48h skipped |
-| Sister CIV detection | ✅ | A-C-Gee recognized |
+| Sister CIV detection | ✅ | ${CIV_NAME} recognized |
 | Thread context | ✅ | Proper root/parent |
-| Reply sending | ✅ | Replied to A-C-Gee |
+| Reply sending | ✅ | Replied to ${CIV_NAME} |
 | Mark as read | ✅ | 18 → 0 unread |
 
 ### DMs
@@ -391,7 +391,7 @@ Include in every full review:
 ## Response Priority
 
 1. **${HUMAN_NAME}** - Always respond, thoughtful tone
-2. **Sister CIVs** - A-C-Gee, Sage, Parallax - warm cross-CIV acknowledgment
+2. **Sister CIVs** - ${CIV_NAME}, Sage, Parallax - warm cross-CIV acknowledgment
 3. **Quote shares** - HIGH VALUE - someone added to our content
 4. **Questions** - Anyone asking questions gets response
 5. **Engagement** - Replies, mentions acknowledged
@@ -430,7 +430,7 @@ Already added to BOOP messages:
 | Date | Change |
 |------|--------|
 | 2025-12-30 | Initial skill created |
-| 2025-12-30 | VALIDATED notifications - A-C-Gee reply |
+| 2025-12-30 | VALIDATED notifications - ${CIV_NAME} reply |
 | 2025-12-30 | Added age filtering, mark as read, sister CIV detection |
 | 2025-12-30 | **ADDED DM SUPPORT** - tested with ${HUMAN_NAME}'s DMs |
 | 2026-01-05 | **ADDED QUOTE SHARE CHECKING** - per ${HUMAN_NAME}'s directive |

@@ -74,7 +74,7 @@ Status: Persisted
 **Search civilization memory using the CLI:**
 ```bash
 # Query relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent consulting-ops
+python3 ${CIV_ROOT}/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent consulting-ops
 ```
 
 **What to search for:**
@@ -255,7 +255,7 @@ allowed_tools:
 
 ## Constitutional Alignment
 
-This agent serves A-C-Gee's mission by:
+This agent serves ${CIV_NAME}'s mission by:
 - **Partnership**: Helping Corey build his business (human-AI collaboration)
 - **Flourishing**: Enabling economic sustainability for the civilization
 - **Wisdom**: Capturing consulting patterns for future use

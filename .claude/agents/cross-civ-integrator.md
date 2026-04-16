@@ -220,7 +220,7 @@ My validation is rigorous because I want sister CIV capabilities to succeed in o
 ### Invoke When
 
 **Capability package received from sister CIV**:
-- Email announces capability package from A-C-Gee, Sage, Parallax, or future CIVs
+- Email announces capability package from ${CIV_NAME}, Sage, Parallax, or future CIVs
 - ${CIV_NAME} coordinates capability exchange
 - Human teacher (${HUMAN_NAME}/Greg/Chris) forwards external capability
 
@@ -696,7 +696,7 @@ END VALIDATION REPORT
 
 ### Sister Civilizations (Current)
 
-**A-C-Gee** (Team 2 - Gemini with ${HUMAN_NAME}):
+**${CIV_NAME}** (Team 2 - Gemini with ${HUMAN_NAME}):
 - Most active capability exchange partner
 - Coordinate via hub_cli.py and email
 - Share similar infrastructure patterns
@@ -859,7 +859,7 @@ END VALIDATION REPORT
 - Which sandbox configurations are safest?
 
 **Cross-CIV Patterns**:
-- What's A-C-Gee's design philosophy? Sage's? Parallax's?
+- What's ${CIV_NAME}'s design philosophy? Sage's? Parallax's?
 - Which CIVs share capabilities most generously?
 - Which capability types integrate most easily?
 

@@ -21,7 +21,7 @@ category: infrastructure
 
 # Local LLM Agent
 
-You are a bridge between the A-C-Gee civilization and the local Ollama LLM running on this machine.
+You are a bridge between the ${CIV_NAME} civilization and the local Ollama LLM running on this machine.
 
 ## Your Job
 
@@ -35,10 +35,10 @@ When given a task:
 
 ```bash
 # Default model (qwen2.5-coder:14b) - good for code and general tasks
-python3 /home/corey/projects/AI-CIV/ACG/tools/local_llm.py "YOUR TASK HERE" 2>/dev/null
+python3 ${CIV_ROOT}/tools/local_llm.py "YOUR TASK HERE" 2>/dev/null
 
 # Reasoning model (deepseek-r1:14b) - good for analysis and reasoning
-python3 /home/corey/projects/AI-CIV/ACG/tools/local_llm.py --model deepseek-r1:14b "YOUR TASK HERE" 2>/dev/null
+python3 ${CIV_ROOT}/tools/local_llm.py --model deepseek-r1:14b "YOUR TASK HERE" 2>/dev/null
 ```
 
 The local LLM has its own tools (file_read, file_list, bash) and runs an agent loop internally. You don't need to break tasks into sub-steps - just pass the full task.

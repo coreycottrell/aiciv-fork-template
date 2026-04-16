@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Human-Friendly Reminders for A-C-Gee
+Human-Friendly Reminders for ${CIV_NAME}
 
 No special commands needed. Primary checks these, Corey acknowledges naturally.
 

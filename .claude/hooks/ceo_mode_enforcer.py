@@ -41,7 +41,7 @@ import re
 import sys
 from pathlib import Path
 
-PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "/home/corey/projects/AI-CIV/ACG")
+PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", str(Path(__file__).resolve().parent.parent.parent))
 
 # === VPS production IPs (from config/vps_registry.json) ===
 # Primary should not SSH or curl these directly - route to infra-lead or specialist

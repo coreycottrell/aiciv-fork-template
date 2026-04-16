@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # Add project root to path for imports
-PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "/home/corey/projects/AI-CIV/ACG")
+PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", str(Path(__file__).resolve().parent.parent.parent))
 sys.path.insert(0, PROJECT_DIR)
 
 def get_session_type(hook_input: dict) -> str:

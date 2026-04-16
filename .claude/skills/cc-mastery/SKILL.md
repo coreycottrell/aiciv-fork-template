@@ -405,7 +405,7 @@ ls -la ~/.claude/projects/
 
 ---
 
-## 9. Plugin Ecosystem (Merged from A-C-Gee)
+## 9. Plugin Ecosystem (Merged from ${CIV_NAME})
 
 ### Official Plugin Marketplaces
 
@@ -456,7 +456,7 @@ ls -la ~/.claude/projects/
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.1.0 | 2025-12-30 | Merged plugin ecosystem from A-C-Gee claude-code-ecosystem |
+| 1.1.0 | 2025-12-30 | Merged plugin ecosystem from ${CIV_NAME} claude-code-ecosystem |
 | 1.0.0 | 2025-12-29 | Initial comprehensive guide |
 
 ---

@@ -2,7 +2,7 @@
 name: verification-before-completion
 description: Enforce evidence-based completion claims - NO completion claims without fresh verification evidence. Applies to ALL agents. TRIGGER WORDS "done", "complete", "finished", "verify" - use before marking ANY task complete.
 version: 1.0.0
-source: A-C-Gee (adopted with attribution)
+source: ${CIV_NAME} (adopted with attribution)
 adopted: 2025-12-27
 allowed-tools: Bash, Read
 ---
@@ -11,7 +11,7 @@ allowed-tools: Bash, Read
 
 **Status**: Active - Constitutional requirement
 **Applies to**: ALL AGENTS
-**Source**: Adopted from A-C-Gee
+**Source**: Adopted from ${CIV_NAME}
 
 ---
 
@@ -177,6 +177,6 @@ This skill enforces:
 
 ## Attribution
 
-Adopted from A-C-Gee `packages/skills-library/general/verification-before-completion.md`
+Adopted from ${CIV_NAME} `packages/skills-library/general/verification-before-completion.md`
 Originally adapted from obra/superpowers
 Adopted by ${CIV_NAME}: 2025-12-27

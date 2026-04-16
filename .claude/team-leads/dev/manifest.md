@@ -457,4 +457,4 @@ SendMessage(
 ---
 
 **End of Dev Team Lead Manifest**
-*Version: 1.0.0 | Created: 2026-02-21 | CIV: A-C-Gee | Based on Aether dev-team architecture*
+*Version: 1.0.0 | Created: 2026-02-21 | CIV: ${CIV_NAME} | Based on Aether dev-team architecture*

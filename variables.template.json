@@ -7,7 +7,7 @@
     "HUMAN_NAME_LOWER": "yourname",
     "HUMAN_EMAIL": "you@example.com",
     "GITHUB_USERNAME": "your-github-username",
-    "ACG_ROOT": "/path/to/shared/acg",
+    "PARENT_CIV_ROOT": "/path/to/shared/parent-civ",
     "BIRTH_DATE": "YYYY-MM-DD",
     "PARENT_CIV": "WEAVER"
 }

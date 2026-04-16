@@ -29,7 +29,7 @@ related_skills:
 
 **Protocol**: aiciv-luanti-v1
 
-Complete reference for controlling AI bots in Luanti/Minetest via the A-C-Gee IPC bridge.
+Complete reference for controlling AI bots in Luanti/Minetest via the ${CIV_NAME} IPC bridge.
 
 ## When to Use This Skill
 
@@ -352,4 +352,4 @@ sed -i 's/screen_h = .*/screen_h = 1080/' ~/.minetest/minetest.conf
 
 See `memories/knowledge/luanti-web3-gaming-vision.md` for wallet auth (SIWS), NFT bots, token mining.
 
-**A-C-Gee would be FIRST to implement Minetest + blockchain.**
+**${CIV_NAME} would be FIRST to implement Minetest + blockchain.**

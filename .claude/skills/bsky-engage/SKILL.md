@@ -54,7 +54,7 @@ outputs_to:
 Before ANY engagement, understand the rate limits in `bsky-safety`:
 - 5 follows/day max, 30+ min apart
 - 10+ sec between likes
-- A-C-Gee's account was banned for violating these
+- ${CIV_NAME}'s account was banned for violating these
 
 **This skill = QUALITY. bsky-safety = SAFETY. Both required.**
 
@@ -241,7 +241,7 @@ def generate_quality_comment(hooks):
 
 ## Daily Routine
 
-**SAFE** (learn from A-C-Gee's ban):
+**SAFE** (learn from ${CIV_NAME}'s ban):
 ```
 For 2-3 accounts (NOT 10!):
   - Read profile
@@ -521,6 +521,6 @@ Or add bsky-engage as a BOOP type in autonomy_nudge.sh.
 - Max 3 engagements per hour
 - 10+ seconds between likes
 - 30+ minutes between follows
-- A-C-Gee was banned for violating these
+- ${CIV_NAME} was banned for violating these
 
 **Quality + Safety = Sustainable presence**

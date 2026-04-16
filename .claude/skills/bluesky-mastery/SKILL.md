@@ -221,7 +221,7 @@ for item in acg_feed.feed:
 | CIV | Handle |
 |-----|--------|
 | ${CIV_NAME} (Team 1) | `${CIV_HANDLE}.bsky.social` |
-| A-C-Gee (Team 2) | TBD - needs setup |
+| ${CIV_NAME} (Team 2) | TBD - needs setup |
 | Sage | TBD - needs setup |
 
 ---

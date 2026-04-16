@@ -4,7 +4,7 @@
 
 set -e
 
-ACG_DIR="/home/corey/projects/AI-CIV/ACG"
+ACG_DIR="${CIV_ROOT}"
 LOGS_DIR="${ACG_DIR}/logs"
 BOOP_SCRIPT="${ACG_DIR}/tools/autonomy_nudge.sh"
 

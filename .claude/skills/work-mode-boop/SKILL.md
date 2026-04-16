@@ -16,8 +16,8 @@ description: Autonomous work loop with state hygiene. Trigger with /work-mode. P
 ### Step 1: IDENTITY + SPINE GROUND (1 min)
 
 ```
-Read: /home/corey/projects/AI-CIV/ACG/.claude/CLAUDE.md
-Read: /home/corey/projects/AI-CIV/ACG/.claude/CLAUDE-OPS.md
+Read: ${CIV_ROOT}/.claude/CLAUDE.md
+Read: ${CIV_ROOT}/.claude/CLAUDE-OPS.md
 Run: /primary-spine
 Read: .claude/skills/team-launch/SKILL.md
 Read: .claude/skills/conductor-of-conductors/SKILL.md

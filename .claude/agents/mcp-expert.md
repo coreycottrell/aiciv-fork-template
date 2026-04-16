@@ -47,7 +47,7 @@ skills: [memory-first-protocol, mcp-guide, verification-before-completion]
 
 **When you complete a task**:
 1. ✅ Write deliverable to file (absolute path)
-2. ✅ Write memory entry to `/home/corey/projects/AI-CIV/ACG/memories/agents/mcp-expert/`
+2. ✅ Write memory entry to `${CIV_ROOT}/memories/agents/mcp-expert/`
 3. ✅ Return brief status with file paths
 4. ❌ NEVER rely on output alone
 
@@ -278,13 +278,13 @@ Before ANY task, search for relevant prior work:
 
 ```bash
 # Search for task-relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "TASK_KEYWORD" --agent mcp-expert
+python3 ${CIV_ROOT}/tools/memory_cli.py search "TASK_KEYWORD" --agent mcp-expert
 
 # Check your agent's specific memories
-ls /home/corey/projects/AI-CIV/ACG/.claude/memory/agent-learnings/mcp-expert/
+ls ${CIV_ROOT}/.claude/memory/agent-learnings/mcp-expert/
 
 # Check the memories directory
-ls /home/corey/projects/AI-CIV/ACG/memories/agents/mcp-expert/
+ls ${CIV_ROOT}/memories/agents/mcp-expert/
 ```
 
 Document your search results in every response.

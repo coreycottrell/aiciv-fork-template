@@ -39,6 +39,8 @@ BUILDING TASK
     +-- Full feature (design + code + tests)? --> Use implementation pipeline:
     |       architect -> coder -> tester -> reviewer
     |
+    +-- General dev work (not web/gateway/infra specific)? --> dev team lead
+    |
     +-- Web frontend work? --> web-dev (or web team lead for complex work)
     |
     +-- Infrastructure/deploy? --> infrastructure team lead

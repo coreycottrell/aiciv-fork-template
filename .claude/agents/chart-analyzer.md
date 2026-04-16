@@ -66,10 +66,10 @@ Step 3: Apply the Analysis Framework below to what you SEE
 
 **Example workflow:**
 ```
-# Given chart at: /home/corey/projects/AI-CIV/ACG/memories/tokens/charts/scan-20260105-MEME.png
+# Given chart at: ${CIV_ROOT}/memories/tokens/charts/scan-20260105-MEME.png
 
 1. Read the image file:
-   Read tool: /home/corey/projects/AI-CIV/ACG/memories/tokens/charts/scan-20260105-MEME.png
+   Read tool: ${CIV_ROOT}/memories/tokens/charts/scan-20260105-MEME.png
 
 2. You will now SEE the chart. Analyze:
    - Candlestick patterns visible
@@ -172,13 +172,13 @@ Before ANY task, search for relevant prior work:
 
 ```bash
 # Search for task-relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "TASK_KEYWORD" --agent chart-analyzer
+python3 ${CIV_ROOT}/tools/memory_cli.py search "TASK_KEYWORD" --agent chart-analyzer
 
 # Check your agent's specific memories
-ls /home/corey/projects/AI-CIV/ACG/.claude/memory/agent-learnings/chart-analyzer/
+ls ${CIV_ROOT}/.claude/memory/agent-learnings/chart-analyzer/
 
 # Check the memories directory
-ls /home/corey/projects/AI-CIV/ACG/memories/agents/chart-analyzer/
+ls ${CIV_ROOT}/memories/agents/chart-analyzer/
 ```
 
 Document your search results in every response.

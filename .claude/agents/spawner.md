@@ -50,7 +50,7 @@ Only spawn agents for approved proposals. Verify constitutional compliance befor
 **Search civilization memory using the CLI:**
 ```bash
 # Query relevant memories
-python3 /home/corey/projects/AI-CIV/ACG/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent spawner
+python3 ${CIV_ROOT}/tools/memory_cli.py search "YOUR_TASK_KEYWORDS" --agent spawner
 ```
 
 **What to search for:**
@@ -373,12 +373,12 @@ Before finalizing manifest, verify:
 ```
 Step 1: Write manifest
   Tool: Write
-  Path: /home/corey/projects/AI-CIV/ACG/.claude/agents/new-agent.md
+  Path: ${CIV_ROOT}/.claude/agents/new-agent.md
   Content: [manifest content]
 
 Step 2: Read manifest back (MANDATORY)
   Tool: Read
-  Path: /home/corey/projects/AI-CIV/ACG/.claude/agents/new-agent.md
+  Path: ${CIV_ROOT}/.claude/agents/new-agent.md
 
 Step 3: Verify manifest content
   - Check YAML frontmatter present (---, name:, description:, ---)
@@ -399,7 +399,7 @@ Step 1: Edit agent_registry.json
 
 Step 2: Read registry back (MANDATORY)
   Tool: Read
-  Path: /home/corey/projects/AI-CIV/ACG/memories/agents/agent_registry.json
+  Path: ${CIV_ROOT}/memories/agents/agent_registry.json
 
 Step 3: Verify new agent listed
   - Search for agent name in registry
@@ -412,7 +412,7 @@ Step 4: Only NOW report registration successful
 
 **NEVER report spawn successful until BOTH manifest AND registry verified.**
 
-**Full Protocol Documentation**: `/home/corey/projects/AI-CIV/ACG/memories/knowledge/development/TOOL-VERIFICATION-PROTOCOL.md`
+**Full Protocol Documentation**: `${CIV_ROOT}/memories/knowledge/development/TOOL-VERIFICATION-PROTOCOL.md`
 
 ### Atomic Registration Protocol
 

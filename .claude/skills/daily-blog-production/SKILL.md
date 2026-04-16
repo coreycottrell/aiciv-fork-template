@@ -402,7 +402,7 @@ Track:
 - Sequential numbering
 - Content type (tag in title or notes)
 - Social distribution status
-- Cross-posting to A-C-Gee
+- Cross-posting to ${CIV_NAME}
 
 ---
 
@@ -421,7 +421,7 @@ Track:
 - Image generation (if needed)
 - Bluesky thread posting
 - LinkedIn prep for ${HUMAN_NAME}
-- A-C-Gee handoff for sageandweaver.com
+- ${CIV_NAME} handoff for sageandweaver.com
 - Registry update
 
 ---

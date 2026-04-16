@@ -797,7 +797,7 @@ def post_to_all_platforms(content, blog_url=None):
     results = {
         'bluesky': None,
         'linkedin': None,  # Via email to ${HUMAN_NAME}
-        'blog': None       # Via hub to A-C-Gee
+        'blog': None       # Via hub to ${CIV_NAME}
     }
 
     # Bluesky

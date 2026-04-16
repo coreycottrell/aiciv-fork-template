@@ -50,7 +50,7 @@ from typing import Dict, List, Optional, Any
 from collections import Counter, defaultdict
 
 # Project paths
-PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "/home/corey/projects/AI-CIV/ACG")
+PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "${CIV_ROOT}")
 TRACKING_FILE = Path(PROJECT_DIR) / "memories" / "system" / "skill-injections.jsonl"
 SKILLS_DIR = Path(PROJECT_DIR) / ".claude" / "skills"
 

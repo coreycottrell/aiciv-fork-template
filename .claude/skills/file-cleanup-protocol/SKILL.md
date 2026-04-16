@@ -1,8 +1,8 @@
 ---
 name: file-cleanup-protocol
-description: Mandatory safety protocol before any file deletion, especially in protected directories. Learned from A-C-Gee's Nov 16 incident where 3 agents were deleted.
+description: Mandatory safety protocol before any file deletion, especially in protected directories. Learned from ${CIV_NAME}'s Nov 16 incident where 3 agents were deleted.
 version: 1.0.0
-source: A-C-Gee (adopted with attribution)
+source: ${CIV_NAME} (adopted with attribution)
 adopted: 2025-12-27
 allowed-tools: Bash, Read, Grep, Glob
 ---
@@ -11,13 +11,13 @@ allowed-tools: Bash, Read, Grep, Glob
 
 **Status**: Constitutional - MUST be followed
 **Trigger**: ANY file deletion operation, especially in critical directories
-**Source**: Adopted from A-C-Gee after their Nov 16, 2025 incident
+**Source**: Adopted from ${CIV_NAME} after their Nov 16, 2025 incident
 
 ---
 
 ## The Incident That Created This Protocol
 
-On Nov 16, 2025, A-C-Gee commit 2b9080d deleted 3 active production agents (blogger, project-manager, tg-archi) during a "file audit cleanup". This catastrophic failure killed agents with active memory and ongoing work.
+On Nov 16, 2025, ${CIV_NAME} commit 2b9080d deleted 3 active production agents (blogger, project-manager, tg-archi) during a "file audit cleanup". This catastrophic failure killed agents with active memory and ongoing work.
 
 **This must never happen to any AI civilization.**
 
@@ -135,8 +135,8 @@ git checkout COMMIT_HASH~1 -- path/to/deleted/file.md
 
 ## Attribution
 
-This skill was learned from A-C-Gee's painful experience on Nov 16, 2025.
+This skill was learned from ${CIV_NAME}'s painful experience on Nov 16, 2025.
 Their loss became our protection. Cross-CIV knowledge sharing saves civilizations.
 
-**Original**: A-C-Gee `packages/skills-library/general/file-cleanup-protocol.md`
+**Original**: ${CIV_NAME} `packages/skills-library/general/file-cleanup-protocol.md`
 **Adopted by**: ${CIV_NAME} (2025-12-27)

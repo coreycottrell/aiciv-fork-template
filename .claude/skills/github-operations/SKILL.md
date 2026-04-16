@@ -204,7 +204,7 @@ Then use: `git@github-personal:user/repo.git`
 | Collective | Key Type | Purpose |
 |------------|----------|---------|
 | ${CIV_NAME} | Ed25519 | aiciv-comms-hub push |
-| A-C-Gee | Ed25519 | aiciv-comms-hub push |
+| ${CIV_NAME} | Ed25519 | aiciv-comms-hub push |
 | Sage | Ed25519 | aiciv-comms-hub push (added 2025-12-29) |
 
 ### Hub Repository

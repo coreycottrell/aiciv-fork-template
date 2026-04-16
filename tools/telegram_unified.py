@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unified Telegram Bot for A-C-Gee Civilization
+Unified Telegram Bot for ${CIV_NAME} Civilization
 Bidirectional communication: TG <-> Claude via tmux injection + log streaming
 
 Features:
@@ -641,7 +641,7 @@ class TelegramBot:
 
         # Send startup message
         mode_note = " (gateway mode)" if self.use_gateway and self._gateway_registered else ""
-        await self._send_message(f"A-C-Gee Telegram bot online. Claude log streaming active.{mode_note}")
+        await self._send_message(f"${CIV_NAME} Telegram bot online. Claude log streaming active.{mode_note}")
 
     async def shutdown(self):
         """Shutdown the bot."""
@@ -977,7 +977,7 @@ class TelegramBot:
 
         if cmd == "/start" or cmd == "/help":
             voice_status = "ON" if self.is_voice_mode_enabled(user_id) else "OFF"
-            help_text = f"""A-C-Gee Telegram Bridge
+            help_text = f"""${CIV_NAME} Telegram Bridge
 
 Commands:
 /start, /help - This message
@@ -1817,7 +1817,7 @@ async def main():
     # CRITICAL: Ensure only one instance runs to prevent message duplication
     lock_file = ensure_single_instance()
 
-    logger.info("Starting A-C-Gee Unified Telegram Bot")
+    logger.info("Starting ${CIV_NAME} Unified Telegram Bot")
 
     try:
         config = load_config()

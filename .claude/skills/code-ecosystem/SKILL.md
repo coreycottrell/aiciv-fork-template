@@ -161,7 +161,7 @@ When LSP plugins are active, Claude Code gains:
 
 ---
 
-## A-C-Gee Relevant Plugins
+## ${CIV_NAME} Relevant Plugins
 
 ### For Solana/ArcX Development
 - **rust-analyzer-lsp**: Essential for Anchor programs

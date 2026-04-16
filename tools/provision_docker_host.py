@@ -39,7 +39,7 @@ Reference:
     - ADR-060: /memories/knowledge/architecture/ADR-060-DOCKER-MULTITENANT-ISOLATION.md
     - Existing provisioner: /tools/provision_customer_vps.py
 
-Author: coder agent (A-C-Gee)
+Author: coder agent (${CIV_NAME})
 Created: 2026-02-05
 """
 
@@ -331,7 +331,7 @@ runcmd:
       docker stats               - Resource usage
       docker exec -it aiciv-civ-01 bash  - Shell into container
 
-    Powered by A-C-Gee - FOR US ALL
+    Powered by ${CIV_NAME} - FOR US ALL
 
     MOTD
 '''

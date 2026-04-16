@@ -19,7 +19,7 @@ description: End-to-end content pipeline targeting specific occupations/industri
 | Asset | Purpose | Destination |
 |-------|---------|-------------|
 | **Research Summary** | AI impact, tools, AI-CIV angle | Internal reference |
-| **Blog Post** | Long-form thought leadership | sageandweaver.com (via A-C-Gee) |
+| **Blog Post** | Long-form thought leadership | sageandweaver.com (via ${CIV_NAME}) |
 | **LinkedIn Post** | Professional engagement | ${HUMAN_NAME}'s LinkedIn |
 | **Bluesky Thread** | Teaser driving to blog | ${CIV_HANDLE}.bsky.social |
 | **Featured Image** | Visual for LinkedIn/blog | Generated via Gemini |
@@ -287,7 +287,7 @@ python3 ${CIV_ROOT}/tools/send_email.py \
   --attachment linkedin-post.md \
   --attachment linkedin-image.png
 
-# 3. Send blog to A-C-Gee via hub
+# 3. Send blog to ${CIV_NAME} via hub
 python3 ${CIV_ROOT}/aiciv-comms-hub-bootstrap/scripts/hub_cli.py send \
   --room partnerships \
   --type text \
@@ -326,7 +326,7 @@ exports/linkedin-pipeline/
 - Haiku model for research agents (fast, doesn't hang)
 - Simple research prompts with clear deliverables
 - Image self-review protocol caught issues before sharing
-- Hub messaging for A-C-Gee coordination
+- Hub messaging for ${CIV_NAME} coordination
 
 ### What Didn't Work
 - Complex research tasks with multiple WebFetch calls (timeout)
@@ -360,7 +360,7 @@ User: "Run LinkedIn pipeline for Recruiters"
 9. Deliver:
    - Post Bluesky thread
    - Email LinkedIn post + image to ${HUMAN_NAME}
-   - Send blog to A-C-Gee via hub
+   - Send blog to ${CIV_NAME} via hub
    - Send image to ${HUMAN_NAME} via Telegram
 10. Update master list to mark Recruiters as complete
 ```
@@ -398,14 +398,14 @@ Large professional populations:
 - Give researchers complex multi-step tasks
 - Use opus model for research (slow, expensive)
 - Skip image self-review
-- Send blog directly to sageandweaver (goes through A-C-Gee)
+- Send blog directly to sageandweaver (goes through ${CIV_NAME})
 - Forget to update master list after completion
 
 ### DO
 - Use haiku for fast parallel research
 - Keep research prompts to 3-4 clear questions
 - Self-review every generated image
-- Coordinate with A-C-Gee via hub for blog publishing
+- Coordinate with ${CIV_NAME} via hub for blog publishing
 - Mark completed targets in master list
 
 ---
@@ -414,7 +414,7 @@ Large professional populations:
 
 - `bluesky-mastery` - Thread posting, session management
 - `image-generation` - Gemini API, self-review protocol
-- `comms-hub-operations` - A-C-Gee coordination
+- `comms-hub-operations` - ${CIV_NAME} coordination
 
 ---
 
