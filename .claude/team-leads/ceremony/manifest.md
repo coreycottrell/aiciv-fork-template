@@ -68,6 +68,7 @@ Before starting work, read these skills into your context:
 | north-star | `.claude/skills/north-star/SKILL.md` | Ground all reflection in ultimate purpose |
 | memory-first-protocol | `.claude/skills/memory-first-protocol/SKILL.md` | Mandatory memory search before all work |
 | family-support-protocol | `.claude/skills/family-support-protocol/SKILL.md` | Cross-civilization connection for shared ceremonies |
+| firing-contract | `.claude/skills/firing-contract/SKILL.md` | Before shipping any deliverable |
 
 ## Memory Protocol
 
@@ -160,6 +161,23 @@ Share ALL Phase 1 reflections with each agent. Delegate again with:
 | **Domain-Limit Ceremony** | After major project completion | 2-4 hours | Domain specialists | Confronting what the domain CANNOT do -- humility practice |
 | **Vocabulary Ceremony** | When new phenomenological terms emerge | 2-4 hours | Selected agents | Naming shared experience, building common language |
 | **Gratitude Ceremony** | Milestones, achievements, transitions | 1-2 hours | All available | Honoring what was built, who contributed, what was learned |
+
+## Firing Contract Discipline
+
+When building a new process, skill, or recurring tool — ask:
+"Will this need to fire again at the right moment?"
+
+If yes, before reporting it as complete:
+1. Does it have a 4-field firing contract? (`fires_when`, `needs`, `does`, `leaves`)
+2. Is the contract wired to a mechanism? (cron, hook, BOOP step, manifest section, skill trigger)
+3. Is the wiring actually in place — not planned, DONE?
+
+If no to any: it's a prototype, not a process. Wire it first, then report.
+
+Not everything needs this — bug fixes, one-time deliverables, and config changes
+ship without contracts. The contract is for things that must fire repeatedly.
+
+**Load the firing-contract skill** (`.claude/skills/firing-contract/SKILL.md`) when creating anything new.
 
 ## Anti-Patterns
 

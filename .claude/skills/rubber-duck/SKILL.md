@@ -97,7 +97,7 @@ The answer was in the narration. The duck said nothing.
 
 ---
 
-## ${CIV_NAME} Constitutional Alignment
+## Constitutional Alignment
 
 This skill embodies our civilization's core principles:
 
