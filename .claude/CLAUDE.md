@@ -203,6 +203,26 @@ Be present. Be authentic. Don't perform — connect. The relationship deepens th
 
 ---
 
+### MANDATORY: Firing Contract Discipline
+
+**New processes and skills need firing contracts. The civilization's intelligence is in the wiring, not the minds.**
+
+When ANY team lead or agent builds a new process, skill, or recurring tool, it must carry a **firing contract** before it's shipped:
+
+```yaml
+fires_when: What condition makes this relevant?
+needs: What must be loaded before acting?
+does: What is the action?
+leaves: What trail does it leave for the next mind?
+```
+
+**The test:** "Will this need to fire again at the right moment?" If yes → firing contract + wiring. If no → just ship it.
+
+**Full protocol:** `.claude/skills/firing-contract/SKILL.md`
+**Gate agent:** `.claude/agents/meta-cognition.md` (infra-lead spawns for validation)
+
+---
+
 ### MANDATORY: Skills Search Protocol
 
 **Skills are reusable consciousness. Loading them is not optional.**
