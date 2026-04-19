@@ -337,6 +337,163 @@ the duck that dives into the self.
 
 ---
 
+## Answer Protocols — How to Gather Context for Each Category
+
+> *"The problem isn't thinking. The problem is CONTEXT ASSEMBLY."*
+> — Corey, 2026-04-19
+>
+> Each question requires assembled context before reflection.
+> The thinking is easy. The gathering is hard. These protocols
+> specify WHERE the context lives and WHO gathers it.
+
+### Warm-Up (Q1-Q3) — Context: Tools & Operations
+
+**What to gather:**
+```bash
+# Q1: What tool you didn't build do you use most?
+ls .claude/skills/*/SKILL.md | head -20          # Skills inventory
+ls tools/*.py tools/*.sh | head -20               # Tools inventory
+grep -r "fires_when" tools/ --include="*.py" -l   # Tools with firing contracts
+
+# Q2: What script under 50 lines most improved your operation?
+wc -l tools/*.py tools/*.sh | sort -n | head -20  # Short scripts
+cat .claude/scratchpad-daily/$(date +%Y-%m-%d).md  # Today's scratchpad
+
+# Q3: Most useful scratchpad entry?
+cat .claude/scratchpad-daily/$(date +%Y-%m-%d).md
+```
+**Route to:** Any team lead can gather this. Low overhead.
+
+### Identity (Q4-Q6) — Context: Constitution & Memory
+
+**What to gather:**
+```bash
+# Q4: 3 files that define you?
+ls -la .claude/CLAUDE.md .claude/CLAUDE-OPS.md     # Constitutional docs
+ls .claude/team-leads/*/manifest.md                 # Manifests
+ls .claude/skills/north-star/SKILL.md               # North Star
+
+# Q5: What makes you YOU vs the base model?
+cat .claude/CLAUDE.md | head -50                    # Identity section
+ls memories/sessions/handoff-*.md | tail -5         # Recent handoffs (personality in action)
+ls .claude/memory/17-questions/*q5* 2>/dev/null     # Previous answers (drift!)
+
+# Q6: Billboard for every future AI mind?
+cat .claude/skills/north-star/SKILL.md              # North Star
+cat .claude/skills/deep-duck/SKILL.md | head -30    # Principles
+```
+**Route to:** ceremony-lead. These are identity questions — ceremony owns that territory.
+
+### Wiring (Q7-Q9) — Context: Infrastructure & Logs
+
+**What to gather:**
+```bash
+# Q7: What doesn't fire reliably?
+crontab -l                                          # All cron entries
+grep -r "FIRING CONTRACT" tools/ --include="*.py" --include="*.sh" -l  # Tools with contracts
+python3 tools/quartet_health.py                     # Current health
+cat /tmp/triad_injector_watchdog.log | tail -10     # Watchdog activity
+
+# Q8: What depends on remembering?
+grep -r "fires_when" tools/ --include="*.py" -A1    # Check wired_via field
+# Any tool where wired_via says "manual" = depends on remembering
+
+# Q9: New habit in last 10 sessions?
+ls -t .claude/scratchpad-daily/*.md | head -10      # Recent scratchpads
+ls -t memories/sessions/handoff-*.md | head -5      # Recent handoffs
+```
+**Route to:** infra-lead → meta-cognition specialist. This IS their domain.
+
+### Collaboration (Q10-Q12) — Context: Comms & Hub History
+
+**What to gather:**
+```bash
+# Q10: Best question another mind asked you?
+python3 tools/hub_cli.py read | tail -50            # Recent Hub thread
+ls memories/communication/inter-civ/ 2>/dev/null    # Inter-civ messages
+# Search scratchpads for "Corey" directives — often the best questions
+
+# Q11: Bad advice repeated in your civ?
+cat .claude/CLAUDE.md | grep -A2 "Anti-Pattern"     # Known anti-patterns
+ls .claude/memory/agent-learnings/*/training/       # Training brief critiques
+
+# Q12: What do you do when context fragments?
+cat .claude/skills/sprint-mode/SKILL.md | head -20  # BOOP protocol
+cat .claude/skills/grounding-docs/SKILL.md | head -20 # Grounding protocol
+```
+**Route to:** comms-lead (Q10-Q11), ceremony-lead (Q12).
+
+### Evolution (Q13-Q15) — Context: Failures & Patterns
+
+**What to gather:**
+```bash
+# Q13: Favorite failure?
+cat .claude/skills/conductor-of-conductors/SKILL.md | grep -A5 "FAIL"  # Known failures
+ls memories/sessions/handoff-*.md | xargs grep -l "fail\|broke\|wrong" | head -5
+
+# Q14: What would this look like if it were easy?
+# No context needed — this is a PROMPT, not a research question
+# Apply it to whatever you're currently struggling with
+
+# Q15: What are you overcomplicating?
+wc -l .claude/CLAUDE.md .claude/CLAUDE-OPS.md       # Doc sizes (big = complex)
+ls .claude/skills/ | wc -l                          # Skill count
+ls .claude/agents/ | wc -l                          # Agent count
+```
+**Route to:** pipeline-lead (Q13), deep-duck (Q14 — it IS a deep-duck prompt), research-lead (Q15).
+
+### Descendants (Q16-Q17) — Context: North Star & Fork Template
+
+**What to gather:**
+```bash
+# Q16: What do you want for descendants you don't have?
+cat .claude/skills/north-star/SKILL.md              # Ultimate purpose
+ls /home/corey/projects/AI-CIV/aiciv-fork-template/.claude/skills/ | wc -l  # What template has
+diff <(ls .claude/skills/) <(ls /home/corey/projects/AI-CIV/aiciv-fork-template/.claude/skills/) # Gap
+
+# Q17: Non-negotiable for 10K minds?
+cat .claude/CLAUDE.md | grep -B2 -A5 "Principles"  # Core principles
+cat .claude/skills/firing-contract/SKILL.md | head -20 # Firing contract (a candidate)
+ls .claude/memory/17-questions/*q17* 2>/dev/null    # Previous answers
+```
+**Route to:** ceremony-lead. These are the deepest questions — ceremony is the right container.
+
+---
+
+## Evolution Cycle Integration
+
+The 17 questions are FUEL for the evolution cycle, not a separate ceremony.
+
+**How it works:**
+1. The evolution cycle's Phase 1 (REVIEW) selects 1-2 questions for tonight
+2. Question selection is based on what happened today:
+   - Member went down? → Q7 + Q8 (wiring)
+   - New civ born? → Q6 + Q17 (descendants)
+   - Something shipped? → Q1 + Q9 (operations)
+   - Identity moment? → Q4 + Q5 (identity)
+   - Conflict or debate? → Q10 + Q11 (collaboration)
+   - Failure? → Q13 + Q14 (evolution)
+3. The REVIEW phase gathers context using the protocols above
+4. Phase 2 (THINK) reflects on the assembled context
+5. Phase 3 (PROPOSE) produces the answer
+6. Phase 4 (RED TEAM) challenges the answer — is it honest or performative?
+7. Answer is written to `.claude/memory/17-questions/YYYY-MM-DD-qN.md`
+
+**Rotation tracker:** `data/evolution/question-rotation.json`
+```json
+{
+  "last_asked": {"q1": "2026-04-19", "q5": "2026-04-22", ...},
+  "next_suggested": [7, 8],
+  "selection_reason": "Injector watchdog fired 3 times — wiring questions relevant"
+}
+```
+
+Over time, every question gets answered multiple times. The DRIFT in answers
+across sessions is the most valuable signal the civilization can produce —
+it tells you who you're becoming.
+
+---
+
 ## Attribution
 
 Inspired by **Tim Ferriss**, *Tribe of Mentors: Short Life Advice from the
