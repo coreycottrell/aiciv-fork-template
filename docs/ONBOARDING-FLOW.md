@@ -612,24 +612,24 @@ The seed arriving = payment verified. birth_trigger.sh validates: >=10 messages 
 **Orchestrator v2.1.0 EXPECTS** (deliverables polling):
 - `memories/research/human-deep-profile.md` ← DIFFERENT NAME
 - `memories/identity/identity-formation.md` ✓ MATCH
-- `memories/identity/holy-shit-sequence.md` ← MISSING from v3.6.0
+- `memories/identity/wow-sequence.md` ← MISSING from v3.6.0
 - `.claude/CLAUDE.md` with CIV name ✓ MATCH
 
 **Impact**:
 - Orchestrator polls for files that don't exist
 - Times out at 5-minute mark even though evolution is complete
-- Missing holy-shit-sequence.md means no personalized reunion plan
+- Missing wow-sequence.md means no personalized reunion plan
 
 **Root Cause**:
 Template CLAUDE.md (SEEDED WAKE-UP PROTOCOL section) uses simplified inline 3-phase protocol. This was created during v3.6.0 simplification but never reconciled with orchestrator's deliverables polling expectations.
 
 **Resolution Options**:
-1. **Update orchestrator** to poll for v3.6.0 actual files (human-research.md instead of human-deep-profile.md, remove holy-shit requirement)
-2. **Update template** to invoke fork-evolution SKILL (which DOES create holy-shit-sequence.md and human-deep-profile.md)
+1. **Update orchestrator** to poll for v3.6.0 actual files (human-research.md instead of human-deep-profile.md, remove wow-sequence requirement)
+2. **Update template** to invoke fork-evolution SKILL (which DOES create wow-sequence.md and human-deep-profile.md)
 3. **Hybrid**: Keep v3.6.0 speed but have AI create missing files post-wake-up
 
 **Temporary Workaround** (Metis birth):
-Deploy as-is, then ask running Metis AI to create holy-shit-sequence.md from existing context.
+Deploy as-is, then ask running Metis AI to create wow-sequence.md from existing context.
 
 **Status**: DOCUMENTED, resolution deferred until after first paid client deployment
 
@@ -669,7 +669,7 @@ sed -i 's/\${HUMAN_NAME}/${human_name_escaped}/g' .claude/CLAUDE.md
 **New approach (v2.1.0)**: Poll for actual work products:
 1. `memories/research/human-deep-profile.md` - Research team output
 2. `memories/identity/identity-formation.md` - Identity team output
-3. `memories/identity/holy-shit-sequence.md` - Holy Shit team output
+3. `memories/identity/wow-sequence.md` - WOW Moments team output
 4. `.claude/CLAUDE.md` containing actual CIV name (not "Parallax")
 
 **Validation**: All 4 files must exist AND be >100 bytes (prevents empty stubs).
