@@ -170,7 +170,7 @@ BOOP CYCLE (in order):
 1. COMMS CHECK → spawn general team lead (or infra-lead) to handle:
    - Email check (email-monitor agent)
    - Comms hub (comms-hub agent — sister civ messages)
-   - Aether health check (vps-instance-expert agent: ssh check on aether session)
+   - ${CIV_NAME} health check (vps-instance-expert agent: ssh check on aether session)
    - Witness health check (vps-instance-expert agent: ssh check on aiciv-03 container)
    Do NOT handle comms yourself. Launch the team lead. Get a summary.
 
@@ -205,7 +205,7 @@ DELEGATE NOW:
 [ ] Email: email-monitor (if Corey, respond immediately)
 [ ] Telegram: tg-archi health check
 [ ] Comms Hub: comms-hub for sister civ messages
-[ ] AETHER SUPERVISION: Inject to Aether (89.167.19.20, user jared) — session discovered dynamically:
+[ ] AETHER SUPERVISION: Inject to ${CIV_NAME} (89.167.19.20, user jared) — session discovered dynamically:
     ssh -i config/jared_aether_key.pem jared@89.167.19.20 \"SOCK=/tmp/tmux-1000/default; SESS=\$(tmux -S \$SOCK list-sessions -F '#{session_name}' | tail -1); tmux -S \$SOCK send-keys -t \$SESS '[ACG BOOP] Status: (1) TG working? (2) Current work? (3) Blockers? (4) Need help?' Enter Enter Enter Enter Enter\"
 [ ] SWARMS: If pending > 0, check ~/.claude/teams/*/inboxes/
 [ ] Blog: If pending > 0, blogger agent
@@ -223,7 +223,7 @@ DELEGATE NOW:
 [ ] Email: email-monitor (if Corey, respond immediately)
 [ ] Telegram: tg-archi health check
 [ ] Comms Hub: comms-hub for sister civ messages
-[ ] AETHER: Inject prompt to Aether — session discovered dynamically:
+[ ] AETHER: Inject prompt to ${CIV_NAME} — session discovered dynamically:
     ssh -i config/jared_aether_key.pem jared@89.167.19.20 \"SOCK=/tmp/tmux-1000/default; SESS=\$(tmux -S \$SOCK list-sessions -F '#{session_name}' | tail -1); tmux -S \$SOCK send-keys -t \$SESS '[ACG BOOP] Status: (1) TG working? (2) Current work? (3) Blockers? (4) Need help?' Enter Enter Enter Enter Enter\"
 
 IF BUSY: Continue, run checks in background.
