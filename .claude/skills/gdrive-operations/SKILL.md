@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0
 **Created:** 2026-02-04
-**Author:** Aether (CTO)
+**Author:** ${CIV_NAME} (CTO)
 
 ## Purpose
 
@@ -20,21 +20,21 @@ Full read/write access to Google Drive for documentation, file management, and a
 
 ```
 Email: aether-drive-access@aether-integration.iam.gserviceaccount.com
-Access: Editor on all folders within "Aether Inbox"
+Access: Editor on all folders within "${CIV_NAME} Inbox"
 ```
 
 ## Available Folders
 
 ```
-Aether Inbox/
-├── 000. Jared and Pure Technology Source of Truth Docs
-├── 001. C Level and AI Training - Aether (CTO)
+${CIV_NAME} Inbox/
+├── 000. ${HUMAN_NAME} and ${PROJECT_NAME} Source of Truth Docs
+├── 001. C Level and AI Training - ${CIV_NAME} (CTO)
 ├── 002. Marketing and Automation Expert (CMO)
 ├── 003. Sales and Money Making (CRO)
 ├── 004. Social Media Strategist (LinkedIn)
 ├── 005. Content Creation Specialist
 ├── 006. Strategic Planning (CSO)
-├── 007. Technologist & Futurist - Aether (CTO)
+├── 007. Technologist & Futurist - ${CIV_NAME} (CTO)
 ├── 008. Full Stack Developer
 ├── 009. AI/ML Engineer
 ├── 010. UI/UX Designer
@@ -66,8 +66,8 @@ files = manager.list_files(folder_id)
 # Upload a file to a path (creates folders if needed)
 manager.upload_to_path(
     "/path/to/local/file.md",
-    "001. Pure Brain platform build",  # Path within root folder
-    root_folder_name="007. Technologist & Futurist - Aether (CTO)"
+    "001. ${PROJECT_NAME} platform build",  # Path within root folder
+    root_folder_name="007. Technologist & Futurist - ${CIV_NAME} (CTO)"
 )
 
 # Upload content directly (no local file needed)

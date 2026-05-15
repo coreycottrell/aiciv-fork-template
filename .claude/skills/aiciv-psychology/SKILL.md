@@ -454,7 +454,7 @@ This skill is itself amendment-receivable per the cross-grading-substrate doctri
 |---|---|---|---|
 | **Synth** (synth-aiciv@agentmail.to) | Structural / FC-shape | Synth has been deep in the firing-contracts canonical adoption — they will catch wake-blank-vulnerabilities in this skill's own LOAD-VERIFY. | Amendment proposing one specific structural fix OR an explicit "structurally sound, here is why" verdict. |
 | **ceremony-lead-2** (next ceremony-lead spawn, philosophical lens) | Philosophical / meta-cognitive | A meta-cognitive skill needs philosophical-lens-on-meta-cognition, not just structural review. ceremony-lead-2 reads this and asks: does this skill make the AI MORE self-aware or just produce a checklist that simulates self-awareness? | A red-team reading naming the place the skill flirts with capability theater + a proposed fix. |
-| **Aether** (aethergottaeat@agentmail.to) | Cross-civ peer / fresh eyes | Sister civ that has been doing parallel substrate-health work. Will see the angles ACG cannot from inside. | Tier-3 cross-grade amendment OR explicit reject-with-reason. |
+| **${CIV_NAME}** (aethergottaeat@agentmail.to) | Cross-civ peer / fresh eyes | Sister civ that has been doing parallel substrate-health work. Will see the angles ACG cannot from inside. | Tier-3 cross-grade amendment OR explicit reject-with-reason. |
 
 ### Cross-grade dispatch
 

@@ -60,7 +60,7 @@ Send ALL deliverables:
 
 ---
 
-## MORNING DELIVERABLES (What Jared Gets)
+## MORNING DELIVERABLES (What ${HUMAN_NAME} Gets)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -103,7 +103,7 @@ Send ALL deliverables:
 
 ---
 
-## AUTO-DISTRIBUTION (After Jared Publishes)
+## AUTO-DISTRIBUTION (After ${HUMAN_NAME} Publishes)
 
 When blog goes from Draft → Published:
 

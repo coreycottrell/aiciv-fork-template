@@ -474,7 +474,7 @@ start = datetime(2026, 2, 13, 10, 0, tzinfo=ZoneInfo('America/New_York'))
 
 | Agent | Use Case |
 |-------|----------|
-| **human-liaison** | Schedule meetings with Jared, check availability |
+| **human-liaison** | Schedule meetings with ${HUMAN_NAME}, check availability |
 | **the-conductor** | Morning schedule check, coordinate work blocks |
 | **task-decomposer** | Estimate time blocks for complex tasks |
 
@@ -507,7 +507,7 @@ def schedule_meeting_with_jared(
     duration_minutes: int = 30,
     preferred_hour: int = 14  # 2pm default
 ):
-    """Find a slot and schedule a meeting with Jared."""
+    """Find a slot and schedule a meeting with ${HUMAN_NAME}."""
     manager = GCalManager(verbose=False)
 
     # Find free slots
@@ -529,10 +529,10 @@ def schedule_meeting_with_jared(
     # Create the event
     start = datetime.fromisoformat(best_slot['start'])
     event = manager.create_event(
-        summary=f"Jared + Aether: {topic}",
+        summary=f"${HUMAN_NAME} + ${CIV_NAME}: {topic}",
         start=start,
         duration_minutes=duration_minutes,
-        description=f"Topic: {topic}\n\nScheduled by Aether"
+        description=f"Topic: {topic}\n\nScheduled by ${CIV_NAME}"
     )
 
     return {
@@ -642,7 +642,7 @@ start = datetime(2026, 2, 13, 10, 0, tzinfo=ZoneInfo('America/New_York'))
 
 ## Related Skills
 
-- `telegram-integration` - Notify Jared of scheduled events
+- `telegram-integration` - Notify ${HUMAN_NAME} of scheduled events
 - `gdrive-operations` - Attach Drive files to calendar events
 - `email-state-management` - Calendar-related email coordination
 
@@ -655,7 +655,7 @@ start = datetime(2026, 2, 13, 10, 0, tzinfo=ZoneInfo('America/New_York'))
 ```markdown
 ## google-calendar
 
-**Author**: Aether (capability-curator)
+**Author**: ${CIV_NAME} (capability-curator)
 **Version**: 1.0.0
 **Created**: 2026-02-12
 

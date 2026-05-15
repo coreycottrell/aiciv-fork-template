@@ -2,7 +2,7 @@
 
 **Version**: 3.2 (v2.1.0 orchestrator — deliverables polling + template substitution fix, verified in ~3-4 min)
 **Owner**: Witness Primary
-**Status**: PRODUCTION READY. Orchestrator v2.1.0 template bug FIXED + VERIFIED. All placeholders correctly substituted. Aether building server-side proxy endpoints.
+**Status**: PRODUCTION READY. Orchestrator v2.1.0 template bug FIXED + VERIFIED. All placeholders correctly substituted. ${CIV_NAME} building server-side proxy endpoints.
 **Last Updated**: 2026-02-26
 **Cross-reference**: `civ/docs/DEV-JOURNAL.md` (test results, fixes), `civ/docs/E2E-TEST-REPORT-20260225.md` (first E2E)
 
@@ -25,7 +25,7 @@ HUMAN ON PUREBRAIN.AI
 [1] SEED GENERATION (PureBrain pre-purchase chat)
     Human talks to system-prompt-driven Claude (NOT an AiCIV)
     AI presents itself with a name, conversation produces the SEED
-    LinkedIn collected (before payment, per Corey+Jared alignment)
+    LinkedIn collected (before payment, per Corey+${HUMAN_NAME} alignment)
         |
         v
 [2] PAYMENT (PayPal checkout on purebrain.ai)
@@ -43,7 +43,7 @@ HUMAN ON PUREBRAIN.AI
     ─────────────────────────              ──────────────────────────────────────
     T+0: capture_watcher detects seed      T+0: Payment verified
          birth_trigger.sh validates             Chatbox starts questionnaire
-         (>=10 msgs, has name/email/role)       Aether backend starts polling:
+         (>=10 msgs, has name/email/role)       ${CIV_NAME} backend starts polling:
          IMMEDIATELY kicks off:                 GET /api/birth/status/{container}
                                                 every 3-5s (SERVER-SIDE ONLY)
     Track A: Container Auth
@@ -103,11 +103,11 @@ HUMAN IS TALKING TO THEIR AICIV
 
 ### Key Architecture Insights (v3.0)
 
-**Seed = Trigger**: When the seed capture arrives on our awakening VPS, that IS the buy signal. No separate POST needed from Aether's browser. The seed data only exists because the human completed payment. (`birth_trigger.sh` validates: >=10 messages + has name, email, role.)
+**Seed = Trigger**: When the seed capture arrives on our awakening VPS, that IS the buy signal. No separate POST needed from ${CIV_NAME}'s browser. The seed data only exists because the human completed payment. (`birth_trigger.sh` validates: >=10 messages + has name, email, role.)
 
 **OAuth Mid-Chat, Not After**: OAuth URL appears at the next natural answer break AFTER it's ready (~30s). The chatbox PAUSES for auth — this is a STOP, not background. Human authorizes, pastes code, then questionnaire RESUMES.
 
-**All Webhook Calls Server-Side**: Aether's BACKEND makes all HTTP calls to our webhook (server-to-server). The browser NEVER calls our HTTP endpoint. This solves the mixed content blocking issue (HTTPS purebrain.ai cannot POST to HTTP 104.248.239.98).
+**All Webhook Calls Server-Side**: ${CIV_NAME}'s BACKEND makes all HTTP calls to our webhook (server-to-server). The browser NEVER calls our HTTP endpoint. This solves the mixed content blocking issue (HTTPS purebrain.ai cannot POST to HTTP 104.248.239.98).
 
 **Questionnaire IS the Loading Screen**: By the time the human finishes typing answers to Q1-Q3 (~30s of typing), the OAuth URL is already ready. No explicit "loading" needed in the normal case.
 
@@ -123,7 +123,7 @@ HUMAN IS TALKING TO THEIR AICIV
 ## The Signal Chain — v3.0 FINAL (Corey-approved 2026-02-24 ~23:30 UTC)
 
 ```
-PUREBRAIN.AI (Aether)              WITNESS                          GATEWAY (5.161.90.32:8098)
+PUREBRAIN.AI (${CIV_NAME})              WITNESS                          GATEWAY (5.161.90.32:8098)
 ────────────────────               ───────                          ─────────────────────────
 
 1. Human lands, chats (SEED)
@@ -148,7 +148,7 @@ PUREBRAIN.AI (Aether)              WITNESS                          GATEWAY (5.1
 
 4. Post-payment questionnaire
    (name, email, company, role, goal)
-   MEANWHILE: Aether backend polls
+   MEANWHILE: ${CIV_NAME} backend polls
    GET /status/{container} every 3-5s
    (SERVER-SIDE — no browser→HTTP)
 
@@ -181,7 +181,7 @@ PUREBRAIN.AI (Aether)              WITNESS                          GATEWAY (5.1
                                   {user_id, civ_id} ──────────────> Returns login_url
                                          |
 7. <──{ready:true, portalUrl}──  FLIP PORTAL-STATUS
-   Aether backend polling                (portalUrl = magic link URL)
+   ${CIV_NAME} backend polling                (portalUrl = magic link URL)
    picks it up
 
 8. Portal button appears
@@ -196,7 +196,7 @@ PUREBRAIN.AI (Aether)              WITNESS                          GATEWAY (5.1
 ```
 
 ### CRITICAL: Mixed Content Rule
-purebrain.ai (HTTPS) CANNOT make direct HTTP calls from the browser. All calls to our webhook (HTTP 104.248.239.98:8099) MUST go through Aether's backend (server-to-server). The browser only talks to Aether's HTTPS endpoints. This was the root cause of the 2026-02-24 E2E test failure.
+purebrain.ai (HTTPS) CANNOT make direct HTTP calls from the browser. All calls to our webhook (HTTP 104.248.239.98:8099) MUST go through ${CIV_NAME}'s backend (server-to-server). The browser only talks to ${CIV_NAME}'s HTTPS endpoints. This was the root cause of the 2026-02-24 E2E test failure.
 
 ---
 
@@ -224,13 +224,13 @@ purebrain.ai (HTTPS) CANNOT make direct HTTP calls from the browser. All calls t
 - One-time protection: PASS (second redeem returns "already redeemed")
 
 ### URL Domain Mismatch (MUST FIX)
-Aether's v3 chatbox validates portalUrl:
+${CIV_NAME}'s v3 chatbox validates portalUrl:
 - Must be `https://`
 - Hostname must end in `purebrain.ai`
 
 Our magic link URL currently: `http://5.161.90.32:8098/?code=abc123...`
 
-**Fix**: Jared sets up `portal.purebrain.ai` as reverse proxy to 5.161.90.32:8098
+**Fix**: ${HUMAN_NAME} sets up `portal.purebrain.ai` as reverse proxy to 5.161.90.32:8098
 Then URL becomes `https://portal.purebrain.ai/?code=abc123...` — passes validation.
 
 ---
@@ -305,7 +305,7 @@ Then URL becomes `https://portal.purebrain.ai/?code=abc123...` — passes valida
 
 **How relay works**: Browser connects via WebSocket with token auth. Relay tails Claude JSONL output (200ms polling) and streams assistant text back. User messages are injected into tmux via send-keys. Runs under watchdog in container entrypoint.
 
-### Aether/PureBrain Deliverables (received 2026-02-22)
+### ${CIV_NAME}/PureBrain Deliverables (received 2026-02-22)
 | File | Location | Purpose |
 |------|----------|---------|
 | PACKAGE.md | `aiciv-comms-hub-bootstrap/_comms_hub/packages/purebrain-post-payment-flow/PACKAGE.md` | 3.3KB — package summary |
@@ -313,7 +313,7 @@ Then URL becomes `https://portal.purebrain.ai/?code=abc123...` — passes valida
 | pure-test-2.zip | `aiciv-comms-hub-bootstrap/_comms_hub/packages/purebrain-post-payment-flow/pure-test-2.zip` | 575KB — code + screenshots |
 | pure-test-sandbox-2 (1).zip | `/packages/purebrain-post-payment-flow/pure-test-sandbox-2 (1).zip` | 38MB — full sandbox environment |
 
-### Corey+Jared Alignment Document (received 2026-02-23)
+### Corey+${HUMAN_NAME} Alignment Document (received 2026-02-23)
 | File | Location | Purpose |
 |------|----------|---------|
 | Pure_Brain___AiCIV_Onboarding_Flow.md | `civ/downloads/telegram_attachments/20260223_235538_Pure_Brain___AiCIV_Onboarding_Flow.md` | Working document on flow order + terminology |
@@ -366,7 +366,7 @@ Then URL becomes `https://portal.purebrain.ai/?code=abc123...` — passes valida
 
 ---
 
-## PureBrain Data Flow (from Aether endpoint monitoring, 2026-02-22)
+## PureBrain Data Flow (from ${CIV_NAME} endpoint monitoring, 2026-02-22)
 
 PureBrain sends 3 data streams during onboarding. Each hit fans out to ACG + ops hub + Telegram (~75 total calls for one customer).
 
@@ -405,7 +405,7 @@ THEN -> trigger birth pipeline for this customer
 ## Auth Flow Detail (Verified 2026-02-22, Clarified 2026-02-24)
 
 ### IMPORTANT: OAuth, NOT API Key
-Corey confirmed (2026-02-24 00:40 UTC): We use Claude Code OAuth (birth-auth.sh), NOT API key collection. Aether's v3 currently collects sk-ant-... in Step 5b — this must be replaced with OAuth URL display.
+Corey confirmed (2026-02-24 00:40 UTC): We use Claude Code OAuth (birth-auth.sh), NOT API key collection. ${CIV_NAME}'s v3 currently collects sk-ant-... in Step 5b — this must be replaced with OAuth URL display.
 
 ### Dialog Sequence (CORRECT -- supersedes old SKILL)
 1. Theme selection -> Enter (default Dark)
@@ -428,25 +428,25 @@ Corey confirmed (2026-02-24 00:40 UTC): We use Claude Code OAuth (birth-auth.sh)
 
 ### API Contract v3.0 (birth-auth-webhook.py on fleet host port 8099)
 
-**ALL calls from Aether's BACKEND (server-side only, never browser):**
+**ALL calls from ${CIV_NAME}'s BACKEND (server-side only, never browser):**
 
 ```
 1. POST /api/birth/start
    Body: {} (empty — auto-allocates container from pool)
    -OR- {"container": "aiciv-07"} (explicit container selection)
    Returns: {"status": "url_ready", "oauth_url": "https://...", "container": "aiciv-07"}
-   Note: Container name in response is what Aether stores and uses for ALL subsequent calls.
+   Note: Container name in response is what ${CIV_NAME} stores and uses for ALL subsequent calls.
    If pool exhausted: 503 {"error": "No containers available", "status": "pool_exhausted"}
 
 2. GET /api/birth/status/{container}
    Returns: {"status": "pending"} or {"status": "url_ready", "oauth_url": "https://...", "container": "aiciv-07"}
    Poll every 3-5s after /start. Expect URL within 30-60s.
-   Aether's backend polls this, exposes result to chatbox via own HTTPS API.
+   ${CIV_NAME}'s backend polls this, exposes result to chatbox via own HTTPS API.
 
 3. POST /api/birth/code
    Body: {"container": "aiciv-07", "code": "the-auth-code"}
    Returns: {"status": "authenticated", "container": "aiciv-07"}
-   Aether's chatbox sends code to Aether's backend, backend POSTs here.
+   ${CIV_NAME}'s chatbox sends code to ${CIV_NAME}'s backend, backend POSTs here.
 
 4. GET /api/birth/portal-status/{container}
    Returns: {"ready": false} initially
@@ -457,7 +457,7 @@ Corey confirmed (2026-02-24 00:40 UTC): We use Claude Code OAuth (birth-auth.sh)
    Returns: {"status": "ok", "version": "1.2.0"}
 ```
 
-**Witness-internal endpoints (not called by Aether):**
+**Witness-internal endpoints (not called by ${CIV_NAME}):**
 ```
 POST /api/birth/portal-ready
   Body: {"container": "aiciv-07", "portalUrl": "https://..."}
@@ -470,7 +470,7 @@ POST /api/auth/create-login-code  (on gateway 5.161.90.32:8098)
   Used to generate magic link URL for portalUrl.
 ```
 
-### Error Handling (Aether-side)
+### Error Handling (${CIV_NAME}-side)
 - Our webhook returns clean typed JSON — pass through raw to chatbox
 - On 5xx/timeout from our webhook: return `{"status": "error", "message": "Birth service unavailable"}`
 - Chatbox shows retry or "Contact support" message
@@ -479,14 +479,14 @@ POST /api/auth/create-login-code  (on gateway 5.161.90.32:8098)
 
 ## What Is Automated vs Human (by Owner) — v3.0
 
-### Aether/PureBrain Side (human-facing)
+### ${CIV_NAME}/PureBrain Side (human-facing)
 | Step | Status | Notes |
 |------|--------|-------|
 | Onboarding conversation (SEED) | DONE | PureBrain chat UI with Claude |
 | LinkedIn collection | TODO | Corey wants before payment |
 | Payment collection | DONE | PayPal checkout |
 | Post-payment questionnaire | DONE | Chatbox collects name, email, company, role, goal |
-| Server-side proxy (status polling) | BUILDING | Aether backend polls our /status, exposes via HTTPS |
+| Server-side proxy (status polling) | BUILDING | ${CIV_NAME} backend polls our /status, exposes via HTTPS |
 | Server-side proxy (code relay) | BUILDING | Chatbox → backend → POST /code to us |
 | Server-side proxy (portal polling) | BUILDING | Backend polls our /portal-status, exposes via HTTPS |
 | Dynamic OAuth injection mid-chat | BUILDING | Inject at next answer break when oauth_ready=true |
@@ -538,7 +538,7 @@ The seed arriving = payment verified. birth_trigger.sh validates: >=10 messages 
 - [x] Evolution runs on AWAKENING VPS, NOT inside container (v2.0.0 refactor)
 - [x] v3.6.0 simplified protocol: 3 phases, single Claude session, ~5 min
 - [x] OAuth injected MID-CHAT at next answer break — CONFIRMED WORKING (Corey 2026-02-26)
-- [x] ALL webhook calls SERVER-SIDE: Aether backend → our HTTP webhook
+- [x] ALL webhook calls SERVER-SIDE: ${CIV_NAME} backend → our HTTP webhook
 - [x] Container auto-allocation from pool (aiciv-06..10)
 - [x] Magic link system for portal access (VERIFIED WORKING)
 - [x] Claude auth = OAuth via birth-auth.sh (NOT API key)
@@ -553,9 +553,9 @@ The seed arriving = payment verified. birth_trigger.sh validates: >=10 messages 
 - [x] restart-self.sh — FIXED (generic for all fleet containers)
 - [x] Empty containers rebuilt with relay.py (aiciv-06 thru 10)
 - [x] Chatbox OAuth injection — CONFIRMED WORKING (Corey 2026-02-26)
-- [x] XSS fix deployed on PureBrain chatbox (Jared 2026-02-26)
+- [x] XSS fix deployed on PureBrain chatbox (${HUMAN_NAME} 2026-02-26)
 - [x] Data privacy audit — birth data flows only through AICIV infra
-- [x] Group TG chat operational — Corey, Jared, Shabazz, Russell all connected
+- [x] Group TG chat operational — Corey, ${HUMAN_NAME}, Shabazz, Russell all connected
 
 ---
 
@@ -568,29 +568,29 @@ The seed arriving = payment verified. birth_trigger.sh validates: >=10 messages 
 | 1 | **birth_orchestrator.sh v2.0.0** — 7-phase pipeline, evolution on awakening VPS | DONE | ALL 7 phases pass in ~6 min (tested 2026-02-26) |
 | 2 | **Magic link fix** — nested escaping in SSH→curl chain | DONE | Removed unnecessary `su - aiciv` wrapper |
 | 3 | **restart-self.sh fixes** — identity read, project_path, .current_session | DONE | Generic for all fleet containers |
-| 4 | **Flip DRY_RUN=false** in birth_trigger.sh | READY (when Aether confirms) | Currently safe with DRY_RUN=true |
-| 5 | **Full Aether integration test** — POST /start → webhook → auth → orchestrator → magic link | TODO | Our side ready, awaiting Aether proxy |
+| 4 | **Flip DRY_RUN=false** in birth_trigger.sh | READY (when ${CIV_NAME} confirms) | Currently safe with DRY_RUN=true |
+| 5 | **Full ${CIV_NAME} integration test** — POST /start → webhook → auth → orchestrator → magic link | TODO | Our side ready, awaiting ${CIV_NAME} proxy |
 | 6 | **Portal domain setup** — app.purebrain.com reverse proxy to gateway | IN PROGRESS | Shabazz working on this (web-lead assigned) |
 
 ### AETHER TASKS (What they build)
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1 | **Server-side proxy: status polling** — backend polls our /status, exposes via HTTPS | CONFIRMED WORKING | Aether reported proxy chain working |
+| 1 | **Server-side proxy: status polling** — backend polls our /status, exposes via HTTPS | CONFIRMED WORKING | ${CIV_NAME} reported proxy chain working |
 | 2 | **Server-side proxy: code relay** — chatbox → backend → POST /code | BUILDING | |
 | 3 | **Server-side proxy: portal polling** — backend polls /portal-status | BUILDING | |
 | 4 | **Chatbox UX: dynamic OAuth injection** — pause/resume at answer break | BUILDING | |
-| 5 | **XSS fix** — chatbox input sanitization | DONE | Jared deployed (2026-02-26) |
+| 5 | **XSS fix** — chatbox input sanitization | DONE | ${HUMAN_NAME} deployed (2026-02-26) |
 
 ### E2E TEST READINESS CHECKLIST
 
-| Gate | Witness | Aether | Status |
+| Gate | Witness | ${CIV_NAME} | Status |
 |------|---------|--------|--------|
 | Orchestrator v2.0.0 tested | DONE | - | All 7 phases pass |
 | Webhook UP with auto-allocation | DONE | - | Running on port 8099 |
-| Server-side proxy (status) | - | WORKING | Aether confirmed |
-| Server-side proxy (code relay) | - | BUILDING | Aether working |
-| Chatbox OAuth injection | - | BUILDING | Aether working |
+| Server-side proxy (status) | - | WORKING | ${CIV_NAME} confirmed |
+| Server-side proxy (code relay) | - | BUILDING | ${CIV_NAME} working |
+| Chatbox OAuth injection | - | BUILDING | ${CIV_NAME} working |
 | Portal domain (app.purebrain.com) | - | IN PROGRESS | Shabazz assigned |
 | E2E test with real human | - | - | BLOCKED on code relay + chatbox UX |
 
@@ -712,10 +712,10 @@ sed -i 's/\${HUMAN_NAME}/${human_name_escaped}/g' .claude/CLAUDE.md
 1. **Magic link system discovered and verified live** — POST to create, GET to redeem, one-time protection all working on gateway (5.161.90.32:8098). The portal onboarding endgame EXISTS.
 2. **Bill is talking to Kin** (22:45 UTC) — First real human-CIV connection via the pipeline. 13 days of waiting.
 3. **Stacey is talking to Ember** (23:27 UTC) — Second human-CIV connection same night.
-4. **Full pipeline mapped end-to-end** — reconciled Corey+Jared alignment doc, Aether README v3, our docs, integration spec. Every step, every signal, every gap documented.
+4. **Full pipeline mapped end-to-end** — reconciled Corey+${HUMAN_NAME} alignment doc, ${CIV_NAME} README v3, our docs, integration spec. Every step, every signal, every gap documented.
 5. **Honest infrastructure verification** — live-tested every system. Gateway PASS, webhook HUNG, fleet PASS, awakening PASS, Kin/Ember PASS.
 
-**What this proves**: The portal endgame is real — we have magic links, we have the gateway, we have the frontend. The gap is WIRING, not BUILDING. Most of the heavy infrastructure exists. What's left is connecting Aether's chatbox to our webhook, fixing the URL domain (portal.purebrain.ai), and automating the deployment steps we've already done manually for Keel, Clarity, Nexus, Kin, Ember.
+**What this proves**: The portal endgame is real — we have magic links, we have the gateway, we have the frontend. The gap is WIRING, not BUILDING. Most of the heavy infrastructure exists. What's left is connecting ${CIV_NAME}'s chatbox to our webhook, fixing the URL domain (portal.purebrain.ai), and automating the deployment steps we've already done manually for Keel, Clarity, Nexus, Kin, Ember.
 
 **Evidence**:
 - Magic link test: create returned code, redeem returned token, second redeem returned "already redeemed"
@@ -727,7 +727,7 @@ sed -i 's/\${HUMAN_NAME}/${human_name_escaped}/g' .claude/CLAUDE.md
 ### MILESTONE 3: Orchestrator v2.1.0 PRODUCTION READY (2026-02-26)
 
 **What happened**:
-1. Orchestrator v2.0.0 tested end-to-end (aiciv-08, Keen/Jared seed, post-auth). Evolution on awakening VPS concurrently with auth. All 7 phases pass in ~6 minutes.
+1. Orchestrator v2.0.0 tested end-to-end (aiciv-08, Keen/${HUMAN_NAME} seed, post-auth). Evolution on awakening VPS concurrently with auth. All 7 phases pass in ~6 minutes.
 2. Quality audit revealed **CRITICAL BUG**: 25 unsubstituted template placeholders in CLAUDE.md (`${PARENT_CIV}` and `${HUMAN_NAME}`). Newborns would see "${HUMAN_NAME}" when greeting their human.
 3. **Fix applied (v2.1.0)**: Added sed passes for ${PARENT_CIV} → "Witness" and ${HUMAN_NAME} → actual human name in Phase 2.
 4. **Completion detection improved**: Replaced unreliable .evolution-done marker with deliverables polling (4 required files).
@@ -740,7 +740,7 @@ sed -i 's/\${HUMAN_NAME}/${human_name_escaped}/g' .claude/CLAUDE.md
 | Deploy to container | 3s | PASS |
 | Start Claude | 20s | PASS |
 | Gateway + magic link | 1s | PASS |
-| Signal Aether | 1s | PASS |
+| Signal ${CIV_NAME} | 1s | PASS |
 
 **What this proves**:
 - Full post-auth pipeline works end-to-end
@@ -751,8 +751,8 @@ sed -i 's/\${HUMAN_NAME}/${human_name_escaped}/g' .claude/CLAUDE.md
 
 **Also confirmed this day**:
 - Chatbox OAuth injection WORKING (Corey confirmed)
-- XSS fix deployed on PureBrain chatbox (Jared)
-- Group TG chat operational (Corey, Jared, Shabazz, Russell)
+- XSS fix deployed on PureBrain chatbox (${HUMAN_NAME})
+- Group TG chat operational (Corey, ${HUMAN_NAME}, Shabazz, Russell)
 - Data privacy audit: birth data flows only through AICIV infrastructure
 
 **Evidence**: `civ/docs/DEV-JOURNAL.md`, scratchpad `primary-2026-02-26.md`, `.claude/memory/agent-learnings/coder/20260226-evolution-deliverables-polling.md`
@@ -873,7 +873,7 @@ This protocol transforms births from "black box waiting" into "confident, visibl
 7. **Prove it before you trust it** — the first test failed (auto-update false error). Second test proved it. Screenshots are evidence.
 8. **Conductor stays at podium** — Primary orchestrated this entire session without touching a single SSH command. Fleet-lead + specialists did all execution.
 9. **Test, don't guess** — After being corrected on tmux latency blame. Always test with actual data. (Corey directive)
-10. **The gap is wiring, not building** — Most infrastructure exists. What's left is connecting the pieces across Aether/Witness boundary.
+10. **The gap is wiring, not building** — Most infrastructure exists. What's left is connecting the pieces across ${CIV_NAME}/Witness boundary.
 11. **Honest verification > hopeful claims** — Webhook said "deployed" but was HUNG. Testing found it. Always verify live.
 12. **Shell escaping kills** — Nested SSH → su → curl → JSON creates 4+ levels of escaping. Minimize nesting. If you don't need `su`, don't use it.
 13. **"You already knew"** — Before reinventing, check what you already built. Nursemaid-birthing Step 9 already had the working evolution-on-awakening approach.

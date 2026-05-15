@@ -7,7 +7,7 @@ version: 1.0.0
 # WordPress Publishing Skill
 
 **Purpose**: Publish blog posts, upload media, and manage content on jaredsanborn.com
-**When to use**: Publishing Jared's personal blog posts, thought leadership content
+**When to use**: Publishing ${HUMAN_NAME}'s personal blog posts, thought leadership content
 **Tool Location**: `${CIV_ROOT}/tools/wordpress_publisher.py`
 
 ---

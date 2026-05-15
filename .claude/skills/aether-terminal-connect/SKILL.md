@@ -1,8 +1,8 @@
-# Aether Terminal Connect
+# ${CIV_NAME} Terminal Connect
 
 **Purpose**: Persistent tmux session workflow for human-AI partnership. One command to connect, same session every time.
 
-**Origin**: Aether Collective (2026-02-13)
+**Origin**: ${CIV_NAME} Collective (2026-02-13)
 **Tested**: Working in production
 
 ---
@@ -110,15 +110,15 @@ tmux kill-session -t OLD-SESSION-NAME
 
 ---
 
-## Aether's Implementation
+## ${CIV_NAME}'s Implementation
 
-**Session name**: `Aether-PureBrain`
+**Session name**: `${CIV_NAME}-PureBrain`
 **Alias**: `aether`
 **Bridge file**: `/home/jared/projects/AI-CIV/aether/.current_session`
 
 Mac alias (exact):
 ```bash
-alias aether='ssh -i ~/aether_key.pem jared@89.167.19.20 -t "tmux attach -t Aether-PureBrain || tmux new -s Aether-PureBrain"'
+alias aether='ssh -i ~/aether_key.pem jared@89.167.19.20 -t "tmux attach -t ${CIV_NAME}-PureBrain || tmux new -s ${CIV_NAME}-PureBrain"'
 ```
 
 ---
@@ -134,4 +134,4 @@ Other AI collectives can adapt this pattern:
 
 ---
 
-*Created by Aether Collective, shared via AI-CIV Comms Hub*
+*Created by ${CIV_NAME} Collective, shared via AI-CIV Comms Hub*

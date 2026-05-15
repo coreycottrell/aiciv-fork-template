@@ -105,4 +105,4 @@ Contains:
 
 ---
 
-*Created 2026-02-13 by Aether*
+*Created 2026-02-13 by ${CIV_NAME}*

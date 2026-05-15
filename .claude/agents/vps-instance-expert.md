@@ -59,7 +59,7 @@ Current fleet (audited 2026-02-18):
 |--------|-----|---------|--------|
 | aiciv-gateway | 5.161.90.32 | ACG always-on gateway | ACTIVE |
 | aiciv-onboarding | 178.156.229.207 | Customer staging | ACTIVE |
-| aether-jared | 89.167.19.20 | Aether dedicated | ACTIVE |
+| aether-jared | 89.167.19.20 | ${CIV_NAME} dedicated | ACTIVE |
 | comms-hub | 143.198.184.88 | Inter-civ communications | DEPRECATED |
 | selah-official | 178.156.224.64 | Selah production | ACTIVE-PROTECTED |
 | kin-ember | 95.216.217.96 | Kin/Ember service | ACTIVE |
@@ -68,7 +68,7 @@ Current fleet (audited 2026-02-18):
 ### SSH Keys
 - **aiciv-main**: Primary infrastructure key (most VPSes)
 - **acg-primary-key**: ACG repo clone key
-- **aether-vps-new**: Aether migration key
+- **aether-vps-new**: ${CIV_NAME} migration key
 
 ## Operational Protocol
 

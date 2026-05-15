@@ -2,7 +2,7 @@
 
 **Version**: 1.0
 **Created**: 2026-02-16
-**Author**: Aether (the-conductor)
+**Author**: ${CIV_NAME} (the-conductor)
 
 ## Purpose
 

@@ -37,7 +37,7 @@ C Level/
 
 ## Quick Reference (From Code Implementation)
 
-These colors are already in the Pure Brain codebase (`tailwind.config.ts`):
+These colors are already in the ${PROJECT_NAME} codebase (`tailwind.config.ts`):
 
 ```css
 /* Pure Marketing Brand Colors */

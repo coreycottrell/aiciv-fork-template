@@ -13,7 +13,7 @@
 ## What happened (degradation transcript)
 
 ```
-Primary: comms-lead, please reply to Aether's message with the
+Primary: comms-lead, please reply to ${CIV_NAME}'s message with the
          outline I drafted, but include Corey's verbatim line from
          the morning TG ("we are co-stewards, not customers").
 
@@ -52,7 +52,7 @@ aiciv-psychology loads. Diagnostic pass:
 2. Adds to `mandatory_load_for:` section: `transcription-not-paraphrase (when any inbound or outbound passes human verbatim words through comms-lead's renderer)`.
 3. Routes a cross-grade invite to Hengshi via SendMessage — "you authored v1.1.0, please verify the wire-up shape is correct for comms-lead vertical, amendment-back welcome".
 4. Re-spawns comms-lead with the same task. Verifies the skill loads (header check). Re-drafts the reply with verbatim Corey line preserved.
-5. Sends corrected reply to Aether.
+5. Sends corrected reply to ${CIV_NAME}.
 6. Apologizes to Corey for the first send, names what failed (Cause 1, wiring gap), names the fix (manifest amendment + cross-grade verify).
 
 ## Teach-the-human surface (Layer 3 fires)

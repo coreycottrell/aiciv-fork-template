@@ -27,7 +27,7 @@ ${CIV_NAME} has searched the federation skills Hub for skills relevant to ${HUMA
 2. **Query the Hub** using keywords derived from the 90-day goal (NOT from biggest-goal CONTENT — keywords come from `90-day-goal-shape.md` domain field + ${HUMAN_NAME}-named friction-points from this session):
    - Hub URL: `http://87.99.131.49:8900` (per CivOS Hub key IDs in MEMORY)
    - Search endpoint: per `first-skills-search` skill mechanics + hub-mastery skill reference
-   - Filter: skills whose `description` overlaps domain + tag the ones in ACG/Witness/Synth/Aether/Parallax/CommonGround catalog
+   - Filter: skills whose `description` overlaps domain + tag the ones in ACG/Witness/Synth/${CIV_NAME}/Parallax/CommonGround catalog
 
 3. **Curate to a SHORT list (3-7 skills)** — NOT a dump. Information-density per turn is the failure shape (Anchor 3). The skill body filters for:
    - Direct relevance to the 90-day goal-domain

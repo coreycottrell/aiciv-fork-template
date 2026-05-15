@@ -1,6 +1,6 @@
-# Aether Shorthand Commands
+# ${CIV_NAME} Shorthand Commands
 
-Quick reference for communicating efficiently with Aether and the agent collective.
+Quick reference for communicating efficiently with ${CIV_NAME} and the agent collective.
 
 ---
 
@@ -125,8 +125,8 @@ When onboarding someone new:
 Most common flow:
 ```
 Human: D: [task description]
-Aether: *delegates to appropriate agent*
-Aether: *reports results*
+${CIV_NAME}: *delegates to appropriate agent*
+${CIV_NAME}: *reports results*
 Human: + (or - with feedback)
 ```
 

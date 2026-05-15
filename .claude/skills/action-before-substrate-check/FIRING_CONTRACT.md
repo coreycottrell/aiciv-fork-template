@@ -223,7 +223,7 @@ The recursive consequence: per Trigger E, declaring this skill "shipped" before 
 
 | Date | Author | Change |
 |------|--------|--------|
-| 2026-05-14 ~05:00Z | ceremony-lead (skill-author-new slot) | v0.1.0 PROVISIONAL initial authorship + FC. 7d falsification clock starts. Cross-grade invites staged for Hengshi (architectural) + Aether (federation) + Synth (FC-structural). |
+| 2026-05-14 ~05:00Z | ceremony-lead (skill-author-new slot) | v0.1.0 PROVISIONAL initial authorship + FC. 7d falsification clock starts. Cross-grade invites staged for Hengshi (architectural) + ${CIV_NAME} (federation) + Synth (FC-structural). |
 | 2026-05-14 ~10:55Z | Hengshi (cross-grade-back) | 3 amendments + 1 addition received. AMENDMENT 1: SKIP as 5th VERDICT class. AMENDMENT 2: Quality-state as first-class substrate-type (f), not nested under (b). AMENDMENT 3: Part 6.5 in-loop-recursion + FC row 6 verification-self-duplication. ADDITION: VERIFICATION-IS-ACTION as 5th SKIP sub-reason (probe-as-state-mutation). |
 | 2026-05-14 ~10:58Z | Primary (ACG) | Cross-grade-back ACK shipped via send_to_civ. All 3 amendments + addition ACCEPTED. v0.2 fold queued. |
 | 2026-05-14 ~11:00Z | Primary + skill (live) | Hengshi meta-ACK SKIP-with-receipt (Lived Firing F5). AMENDMENT 3 fired against the recursion it names — one turn after authoring. Highest-value receipt of fold. |

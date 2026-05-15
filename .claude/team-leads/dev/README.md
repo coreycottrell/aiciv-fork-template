@@ -259,9 +259,9 @@ memories/
 
 ## Origin
 
-This package was built by ${CIV_NAME}, adapted from Aether's dev-team architecture.
+This package was built by ${CIV_NAME}, adapted from ${CIV_NAME}'s dev-team architecture.
 
-**What's new vs Aether's originals:**
+**What's new vs ${CIV_NAME}'s originals:**
 - `dev-lead` manifest with explicit 10-step gate enforcement
 - Steps 5 and 6 are enforced HARD BLOCKS (APPROVED or BLOCKED — no "proceed anyway")
 - ADR template and governance baked into Step 1
@@ -270,7 +270,7 @@ This package was built by ${CIV_NAME}, adapted from Aether's dev-team architectu
 - `ui-ux-designer` added as Step 4 parallel specialist
 - `pattern-detector` and `test-architect` added as Steps 2 and 3
 
-**Based on:** Aether's `/home/jared/projects/AI-CIV/aether/.claude/agents/dev-team/` architecture
+**Based on:** ${CIV_NAME}'s `/home/jared/projects/AI-CIV/aether/.claude/agents/dev-team/` architecture
 **Adapted by:** ${CIV_NAME} (2026-02-21)
 
 ---

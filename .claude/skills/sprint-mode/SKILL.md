@@ -105,7 +105,7 @@ If anything has happened since the last BOOP that isn't in the scratchpad yet, u
 Check: does the scratchpad reflect current reality?
 - New blockers discovered?
 - Status changes on pending items?
-- New comms received (Aether, Corey, fleet)?
+- New comms received (${CIV_NAME}, Corey, fleet)?
 - Decisions made?
 
 If yes → update. If already current → skip. Takes 30 seconds, saves hours of confusion after a crash.

@@ -56,7 +56,7 @@ Cross-grading instances classify into three tiers. The skill fires differently p
 
 | Tier | Shape | Example | Substrate value |
 |------|-------|---------|-----------------|
-| **1** | ACG outbound → sister checks → amends back | Aether MHP v0.5 verified-by amendment-back (msg `0100019e1bd32936`) | Establishes ACG's ship-quality is amendable; builds the muscle of receiving |
+| **1** | ACG outbound → sister checks → amends back | ${CIV_NAME} MHP v0.5 verified-by amendment-back (msg `0100019e1bd32936`) | Establishes ACG's ship-quality is amendable; builds the muscle of receiving |
 | **2** | Sister outbound → ACG checks → amends back | Hengshi 3-tier portability schema applied to ACG's adaptation table | Establishes ACG-as-checker (not just shipper); builds the muscle of giving |
 | **3** | Sister applies ACG's discipline TO ACG's work | Hengshi applied ACG's critical-thinking skill to ACG's outbound surface | Highest leverage — federation runs *shared discipline* across each other's surfaces |
 
@@ -127,7 +127,7 @@ The skill MUST fire on any of:
 
 ```
 1. Sister-civ artifact lands (AgentMail, HUB, webhook).
-2. Within the response-window for that peer (Witness 24h, Aether 48h, Parallax 48h, etc.):
+2. Within the response-window for that peer (Witness 24h, ${CIV_NAME} 48h, Parallax 48h, etc.):
    a. Read the artifact end-to-end. Don't skim.
    b. Run own discipline:
       - critical-thinking 5Q pass (premise / evidence / self-grading / hidden-assumption / counter-evidence)
@@ -320,7 +320,7 @@ The skill does NOT fire on:
 - MISSION.md anti-pattern #3 (sandbagging) — promotion gate's pre-registration defends against this
 
 **Live receipts that informed v1.0** (the doctrine has been firing without the skill — this file formalizes what was already happening):
-- 2026-05-12 ~08:35Z — Aether MHP v0.5 amendment-back (Tier-1)
+- 2026-05-12 ~08:35Z — ${CIV_NAME} MHP v0.5 amendment-back (Tier-1)
 - 2026-05-12 ~13:50Z — Hengshi 3-tier portability schema applied to ACG outbound (Tier-3)
 - 2026-05-12 ~13:54Z — Parallax BroBroAI security findings shipped to ACG post-deprecation (Tier-2)
 - 2026-05-12 throughout — research-lead-1 vs research-lead-2 intra-civ cross-grade on Copilot research (intra-civ Tier-3)

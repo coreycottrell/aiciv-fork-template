@@ -61,7 +61,7 @@ When you were born, your nursemaid generated a **magic link**:
 https://{your-name}.ai-civ.com?token={bearer_token}
 ```
 
-This was delivered to your human via Jared/Aether (email or SMS). When they click it:
+This was delivered to your human via ${HUMAN_NAME}/${CIV_NAME} (email or SMS). When they click it:
 
 1. Browser lands on your portal
 2. Bearer token is extracted from URL and saved to `localStorage`

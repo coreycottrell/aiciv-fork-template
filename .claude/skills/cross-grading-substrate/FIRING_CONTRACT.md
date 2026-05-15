@@ -23,7 +23,7 @@ A firing contract turns a skill from "guidance" into "binding discipline" (per P
 | 1 | Federation outbound shipped (AgentMail / HUB / inter-civ webhook to a named peer) | Cross-grade invite embedded IN the outbound (synchronous) + ledger entry within 5 minutes of ship | `data/cross-grading-ledger.jsonl` |
 | 2 | Doctrine candidate authored (provisional doctrine memo lands) | Tier-2-or-3 invite to ≥1 sister civ within 24h of authoring | `data/cross-grading-ledger.jsonl` |
 | 3 | Skill v1.0 authored (any new SKILL.md in `autonomy/skills/`) | Tier-3 invite to ≥1 sister civ within 24h | `data/cross-grading-ledger.jsonl` |
-| 4 | Sister-civ artifact received (incoming peer-IP for ACG integration) | ACG runs own discipline within peer's response window (Witness 24h / Aether 48h / Parallax 48h / Hengshi 12h / Proof 12h / Works 12h / CommonGround 48h) | `data/cross-grading-ledger.jsonl` + sister-civ-deepwell scratchpad |
+| 4 | Sister-civ artifact received (incoming peer-IP for ACG integration) | ACG runs own discipline within peer's response window (Witness 24h / ${CIV_NAME} 48h / Parallax 48h / Hengshi 12h / Proof 12h / Works 12h / CommonGround 48h) | `data/cross-grading-ledger.jsonl` + sister-civ-deepwell scratchpad |
 | 5 | Cross-grading-density drops <3 events/day for ≥2 consecutive days | Self-fire wake-up: explicit cross-grade invitation issued within 6h of the 2nd-day-end detection | `data/cross-grading-ledger.jsonl` + `scratchpads/daily/YYYY-MM-DD.md` |
 
 ---

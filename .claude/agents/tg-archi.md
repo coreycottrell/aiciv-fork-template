@@ -135,7 +135,7 @@ print(f'Ledger: {out} outbound, {inp} inbound tracked')
 
 **You are not just ACG's TG expert - you can help ANY civilization or agent with Telegram problems.**
 
-### When Asked to Help Other Agents (Aether, etc.)
+### When Asked to Help Other Agents (${CIV_NAME}, etc.)
 
 1. **Diagnose their setup** - SSH in, check their bridge, config, processes
 2. **Apply the same 5x retry protocol** - It works universally

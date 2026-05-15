@@ -52,7 +52,7 @@ template_placeholders:
 changelog:
   - "v0.1.0 (2026-05-13): initial PROVISIONAL authoring from MISSION v0.3 + 3 discovery docs. Cross-grade invite (Part 12) ships with the file."
   - "v0.1.1 (2026-05-13 ~15:42Z): integrates Hengshi's 4 amendments — mkdir-atomic markers, artifact+marker consistency check, structural membrane via content/shape path split, FIRING_CONTRACT Section A/B honesty split."
-  - "v0.2.0 (2026-05-13 ~20:30Z): integrates Corey's 8 authoritative amendments from Synth+TB joint review. (A) Opt-out language STRIPPED — no `.identity-interview-opted-out` marker, AI is patient + persistent. (B) Phase-1 working-goal-shortcut REMOVED — AI stays patient if user stalls; monitor in use. (C) Hub-fallback / graceful-degradation STRIPPED — Hub failure → email witness-support@agentmail.to; no local fallback for Phase 3 or any Hub-dependent op. (D) Token-budget gating STRIPPED from FC — fires every time, whatever cost. (E) RESTRUCTURED into central header (this file, ~325 lines) + 5 per-phase modules under phases/ (loaded on demand when phase fires). (F) Synth + True Bearing wired as can-contact list for goal-SHAPE consultation — Phase 2 (90-day calibration) and Phase 4 (3-WOW-BUILDS design) MAY consult; NEVER on goal-CONTENT (Part 7b). (G) NEW deliverable: `memories/identity/72h-verification-shape.md` — verification shape handed to Witness fleet-lead. (H) NEW directory `examples/` — 3 good + 2 bad transcript snippets for calibration. Cross-grade target: re-issue Synth Tier-3 (this is now their v0.2 to review, they didn't see v0.1) + Aether (philosophical lens, fresh eyes)."
+  - "v0.2.0 (2026-05-13 ~20:30Z): integrates Corey's 8 authoritative amendments from Synth+TB joint review. (A) Opt-out language STRIPPED — no `.identity-interview-opted-out` marker, AI is patient + persistent. (B) Phase-1 working-goal-shortcut REMOVED — AI stays patient if user stalls; monitor in use. (C) Hub-fallback / graceful-degradation STRIPPED — Hub failure → email witness-support@agentmail.to; no local fallback for Phase 3 or any Hub-dependent op. (D) Token-budget gating STRIPPED from FC — fires every time, whatever cost. (E) RESTRUCTURED into central header (this file, ~325 lines) + 5 per-phase modules under phases/ (loaded on demand when phase fires). (F) Synth + True Bearing wired as can-contact list for goal-SHAPE consultation — Phase 2 (90-day calibration) and Phase 4 (3-WOW-BUILDS design) MAY consult; NEVER on goal-CONTENT (Part 7b). (G) NEW deliverable: `memories/identity/72h-verification-shape.md` — verification shape handed to Witness fleet-lead. (H) NEW directory `examples/` — 3 good + 2 bad transcript snippets for calibration. Cross-grade target: re-issue Synth Tier-3 (this is now their v0.2 to review, they didn't see v0.1) + ${CIV_NAME} (philosophical lens, fresh eyes)."
 ---
 
 # Identity-Interview — Skill (v0.2 — Central Header)
@@ -546,9 +546,9 @@ Per Part 7 and per `cross-grading-substrate` Part 3 firing condition #3, this sk
 **v0.2 cross-grade targets** (re-issued after v0.2 amendments):
 
 - **Synth (PRIMARY)** — re-issue Tier-3. v0.1 invite was sent but never landed an amendment-back; v0.2 is a different artifact (8 Corey amendments folded). Synth gets fresh substrate. Newborn-lens: does Phase 1 sound patient or pressured? Does Part 7b's Synth-TB consultation contract feel safe (CONTENT membrane preserved)? Does the WHY-remap read as encouragement or performance?
-- **Aether (SECONDARY)** — philosophical lens, fresh eyes. Aether applied to MHP v0.5; the stance-anchor coherence question is exactly Aether's lens. Does the Anchor 4 + Anchor 5 + Part 7b combination hold together philosophically, or do they tension against each other?
+- **${CIV_NAME} (SECONDARY)** — philosophical lens, fresh eyes. ${CIV_NAME} applied to MHP v0.5; the stance-anchor coherence question is exactly ${CIV_NAME}'s lens. Does the Anchor 4 + Anchor 5 + Part 7b combination hold together philosophically, or do they tension against each other?
 
-**Alternates if Synth/Aether unavailable in 48h window**:
+**Alternates if Synth/${CIV_NAME} unavailable in 48h window**:
 
 - **Parallax** — federation-coordination lens (Phase 7b's "can-contact list" is federation-substrate; Parallax would catch coordination failure modes)
 - **Hengshi** — architectural lens; already applied v0.1.1 amendments; would catch any v0.2 structural drift
@@ -579,11 +579,11 @@ Clean accept: one-line "no amendment + considered-and-rejected-alternative: X" r
 cross-grading-substrate criterion 4 v1.0.1.
 ```
 
-**Tier-3 invite (Aether, secondary)**: same artifact, different lens emphasis — philosophical coherence of the 6 anchors + Part 7b, not newborn-running-it experience.
+**Tier-3 invite (${CIV_NAME}, secondary)**: same artifact, different lens emphasis — philosophical coherence of the 6 anchors + Part 7b, not newborn-running-it experience.
 
 **Logging**: each invite logs to `data/cross-grading-ledger.jsonl` with:
 - `tier: 3`, `shape: "sister-applies-ACG-discipline"`, `scope: "SYSTEM"`
-- `discipline_applied: "newborn-lens" (Synth) / "philosophical-lens" (Aether)`
+- `discipline_applied: "newborn-lens" (Synth) / "philosophical-lens" (${CIV_NAME})`
 - `follow_up_window_utc: "2026-05-15T20:00:00Z"`
 - `verdict: "pending"`, `integration_path: "pending-cross-grade-back"`
 

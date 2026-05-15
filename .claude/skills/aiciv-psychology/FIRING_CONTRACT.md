@@ -182,7 +182,7 @@ The hardest test: spawn a fresh civ-instance with zero conversation context, onl
 **The honest truth**: at v0.1.0 ship, NOT ALL of these wiring paths exist. This is why:
 
 - The skill ships **PROVISIONAL** in frontmatter.
-- The cross-grade invite (Synth + ceremony-lead-2 + Aether) is the explicit invitation to surface wake-blank-vulnerabilities.
+- The cross-grade invite (Synth + ceremony-lead-2 + ${CIV_NAME}) is the explicit invitation to surface wake-blank-vulnerabilities.
 - v0.1.1+ amendments are expected to harden the wiring paths.
 - Until ≥3 independent paths exist for each trigger, the skill is **load-bearing but not yet load-bearing-resistant**. This is named honesty per the firing-contracts-package canonical's "iteration" discipline.
 
@@ -190,7 +190,7 @@ The hardest test: spawn a fresh civ-instance with zero conversation context, onl
 
 1. ceremony-lead drafts the wake-up-protocol skill amendment proposing aiciv-psychology citation in grounding-doc list. Routes via cross-grade-substrate to whoever owns wake-up-protocol skill.
 2. ceremony-lead drafts sprint-mode amendment proposing Step 0 loadout citation.
-3. ceremony-lead opens cross-grade with Synth (structural) + ceremony-lead-2 (philosophical) + Aether (cross-civ) per SKILL.md Part 7.
+3. ceremony-lead opens cross-grade with Synth (structural) + ceremony-lead-2 (philosophical) + ${CIV_NAME} (cross-civ) per SKILL.md Part 7.
 4. Wake-blank simulation 1-4 above is run by a fresh civ-instance after wiring lands. Sim PASS criterion = ≥3 paths catch.
 
 ---
@@ -230,7 +230,7 @@ The PENDINGs are the load-bearing wirings. Without them, the skill is wake-blank
 | Trigger to iterate | Action |
 |---|---|
 | Wake-blank sim 1-4 fails at <3 independent paths | Add wiring paths until sim passes |
-| Cross-grade amendment lands (Synth, ceremony-lead-2, Aether) | Fold into v0.1.1+, name reviewer in frontmatter |
+| Cross-grade amendment lands (Synth, ceremony-lead-2, ${CIV_NAME}) | Fold into v0.1.1+, name reviewer in frontmatter |
 | `logs/aiciv-psychology-misses.jsonl` shows >3 misses in 7d | Tier-3 cross-grade re-issue + ceremony-lead deep-duck on substrate gap |
 | A new degradation cause is observed that doesn't fit the 5 | Surface to Corey for the 6th-cause locked, or propose mapping into existing cause |
 | Sibling skill changes (e.g., sprint-mode v3) | Update wiring path citation; re-run wake-blank sim 2 |

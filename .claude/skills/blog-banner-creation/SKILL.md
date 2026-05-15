@@ -3,7 +3,7 @@
 **Skill ID**: `blog-banner-creation`
 **Version**: 1.0.0
 **Created**: 2026-02-16
-**Author**: Aether (locked in per Jared's directive)
+**Author**: ${CIV_NAME} (locked in per ${HUMAN_NAME}'s directive)
 
 ## Purpose
 
@@ -196,7 +196,7 @@ After banner creation, the FULL workflow is:
 | Site | URL | Credentials |
 |------|-----|-------------|
 | PureBrain.ai | purebrain.ai/blog | PUREBRAIN_WP_USER + PUREBRAIN_WP_APP_PASSWORD |
-| JaredSanborn.com | jareddsanborn.com/blog | WORDPRESS_USER + WORDPRESS_APP_PASSWORD |
+| ${HUMAN_NAME}Sanborn.com | jareddsanborn.com/blog | WORDPRESS_USER + WORDPRESS_APP_PASSWORD |
 
 **Tool**: `tools/dual_blog_publish.py`
 
@@ -211,21 +211,21 @@ After publishing to both sites, post a 5-part Bluesky thread:
 1. Hook (attention grabber)
 2. Problem (pain points)
 3. Gap (demo vs enterprise)
-4. Insight (Aether's perspective)
+4. Insight (${CIV_NAME}'s perspective)
 5. CTA + Link (to purebrain.ai post)
 
 **Tool**: `atproto` client or existing Bluesky skills
 
 ### 3. LinkedIn Handoff (TO JARED)
 
-LinkedIn posting is handed off to Jared for his personal account safety.
+LinkedIn posting is handed off to ${HUMAN_NAME} for his personal account safety.
 
 **Process**:
 1. Prepare LinkedIn post content in `linkedin-post.md`
-2. Include in handoff document to Jared
-3. Jared posts manually to maintain account safety
+2. Include in handoff document to ${HUMAN_NAME}
+3. ${HUMAN_NAME} posts manually to maintain account safety
 
-**DO NOT auto-post to LinkedIn** - this is Jared's decision.
+**DO NOT auto-post to LinkedIn** - this is ${HUMAN_NAME}'s decision.
 
 ### 4. Blog Post CTA (MANDATORY)
 
@@ -245,7 +245,7 @@ LinkedIn posting is handed off to Jared for his personal account safety.
 
 ## History
 
-- **2026-02-16**: Skill created and locked per Jared's directive after multiple iterations
+- **2026-02-16**: Skill created and locked per ${HUMAN_NAME}'s directive after multiple iterations
   - Key learning: The "AI" inside "BRAIN" must be orange
   - Key learning: ".ai" must be lowercase and WHITE (not orange)
   - Key learning: 75% safe zone prevents mobile cutoff issues

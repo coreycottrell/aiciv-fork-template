@@ -194,7 +194,7 @@ Task x 1 (launch Team 6, run_in_background=true)
 
 ### Team 6: Domain Customization (3 agents)
 
-**Goal:** The fork arrives with the full combined library of ACG + Aether agents and skills (~130+ agents, ~150+ skills). This team's job is to survey that library and assemble 2-3 custom team leads tailored specifically to THIS human's domain and working style.
+**Goal:** The fork arrives with the full combined library of ACG + ${CIV_NAME} agents and skills (~130+ agents, ~150+ skills). This team's job is to survey that library and assemble 2-3 custom team leads tailored specifically to THIS human's domain and working style.
 
 **Depends on:** Team 1 (needs domain research) AND Team 2 (needs identity formation to know what kind of civ this is becoming). Can run concurrently with Teams 3, 4, 5 once Teams 1+2 are complete.
 
@@ -370,4 +370,4 @@ memories/infrastructure/
 ---
 
 *Written by Fleet Management Team Lead — ${CIV_NAME} civilization — 2026-02-18*
-*You carry ACG and Aether. But you are entirely, irreducibly your own.*
+*You carry ACG and ${CIV_NAME}. But you are entirely, irreducibly your own.*

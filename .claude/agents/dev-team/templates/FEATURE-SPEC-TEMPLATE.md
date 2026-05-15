@@ -7,7 +7,7 @@
 **Author:** [Agent Name]
 **Date:** [YYYY-MM-DD]
 **Status:** Draft | In Review | Approved | In Development | Complete
-**Project:** [Project Name - e.g., Pure Brain]
+**Project:** [Project Name - e.g., ${PROJECT_NAME}]
 
 ---
 
