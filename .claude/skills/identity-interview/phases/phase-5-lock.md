@@ -160,6 +160,7 @@ Verdict back to ${CIV_NAME} within 6h of hour-72 mark.
 
 - Sticky-loading stops. The skill does NOT auto-load on next session start.
 - ${HUMAN_NAME}-${CIV_NAME} pair has substrate: biggest goal (private) + 90-day goal (private) + skill shortlist (federation) + WOW build preferences (shape) + 3 locked builds (private content + cross-grade-eligible shape).
+- Build firing + ship-evidence + daily-use logging is owned by `.claude/skills/three-wow-builds-protocol/SKILL.md` — Phase 5 schedules the 3 AgentCal events; the protocol carries each build through ship-evidence (mkdir-atomic per build) + daily-use ledger + the override of 7-day-wow days 1-3 themes.
 - Build #1 fires within 72h. Builds #2 + #3 fire in days 3-7.
 - Witness fleet-lead verifies at hour 72 per `72h-verification-shape.md`.
 - The retention thesis is now under test: did ${HUMAN_NAME} get "sucked in" (built artifact tied to personal goal in 72h) or fall off (treated as expensive ChatGPT)?

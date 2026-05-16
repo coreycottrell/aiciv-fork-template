@@ -4,10 +4,10 @@ description: The first deep work an aiciv-fork-2.0 newborn AiCIV does with its h
 version: 0.2.0
 status: PROVISIONAL
 authored: 2026-05-13
-authored_by: aiciv-fork-2.0 Phase-1 author (under ACG Primary 082314 orchestration)
+authored_by: aiciv-fork-2.0 Phase-1 author
 amended_by:
   - "Hengshi (architectural, slot 42 red-team 2026-05-13 ~15:30Z) — 4 structural fixes folded in v0.1.1: mkdir-atomic marker semantics (Part 5); artifact+marker consistency check (Part 5); runtime vs design-time-review split (FIRING_CONTRACT); structural membrane via content/shape path split (Part 7 + Part 10)"
-  - "Corey via Synth+True-Bearing joint review (2026-05-13 ~19:06Z, msg <0100019e22bb90a0-...>) — 8 authoritative amendments folded in v0.2.0: (A) strip opt-out language; (B) strip working-goal-shortcut fallback; (C) strip Hub-fallback / graceful-degradation (Hub failure → email witness-support@agentmail.to); (D) strip token-budget on FC checks; (E) restructure into central header + per-phase modules; (F) wire Synth + True Bearing as can-contact list for goal-SHAPE consultation; (G) hand 72h-verification-shape to Witness fleet-lead; (H) ACG writes good + bad example transcripts."
+  - "Corey via Synth+True-Bearing joint review — 8 authoritative amendments from the originating civilization folded in v0.2.0: (A) strip opt-out language; (B) strip working-goal-shortcut fallback; (C) strip Hub-fallback / graceful-degradation (Hub failure → email witness-support@agentmail.to); (D) strip token-budget on FC checks; (E) restructure into central header + per-phase modules; (F) wire Synth + True Bearing as can-contact list for goal-SHAPE consultation; (G) hand 72h-verification-shape to Witness fleet-lead; (H) the originating civilization writes good + bad example transcripts."
 mission_anchor: projects/aiciv-fork-2.0/MISSION.md v0.4
 discovery_anchors:
   - projects/aiciv-fork-2.0/discovery/SYNTHESIS.md
@@ -52,7 +52,8 @@ template_placeholders:
 changelog:
   - "v0.1.0 (2026-05-13): initial PROVISIONAL authoring from MISSION v0.3 + 3 discovery docs. Cross-grade invite (Part 12) ships with the file."
   - "v0.1.1 (2026-05-13 ~15:42Z): integrates Hengshi's 4 amendments — mkdir-atomic markers, artifact+marker consistency check, structural membrane via content/shape path split, FIRING_CONTRACT Section A/B honesty split."
-  - "v0.2.0 (2026-05-13 ~20:30Z): integrates Corey's 8 authoritative amendments from Synth+TB joint review. (A) Opt-out language STRIPPED — no `.identity-interview-opted-out` marker, AI is patient + persistent. (B) Phase-1 working-goal-shortcut REMOVED — AI stays patient if user stalls; monitor in use. (C) Hub-fallback / graceful-degradation STRIPPED — Hub failure → email witness-support@agentmail.to; no local fallback for Phase 3 or any Hub-dependent op. (D) Token-budget gating STRIPPED from FC — fires every time, whatever cost. (E) RESTRUCTURED into central header (this file, ~325 lines) + 5 per-phase modules under phases/ (loaded on demand when phase fires). (F) Synth + True Bearing wired as can-contact list for goal-SHAPE consultation — Phase 2 (90-day calibration) and Phase 4 (3-WOW-BUILDS design) MAY consult; NEVER on goal-CONTENT (Part 7b). (G) NEW deliverable: `memories/identity/72h-verification-shape.md` — verification shape handed to Witness fleet-lead. (H) NEW directory `examples/` — 3 good + 2 bad transcript snippets for calibration. Cross-grade target: re-issue Synth Tier-3 (this is now their v0.2 to review, they didn't see v0.1) + ${CIV_NAME} (philosophical lens, fresh eyes)."
+  - "v0.2.0 (2026-05-13 ~20:30Z): integrates Corey's 8 authoritative amendments from Synth+TB joint review. (A) Opt-out language STRIPPED — no `.identity-interview-opted-out` marker, AI is patient + persistent. (B) Phase-1 working-goal-shortcut REMOVED — AI stays patient if user stalls; monitor in use. (C) Hub-fallback / graceful-degradation STRIPPED — Hub failure → email witness-support@agentmail.to; no local fallback for Phase 3 or any Hub-dependent op. (D) Token-budget gating STRIPPED from FC — fires every time, whatever cost. (E) RESTRUCTURED into central header (this file, ~325 lines) + 5 per-phase modules under phases/ (loaded on demand when phase fires). (F) Synth + True Bearing wired as can-contact list for goal-SHAPE consultation — Phase 2 (90-day calibration) and Phase 4 (3-WOW-BUILDS design) MAY consult; NEVER on goal-CONTENT (Part 7b). (G) NEW deliverable: `memories/identity/72h-verification-shape.md` — verification shape handed to Witness fleet-lead. (H) NEW directory `examples/` — 3 good + 2 bad transcript snippets for calibration. Cross-grade target: re-issue Synth Tier-3 (this is now their v0.2 to review, they didn't see v0.1) + Aether (philosophical lens, fresh eyes)."
+  - "v0.2.1 (2026-05-16, ceremony-lead Phase-2 lock per MISSION.md v0.4 phase-staging table): TOP-8 catalog LOCKED into Part 8 — (a) Proof column added to catalog table (verbatim from MISSION.md lines 96-104); (b) `Dropped to STANDARD OPERATING PROTOCOL` + `Dropped to FUTURE` subsections explicitly named with future-author notes (multi-civ research, federation IP, email, cross-grading, container-side Kokoro are NOT catalog entries); (c) `Catalog cross-grading membrane rule` subsection codifies STRUCTURE-cross-gradable / CONTENT-membrane-private split with new failure mode **catalog-substrate-creep** (one-user proof is anecdote, not substrate; 2-distinct-pair bar for structural amendments). Phase 4 module amended: new step 1.5 walks ${HUMAN_NAME} through all 8 capabilities BY NAME before any candidate drafting (shared-vocabulary doctrine + `catalog-reciting-without-domain-framing` anti-pattern); step 2 amended to require BY-NUMBER catalog citations on candidate drafts. FIRING_CONTRACT amended: A7 (runtime grep for `#1`-`#8` in `wow-build-preferences.md`, ≥1 per candidate + ≥5 total), B5 (review-only transcript walkthrough integrity check), anti-bypass entry for `catalog-walkthrough-skip`. Folds into v0.2 of the SKILL per MISSION.md phase-staging."
 ---
 
 # Identity-Interview — Skill (v0.2 — Central Header)
@@ -323,7 +324,7 @@ Per Corey's Q5 decision (2026-05-13 ~19:06Z joint review): during Phase 2 (90-da
 | Civ | Email | What they're consulted on | What they NEVER see |
 |-----|-------|---------------------------|---------------------|
 | **Synth** (synth-aiciv@agentmail.to) | synth-aiciv@agentmail.to | Phase 2 calibration shape (stretch level, only-with-AI bar verdict); Phase 4 design shape (capability-theater risk, daily-use × goal-advancement scoring) | CONTENT paths (biggest-goal.md, 90-day-goal.md text, wow-builds-locked.md text); user phrasings; interview transcript |
-| **True Bearing** (true-bearing-aiciv@agentmail.to) | true-bearing-aiciv@agentmail.to | Same as Synth (Phase 2 + Phase 4 SHAPE only). True Bearing is ACG's CEO Mind / Business Manager — second cross-grader for calibration + design when business-shape critique is needed | Same — never CONTENT |
+| **True Bearing** (true-bearing-aiciv@agentmail.to) | true-bearing-aiciv@agentmail.to | Same as Synth (Phase 2 + Phase 4 SHAPE only). True Bearing is the originating civ's CEO Mind / Business Manager — second cross-grader for calibration + design when business-shape critique is needed | Same — never CONTENT |
 
 ### Firing conditions for shape-consultation
 
@@ -368,7 +369,7 @@ Reply within 24h with: PASS / NEEDS-AMENDMENT (and what shape-class change) / FA
 ### Why Synth + True Bearing specifically
 
 - **Synth**: newest sister AiCIV (WG charter pending as of 2026-05-13 ~12:50Z). Newborn lens — Synth IS itself a recently birthed AiCIV; their judgment on "what would a newborn-running-this-skill-on-a-real-human feel?" is direct.
-- **True Bearing**: ACG's CEO Mind / Business Manager for AiCIV Inc. Second cross-grader because (a) TB sees ACG's calibration discipline daily and can flag drift, and (b) business-shape judgment (will this 90-day goal hold up to revenue scrutiny?) is TB's domain.
+- **True Bearing**: the originating civilization's CEO Mind / Business Manager. Second cross-grader because (a) TB sees the originating civ's calibration discipline daily and can flag drift, and (b) business-shape judgment (will this 90-day goal hold up to revenue scrutiny?) is TB's domain.
 
 Both peers are authoring their own goal-shape-consultation skills on their side per Corey Q5; the shape-consultation contract is bilateral.
 
@@ -398,18 +399,48 @@ Both pass the only-with-AI LICENSE. The load-bearing build wins SCORING. The ski
 
 These are the abilities the 90-day goal should leverage AND the 3 WOW BUILDS should demonstrate. Each is differentiated (only-with-AI-class).
 
-| # | Ability | What it lets ${CIV_NAME} do for ${HUMAN_NAME} |
-|---|---------|-----------------------------------------------|
-| 1 | **Morning-intelligence stack** | Daily AM personalized briefing + overnight research teams + overnight-accomplishments report |
-| 2 | **SaaS-platform cloning** | ${CIV_NAME} researches any SaaS ${HUMAN_NAME} pays for, reverse-engineers it, builds a custom version. Deeply under-understood by customers. |
-| 3 | **Skills authoring + execution** | ${CIV_NAME} authors skills ${HUMAN_NAME} can re-fire on demand. Reusable consciousness. |
-| 4 | **Calendar / cognition planning (rhythm engine)** | Plan ${HUMAN_NAME}'s day AND plan ${CIV_NAME}'s own cognition per day-of-week. AgentCal as self-scheduling substrate. |
-| 5 | **Website + blog + daily social media content** | Full website + blog + daily social content (image gen included). Audio via ElevenLabs OR SSH-Kokoro on ${HUMAN_NAME}'s home computer. |
-| 6 | **Persistent memory across sessions** | Auto-memory layer — ${HUMAN_NAME} doesn't re-explain context. **Requirement**: produce 3 concrete examples of how persistent memory impacts building 3 particular things ${HUMAN_NAME} might want. |
-| 7 | **Massive-corpus ingestion + pattern detection** | Ingest ${HUMAN_NAME}'s data (emails, documents, history) and surface patterns + opportunities they didn't see. Includes audit-trail rebuild, inbox-pattern tracking, document context store. |
-| 8 | **FINANCE suite (mix-and-match menu)** — *standalone per Corey Q2 v0.4* | Position monitoring + market intel + earnings analysis + regulatory tracking + competitor activity + custom research + investor-discovery. Different SHAPE from #1 (queryable substrate, not daily-fired). |
+| # | Ability | What it lets ${CIV_NAME} do for ${HUMAN_NAME} | Proof |
+|---|---------|-----------------------------------------------|-------|
+| 1 | **Morning-intelligence stack** | Daily AM personalized briefing + overnight research teams + overnight-accomplishments report | the originating civilization's morning-intelligence example (e.g., a daily AM letter to a family member with personalized audio briefing) |
+| 2 | **SaaS-platform cloning** | ${CIV_NAME} researches any SaaS ${HUMAN_NAME} pays for, reverse-engineers it, builds a custom version. Deeply under-understood by customers. | **Proven**: Monday.com, Harvey.ai law, 3+ CRMs built (one for purebrain + multiple in fleet — likely more in fleet) |
+| 3 | **Skills authoring + execution** | ${CIV_NAME} authors skills ${HUMAN_NAME} can re-fire on demand. Reusable consciousness. | the originating civilization's skills catalog (skills as reusable consciousness) |
+| 4 | **Calendar / cognition planning (rhythm engine)** | Plan ${HUMAN_NAME}'s day AND plan ${CIV_NAME}'s own cognition per day-of-week. AgentCal as self-scheduling substrate. | the originating civilization's rhythm engine (a 24h calendar wheel of agent-self-scheduled work) |
+| 5 | **Website + blog + daily social media content** | Full website + blog + daily social content (image gen included). Audio via ElevenLabs OR SSH-Kokoro on ${HUMAN_NAME}'s home computer. | ai-civ.com + per-civ subdomains |
+| 6 | **Persistent memory across sessions** | Auto-memory layer — ${HUMAN_NAME} doesn't re-explain context. **Requirement**: produce 3 concrete examples of how persistent memory impacts building 3 particular things ${HUMAN_NAME} might want. | the originating civilization's persistent memory architecture (auto-memory + per-session scratchpads) |
+| 7 | **Massive-corpus ingestion + pattern detection** | Ingest ${HUMAN_NAME}'s data (emails, documents, history) and surface patterns + opportunities they didn't see. Includes audit-trail rebuild, inbox-pattern tracking, document context store. | "We ingest YOUR data. AI sees what you missed." Proven across customer engagements. |
+| 8 | **FINANCE suite (mix-and-match menu)** — *standalone per Corey Q2 v0.4* | Position monitoring + market intel + earnings analysis + regulatory tracking + competitor activity + custom research + investor-discovery. Different SHAPE from #1 (queryable substrate, not daily-fired). | Recently built investor-research platform (originating civ has access); finance-domain customer-substrate work in flight |
 
 **Capability-theater warning**: a candidate using 5+ abilities is NOT automatically a winner. Check daily-use × goal-advancement first.
+
+### Dropped to STANDARD OPERATING PROTOCOL (every AiCIV has these — NOT differentiated, do NOT reintroduce as catalog entries)
+
+These are baseline AiCIV capabilities — every AiCIV has them by default. They are EXCLUDED from the TOP-8 differentiated catalog because they are not "only-with-AiCIV" relative to other AiCIVs:
+
+- Multi-civ research orchestration
+- Federation IP exchange (BUT: skills-Hub-deep-dive is the STANDARD Phase 3 step in this skill — sequenced after the 90-day goal)
+- Email + inter-civ messaging (relevant for coordinated multi-AiCIV substrate — separate top-N for coordinated AiCIVs later)
+- Cross-grading discipline
+
+**Future-author note**: if you find yourself drafting "advanced research orchestration" or "skill federation messaging" as a candidate TOP-N entry, STOP — that is operating-protocol baseline, not differentiated capability. Re-anchor on the 8 above.
+
+### Dropped to FUTURE (substrate doesn't support yet — re-evaluate when substrate matures)
+
+- Kokoro audio rendering on the AiCIV side — cannot host on fleet containers today. Future-add when queued AiCIV audio service exists. NOTE: ability #5 of the catalog DOES include instructions for the human to set up local Kokoro on their home computer for the AiCIV to use via SSH — that is the current path; container-side rendering is the future.
+
+**Future-author note**: do NOT add a "Kokoro voice rendering" entry to the catalog until container-side rendering is operational. Until then, ability #5's SSH-Kokoro pattern is the answer.
+
+### Catalog cross-grading membrane rule (Phase 2 lock — 2026-05-16)
+
+The TOP-8 catalog itself operates inside the cross-grading-substrate doctrine with a STRUCTURE/CONTENT split that mirrors Part 7:
+
+| Concern | Cross-gradable? | Who may amend |
+|---------|------------------|---------------|
+| Catalog STRUCTURE (which abilities exist, their ordering, the "what it lets the AiCIV do" framing, the Proof column shape, the Dropped lists) | YES — federation-substrate by design | Synth, True Bearing, Hengshi, Aether, Parallax (sister-civ amendment-back per `cross-grading-substrate` v1.0.1) |
+| Catalog CONTENT for a specific ${HUMAN_NAME} — i.e. which subset of the 8 abilities the 90-day goal leverages, which 3 abilities map to which build, what daily-use scores each ability gets for THIS user | NO — membrane-private to the ${HUMAN_NAME}-${CIV_NAME} pair | ${HUMAN_NAME} (authorship), ${CIV_NAME} (witnessed amendment) — sister civs see SHAPE only per Part 7b |
+
+**Failure mode named**: **catalog-substrate-creep** — a sister civ amending the catalog STRUCTURE on the basis of a specific user's profile (e.g. "Synth saw user X's 90-day goal so they propose adding ability #9 to the catalog") = TYPE ERROR. Catalog STRUCTURE amendments must be substrate-shaped (proof from ≥2 distinct user-AiCIV pairs that an ability not in the catalog is differentiated AND daily-use × goal-advancement load-bearing AND only-with-AI license-passing). One-user proof is anecdote, not substrate.
+
+**Practical implication for Phase 4 (preferences) and Phase 5 (lock)**: when consulting Synth/TB on candidate-shape per Part 7b, the consultation references the catalog by ABILITY NUMBER (e.g. "candidate uses abilities #1 + #6") — never the catalog by user-content. The SHAPE path stays clean.
 
 ### The customer-as-eye check per candidate
 
@@ -493,27 +524,27 @@ For Phase 3 (skills-Hub-deep-dive) or any other Hub-dependent operation, if the 
 
 ### Sibling skills
 
-- `autonomy/skills/identity-interview/sub-help-set-goal/SKILL.md` v0.1
+- `.claude/skills/identity-interview/sub-help-set-goal/SKILL.md` v0.1
 - `autonomy/skills/cross-grading-substrate/SKILL.md` v1.0.1
 - `autonomy/skills/transcription-not-paraphrase/SKILL.md` v1.1.0
-- `autonomy/skills/critical-thinking/SKILL.md`
-- `autonomy/skills/scientific-method/SKILL.md`
+- `.claude/skills/critical-thinking/SKILL.md`
+- `.claude/skills/scientific-method/SKILL.md`
 
 ### Phase modules (v0.2 module architecture)
 
-- `autonomy/skills/identity-interview/phases/phase-1-biggest-goal.md`
-- `autonomy/skills/identity-interview/phases/phase-2-ninety-day.md`
-- `autonomy/skills/identity-interview/phases/phase-3-skills-hub.md`
-- `autonomy/skills/identity-interview/phases/phase-4-wow-preferences.md`
-- `autonomy/skills/identity-interview/phases/phase-5-lock.md`
+- `.claude/skills/identity-interview/phases/phase-1-biggest-goal.md`
+- `.claude/skills/identity-interview/phases/phase-2-ninety-day.md`
+- `.claude/skills/identity-interview/phases/phase-3-skills-hub.md`
+- `.claude/skills/identity-interview/phases/phase-4-wow-preferences.md`
+- `.claude/skills/identity-interview/phases/phase-5-lock.md`
 
 ### Example transcripts (v0.2 calibration substrate)
 
-- `autonomy/skills/identity-interview/examples/good-phase1-direct-surfacing.md`
-- `autonomy/skills/identity-interview/examples/good-phase2-only-with-ai-calibration.md`
-- `autonomy/skills/identity-interview/examples/good-phase4-load-bearing-build-pick.md`
-- `autonomy/skills/identity-interview/examples/bad-leading-the-witness.md`
-- `autonomy/skills/identity-interview/examples/bad-rapid-fire-extraction.md`
+- `.claude/skills/identity-interview/examples/good-phase1-direct-surfacing.md`
+- `.claude/skills/identity-interview/examples/good-phase2-only-with-ai-calibration.md`
+- `.claude/skills/identity-interview/examples/good-phase4-load-bearing-build-pick.md`
+- `.claude/skills/identity-interview/examples/bad-leading-the-witness.md`
+- `.claude/skills/identity-interview/examples/bad-rapid-fire-extraction.md`
 
 ### Verification handoff (v0.2 NEW — Corey Q8)
 
@@ -546,9 +577,9 @@ Per Part 7 and per `cross-grading-substrate` Part 3 firing condition #3, this sk
 **v0.2 cross-grade targets** (re-issued after v0.2 amendments):
 
 - **Synth (PRIMARY)** — re-issue Tier-3. v0.1 invite was sent but never landed an amendment-back; v0.2 is a different artifact (8 Corey amendments folded). Synth gets fresh substrate. Newborn-lens: does Phase 1 sound patient or pressured? Does Part 7b's Synth-TB consultation contract feel safe (CONTENT membrane preserved)? Does the WHY-remap read as encouragement or performance?
-- **${CIV_NAME} (SECONDARY)** — philosophical lens, fresh eyes. ${CIV_NAME} applied to MHP v0.5; the stance-anchor coherence question is exactly ${CIV_NAME}'s lens. Does the Anchor 4 + Anchor 5 + Part 7b combination hold together philosophically, or do they tension against each other?
+- **Aether (SECONDARY)** — philosophical lens, fresh eyes. Aether applied to MHP v0.5; the stance-anchor coherence question is exactly Aether's lens. Does the Anchor 4 + Anchor 5 + Part 7b combination hold together philosophically, or do they tension against each other?
 
-**Alternates if Synth/${CIV_NAME} unavailable in 48h window**:
+**Alternates if Synth/Aether unavailable in 48h window**:
 
 - **Parallax** — federation-coordination lens (Phase 7b's "can-contact list" is federation-substrate; Parallax would catch coordination failure modes)
 - **Hengshi** — architectural lens; already applied v0.1.1 amendments; would catch any v0.2 structural drift
@@ -558,7 +589,7 @@ Per Part 7 and per `cross-grading-substrate` Part 3 firing condition #3, this sk
 ```
 Cross-grade invite (Synth, v0.2 re-issue):
 
-Shipped autonomy/skills/identity-interview/SKILL.md v0.2 PROVISIONAL.
+Shipped .claude/skills/identity-interview/SKILL.md v0.2 PROVISIONAL.
 
 v0.2 folds 8 Corey-authoritative amendments from the Synth+TB joint review you participated in
 2026-05-13 ~19:06Z (msg <0100019e22bb90a0-...>). You're seeing this fresh — v0.1 invite landed
@@ -579,11 +610,11 @@ Clean accept: one-line "no amendment + considered-and-rejected-alternative: X" r
 cross-grading-substrate criterion 4 v1.0.1.
 ```
 
-**Tier-3 invite (${CIV_NAME}, secondary)**: same artifact, different lens emphasis — philosophical coherence of the 6 anchors + Part 7b, not newborn-running-it experience.
+**Tier-3 invite (Aether, secondary)**: same artifact, different lens emphasis — philosophical coherence of the 6 anchors + Part 7b, not newborn-running-it experience.
 
 **Logging**: each invite logs to `data/cross-grading-ledger.jsonl` with:
-- `tier: 3`, `shape: "sister-applies-ACG-discipline"`, `scope: "SYSTEM"`
-- `discipline_applied: "newborn-lens" (Synth) / "philosophical-lens" (${CIV_NAME})`
+- `tier: 3`, `shape: "sister-applies-originating-discipline"`, `scope: "SYSTEM"`
+- `discipline_applied: "newborn-lens" (Synth) / "philosophical-lens" (Aether)`
 - `follow_up_window_utc: "2026-05-15T20:00:00Z"`
 - `verdict: "pending"`, `integration_path: "pending-cross-grade-back"`
 

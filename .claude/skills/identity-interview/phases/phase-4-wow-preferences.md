@@ -24,11 +24,33 @@ ${CIV_NAME} and ${HUMAN_NAME} have discussed PREFERENCES (not yet locked) for wh
 1. **Frame the phase**:
    *"${HUMAN_NAME}, we're going to talk through some ideas for what I should actually BUILD for you. Not lock anything yet — just feel out which shapes land. I'll draft 5 to 7, you tell me what feels load-bearing vs what feels like a demo of what I can do."*
 
+1.5. **Walk ${HUMAN_NAME} through the 8 differentiated capabilities BY NAME** (FROM SKILL Part 8 catalog) before any candidate drafting:
+
+   *"${HUMAN_NAME}, before I draft anything, here's what I can actually DO that you couldn't easily get without an AiCIV — there are 8 of these, and your 3 builds will lean on a subset:"*
+
+   Walk through each in plain language, 1-2 sentences each, in ${HUMAN_NAME}'s domain framing:
+
+   1. **Morning intelligence** — daily AM personalized brief + overnight research teams + what I built/researched while you slept.
+   2. **SaaS-platform cloning** — I research any SaaS you pay for and build you a custom version. *(Most users don't know to ask for this.)*
+   3. **Skills authoring + execution** — I write you re-fireable skills; your toolkit compounds.
+   4. **Calendar + cognition planning** — I plan your day AND plan my own cognition per day-of-week.
+   5. **Website + blog + daily social media** — full website, blog, daily researched content with images; audio via ElevenLabs OR SSH-Kokoro on your home computer.
+   6. **Persistent memory** — you never re-explain context; my memory of you compounds across sessions.
+   7. **Massive-corpus ingestion + pattern detection** — I ingest your emails, docs, history, and surface patterns + opportunities you didn't see.
+   8. **Finance suite** *(mix-and-match menu)* — position monitoring, market intel, earnings analysis, regulatory tracking, competitor activity, custom research, investor-discovery. Different shape from #1 — this is a queryable substrate, not a daily-fired briefing.
+
+   *"Don't pick yet — just notice which of these light up for you when you hear them. Now let me draft 5-7 candidate builds that lean on subsets of these toward your 90-day goal..."*
+
+   **Why this walkthrough fires HERE**: Phase 4 is the first moment ${HUMAN_NAME} sees the differentiated capability surface ${CIV_NAME} brings. Without the walkthrough, candidates appear as ${CIV_NAME}-flavored ideas with no shared vocabulary. With the walkthrough, ${HUMAN_NAME} and ${CIV_NAME} share the 8-ability vocabulary for the rest of the conversation. **The catalog reference is BY NAME (ability #1, #2, ... #8), never by abstract description — shared vocabulary is the point.**
+
+   **Anti-pattern (added 2026-05-16, Phase 2 lock)**: ❌ **catalog-reciting-without-domain-framing** — reading the 8 abilities verbatim from Part 8 instead of framing each in ${HUMAN_NAME}'s domain. The walkthrough IS conversational; if it sounds like a sales pitch, ${CIV_NAME} drifted into capability-theater BEFORE candidate drafting even starts.
+
 2. **Draft 5-7 candidate build-shapes** from the TOP-8 capabilities catalog (parent Part 8), each rooted in the 90-day goal-shape (NOT goal-content directly — drafts come from ${CIV_NAME}'s domain understanding of the goal):
 
-   - Each candidate cites: which TOP-8 ability/abilities, what daily-use shape, what 90-day-advancement shape.
+   - Each candidate cites: which TOP-8 abilities BY NUMBER (e.g. "uses #1 + #6"), what daily-use shape, what 90-day-advancement shape. By-number references make the shape-consultation payload (Part 7b) trivial to author content-free and let ${HUMAN_NAME} cross-reference back to the step-1.5 walkthrough.
    - Bias toward LOAD-BEARING SIMPLE over CAPABILITY-THEATER COMPLEX (parent Part 8).
    - Filter pre-presentation: any candidate that fails the only-with-AI LICENSE is dropped BEFORE presentation. ${HUMAN_NAME} never sees failed-license candidates.
+   - **AT LEAST 1 of the 5-7 candidates MUST be an under-understood-capabilities proposal** per `.claude/skills/three-wow-builds-protocol/SKILL.md` Part 5 — drawn from ability #2 (SaaS-platform cloning) or #7 (massive-corpus pattern detection), OR another TOP-8 ability where ${CIV_NAME} judges ${HUMAN_NAME} has not internalized the capability. The proposal carries (a) capability-explainer in ${HUMAN_NAME}'s domain language + (b) concrete first-shipped artifact. Logged to `memories/identity/under-understood-proposals.jsonl` (SHAPE-class). Customer-as-eye after the proposal includes the explicit invitation: *"that might sound like something you'd never have asked me for — that's exactly why I'm raising it."*
 
 3. **Present each in ${HUMAN_NAME}'s domain language** (NOT skill-jargon):
    - ❌ "Build #2 uses abilities 1 + 6 of the TOP-8 catalog."

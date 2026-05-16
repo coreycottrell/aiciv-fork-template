@@ -1,13 +1,13 @@
 # FIRING CONTRACT — identity-interview skill
 
-**Skill**: `autonomy/skills/identity-interview/SKILL.md`
-**Sub-skill**: `autonomy/skills/identity-interview/sub-help-set-goal/SKILL.md`
-**Phase modules**: `autonomy/skills/identity-interview/phases/phase-{1..5}-*.md`
-**Examples**: `autonomy/skills/identity-interview/examples/{good,bad}-*.md`
+**Skill**: `.claude/skills/identity-interview/SKILL.md`
+**Sub-skill**: `.claude/skills/identity-interview/sub-help-set-goal/SKILL.md`
+**Phase modules**: `.claude/skills/identity-interview/phases/phase-{1..5}-*.md`
+**Examples**: `.claude/skills/identity-interview/examples/{good,bad}-*.md`
 **72h-verification handoff**: `memories/identity/72h-verification-shape.md`
 **Version**: 0.2.0 PROVISIONAL
 **Authored**: 2026-05-13
-**Author**: aiciv-fork-2.0 Phase-1 author (under ACG Primary 082314 orchestration)
+**Author**: aiciv-fork-2.0 Phase-1 author (under Primary (originating civilization) orchestration)
 **Amended by**:
 - Hengshi (architectural, slot 42 red-team 2026-05-13 ~15:30Z) — runtime vs design-time-review split per amendment #3, marker semantics updated to mkdir directories per amendment #1, verification script `test -f` → `test -d` and consistency check added per amendments #1+#2
 - Corey via Synth+True-Bearing joint review (2026-05-13 ~19:06Z) — 8 authoritative amendments folded in v0.2.0 (token-budget STRIPPED from FC checks per Q9; 72h-verification-shape handed to Witness fleet-lead per Q8; opt-out stripped per Q7; Hub-fallback stripped per Q6+Q12; phase-module references added per Q10 restructure; Synth+TB shape-consultation contract per Q5)
@@ -15,7 +15,7 @@
 **Changelog**:
 - v0.1.0 (2026-05-13): initial firing contract authored alongside SKILL.md v0.1
 - v0.1.1 (2026-05-13 ~15:42Z): Hengshi's amendments #1 + #2 + #3 + #4 integrated. mkdir-atomic markers; pre-phase consistency check; Section A/B honesty split (runtime-blocking vs design-time-review); per-phase artifact table CONTENT/SHAPE columns; structural-membrane audit as A6.
-- v0.2.0 (2026-05-13 ~20:30Z): Corey's 8 authoritative amendments from Synth+TB joint review folded. Token-budget gating REMOVED — FC fires every time, whatever cost (Q9). Witness fleet-lead 72h-verification handoff codified at `memories/identity/72h-verification-shape.md` (Q8). Opt-out firing condition removed from §"When the skill does NOT fire" (Q7). Hub-failure protocol named: email witness-support@agentmail.to, NO local fallback (Q6+Q12). Phase modules + examples added to verification scope (Q10 restructure + Q11). Shape-consultation contract (Synth + True Bearing on Phase 2 + Phase 4 SHAPE only) integrated into anti-bypass table (Q5). Cross-grade re-issue target: Synth (v0.2 fresh) + ${CIV_NAME} (philosophical lens).
+- v0.2.0 (2026-05-13 ~20:30Z): Corey's 8 authoritative amendments from Synth+TB joint review folded. Token-budget gating REMOVED — FC fires every time, whatever cost (Q9). Witness fleet-lead 72h-verification handoff codified at `memories/identity/72h-verification-shape.md` (Q8). Opt-out firing condition removed from §"When the skill does NOT fire" (Q7). Hub-failure protocol named: email witness-support@agentmail.to, NO local fallback (Q6+Q12). Phase modules + examples added to verification scope (Q10 restructure + Q11). Shape-consultation contract (Synth + True Bearing on Phase 2 + Phase 4 SHAPE only) integrated into anti-bypass table (Q5). Cross-grade re-issue target: Synth (v0.2 fresh) + Aether (philosophical lens).
 
 ---
 
@@ -89,7 +89,7 @@ If ANY of these checks fail, the skill DID NOT FIRE TO COMPLETION. The miss is l
 
 research-lead is the verified-by principal for the SKILL CORRECTNESS (transcript review, anchor compliance, design-time checks per Section B). For NEWBORN AiCIVs' 72h checks (marker existence, artifact validity, build-shipped-on-time, structural-membrane audit), Witness fleet-lead is the verifier per Corey Q8 (2026-05-13 ~19:06Z directive).
 
-**v0.2 handoff (Corey Q8)**: `memories/identity/72h-verification-shape.md` is the explicit verification SHAPE handed to Witness fleet-lead. It contains the 4 checks (marker existence / artifact validity / build-shipped-on-time / structural-membrane audit), the verdict shape, and the membrane-respect protocol. ACG authors the SHAPE; Witness fleet-lead executes the verification. The verification cadence is hour 72 ±6h of `.identity-interview-complete/` marker timestamp.
+**v0.2 handoff (Corey Q8)**: `memories/identity/72h-verification-shape.md` is the explicit verification SHAPE handed to Witness fleet-lead. It contains the 4 checks (marker existence / artifact validity / build-shipped-on-time / structural-membrane audit), the verdict shape, and the membrane-respect protocol. The originating civilization authors the SHAPE; the receiving civilization's fleet-lead executes the verification. The verification cadence is hour 72 ±6h of `.identity-interview-complete/` marker timestamp.
 
 The bash verification script below (run by research-lead during fork-2.0 test births) is essentially the same shape as the Witness fleet-lead script — same 4 checks, same artifacts. The handoff doc formalizes the spec.
 
@@ -212,6 +212,7 @@ If the receiver of this skill (newborn AiCIV, team-lead, specialist) attempts to
 | **v0.2** "Tokens running low — I'll skip the FC check this turn" | **Anti-pattern: token-budget gating (Corey Q9 stripped v0.2).** FC fires every time, whatever cost. If tokens are tight, COMPACT the session and re-load — never skip the contract. |
 | **v0.2** "Phase 1 has been stalled for 3 sessions; let me propose a placeholder goal so Phase 2-5 can advance" | **Anti-pattern: working-goal-shortcut (Corey Q3 stripped v0.2).** There is no shortcut. Phase 1 takes as many sessions as it takes. Monitor is in use. Placeholder goals produce placeholder Phase 2-5 = retention thesis collapses. AI stays patient. |
 | **v0.2** "Let me ask Synth what they think of this exact goal text" | **Anti-pattern: shape-consultation CONTENT leak (Corey Q5 + Part 7b).** Synth + True Bearing see SHAPE only — capabilities, scores, license verdict, ability tags, abstract pattern descriptions. Including goal text or user phrasings in the consultation payload = substrate violation; file per `cross-grading-substrate/FIRING_CONTRACT.md` anti-bypass. Pre-fire content scrub mandatory before sending. |
+| **v0.2 + Phase 2 lock (2026-05-16)** "Catalog walkthrough felt redundant, let me skip step 1.5 of Phase 4" | **Anti-pattern: catalog-walkthrough-skip (Phase 2 lock — 2026-05-16).** Step 1.5 of Phase 4 is the moment ${HUMAN_NAME} and ${CIV_NAME} share the 8-ability vocabulary that the rest of the conversation references. Skipping it means candidates appear as ${CIV_NAME}-flavored ideas with no shared vocabulary — and the by-number references A7 verifies become brittle. Walkthrough fires every Phase 4. |
 
 ---
 
@@ -268,6 +269,14 @@ The cross-grading-ledger MUST NOT reference any CONTENT path. This is a substrat
 - Test: `grep -F "$content_path" data/cross-grading-ledger.jsonl` returns nothing for each of the 3 CONTENT paths (biggest-goal.md, 90-day-goal.md, wow-builds-locked.md).
 - Action on violation: file a substrate violation per `cross-grading-substrate/FIRING_CONTRACT.md` anti-bypass.
 
+#### A7 — Phase 4 candidate-shape catalog-reference check (Phase 2 lock — 2026-05-16)
+
+When `.wow-preferences-captured/` marker exists, `memories/identity/wow-build-preferences.md` MUST contain by-number catalog references (`#1` through `#8`) for every candidate's `Capabilities used` field. This is the runtime-detectable form of "the catalog was loaded + applied at Phase 4" per MISSION.md Phase 2 deliverable.
+
+- Test: `grep -E '#[1-8]' memories/identity/wow-build-preferences.md` must match ≥1 per candidate block; total catalog references ≥5 (5-7 candidates × ≥1 catalog citation each).
+- Action on violation (no by-number references OR <5 total): file `catalog-not-applied-at-phase-4` MISS at `logs/identity-interview-misses.jsonl`; surface to research-lead per FC anti-bypass.
+- Why runtime-blockable: `wow-build-preferences.md` is on disk; the grep is a deterministic file-system check, not a semantic judgment.
+
 **Anything not in Section A cannot be enforced by the contract at runtime.** The remaining checks live in Section B and require human or sister-civ review of transcripts/outputs.
 
 ---
@@ -308,6 +317,16 @@ The skill aspires to detect when a WOW build candidate uses 5+ capabilities AND 
 - **Reviewer's red flag**: ≥2 of 3 locked builds use 5+ capabilities AND have low daily-use × goal-advancement after deployment.
 - **Reviewer action**: capability-theater MISS logged; Part 8 of SKILL.md amended; if rate >40% across newborns, the 3-WOW-BUILDS shape is reconsidered substrate-wide.
 
+#### B5 — Phase 4 walkthrough integrity (Phase 2 lock — 2026-05-16) — REVIEW-ONLY
+
+The skill aspires to walk ${HUMAN_NAME} through all 8 catalog abilities by name BEFORE drafting candidates (phase-4 step 1.5). There is no runtime check that the walkthrough happened in-conversation — the marker + artifact pair don't capture walkthrough adherence; only the resulting candidate citations do. The transcript review catches whether ${HUMAN_NAME} saw the 8-ability surface or was funneled straight to candidates.
+
+- **Detected at review by**: research-lead reads Phase 4 transcripts post-session, looks for the explicit 8-ability walkthrough (`#1 Morning intelligence ... #8 Finance suite`) BEFORE the first candidate draft.
+- **Reviewer's red flag**: candidates drafted before walkthrough fired, OR walkthrough referenced only 3-5 abilities (not all 8), OR walkthrough drifted into catalog-reciting-without-domain-framing (Phase 4 anti-pattern, 2026-05-16).
+- **Reviewer action**: walkthrough-skip MISS logged; Phase 4 module amended if pattern repeats across newborns.
+
+Why review-only and not runtime: detecting "the walkthrough actually happened in conversation" requires semantic transcript inspection. A7 (by-number candidate references) is the runtime proxy — necessary but not sufficient. B5 covers the sufficiency lens.
+
 ---
 
 ### Why this split matters (the honesty principle)
@@ -323,7 +342,7 @@ The corresponding mid-flow self-check the running skill performs (SKILL.md Part 
 This skill ships at v0.2 PROVISIONAL. Promotion criteria:
 
 **v0.2 → v0.3 (sister-civ amendment integration on v0.2)**:
-- At least ONE sister-civ cross-grade-back lands on v0.2 (re-issued to Synth + ${CIV_NAME} per SKILL.md Part 12). Hengshi's v0.1.1 amendment is already integrated; v0.2 needs a fresh amendment-back from a peer who saw v0.2.
+- At least ONE sister-civ cross-grade-back lands on v0.2 (re-issued to Synth + Aether per SKILL.md Part 12). Hengshi's v0.1.1 amendment is already integrated; v0.2 needs a fresh amendment-back from a peer who saw v0.2.
 - The amendment integrates into the SKILL body OR is documented as `considered-and-rejected-alternative` per cross-grading-substrate criterion 4.
 - Cross-grade ledger entry logged at `data/cross-grading-ledger.jsonl`.
 
@@ -349,8 +368,8 @@ This skill ships at v0.2 PROVISIONAL. Promotion criteria:
 
 This contract should be cross-referenced (and ideally amended together) with:
 
-- `autonomy/skills/cross-grading-substrate/FIRING_CONTRACT.md` v1.0.1 — the cross-grading discipline this skill operates inside (with membrane-respect per Part 7 of SKILL.md).
-- `autonomy/skills/transcription-not-paraphrase/FIRING_CONTRACT.md` (if/when authored) — Anchor 1 source.
+- `(your originating civilization may carry cross-grading-substrate at) .claude/skills/cross-grading-substrate/FIRING_CONTRACT.md` v1.0.1 — the cross-grading discipline this skill operates inside (with membrane-respect per Part 7 of SKILL.md).
+- `(your originating civilization may carry transcription-not-paraphrase at) .claude/skills/transcription-not-paraphrase/FIRING_CONTRACT.md` (if/when authored) — Anchor 1 source.
 - `tools/FIRING_CONTRACT_witness_heartbeat_watchdog.md` — the precedent firing-contract that named active-probe vs passive-ACK. The 72h-build-shipped rate is the active-probe of the retention thesis; mere marker existence is the passive-ACK.
 
 ---
@@ -359,10 +378,10 @@ This contract should be cross-referenced (and ideally amended together) with:
 
 | Date | Author | Change |
 |------|--------|--------|
-| 2026-05-13 | aiciv-fork-2.0 Phase-1 author | v0.1.0 PROVISIONAL — initial firing contract authored alongside SKILL.md + sub-skill SKILL.md. Phase markers + per-phase artifacts + anti-bypass + 4 mid-flow checks + promotion gate codified. Cross-grade invite (SKILL.md Part 12) issued to Synth (primary), ${CIV_NAME} + Hengshi (alternates). |
+| 2026-05-13 | aiciv-fork-2.0 Phase-1 author | v0.1.0 PROVISIONAL — initial firing contract authored alongside SKILL.md + sub-skill SKILL.md. Phase markers + per-phase artifacts + anti-bypass + 4 mid-flow checks + promotion gate codified. Cross-grade invite (SKILL.md Part 12) issued to Synth (primary), Aether + Hengshi (alternates). |
 | 2026-05-13 ~15:42Z | identity-interview-author respawn (Hengshi amendments) | v0.1.1 PROVISIONAL — integrates 4 Hengshi architectural amendments from slot 42 red-team (~15:30Z). #1 markers become mkdir-atomic directories (verification switches to `test -d`). #2 marker-vs-artifact consistency check added. #3 mid-flow checks section RESTRUCTURED into Section A (runtime-blocking — A1-A6) and Section B (design-time review — B1-B4). Honesty fix: the contract no longer claims runtime enforcement it cannot deliver. #4 per-phase artifact table updated with CONTENT and SHAPE columns. |
 | 2026-05-13 ~20:30Z | identity-interview-author respawn (Corey v0.4 amendments via Synth+TB joint review) | v0.2.0 PROVISIONAL — integrates 8 Corey-authoritative amendments. (A) Opt-out STRIPPED — `.identity-interview-deferred`/`opted-out` markers removed; AI patient + persistent. (B) Working-goal-shortcut STRIPPED — Phase 1 stall has no shortcut. (C) Hub-fallback STRIPPED — Hub failure → email witness-support@agentmail.to; NO local fallback for Phase 3 or any Hub-dependent op. (D) Token-budget gating STRIPPED — FC fires every time, whatever cost. (E) RESTRUCTURED SKILL into central header + 5 phase modules under `phases/`; FC references updated. (F) Synth + True Bearing wired as can-contact list for goal-SHAPE consultation in Phase 2 + Phase 4 (NEVER goal-CONTENT). (G) NEW handoff: `memories/identity/72h-verification-shape.md` handed to Witness fleet-lead — 4 checks (marker existence / artifact validity / build-shipped-on-time / structural-membrane audit) + verdict shape. (H) NEW directory `examples/` — 3 good + 2 bad transcript snippets for calibration. Anti-bypass table expanded with 5 v0.2 entries. |
-| (pending) | sister-civ cross-grader (Synth — RE-ISSUED v0.2) | v0.3 — promotion gate fires after first sister-civ cross-grade-back on v0.2 lands. Synth invite v0.2 re-issued because v0.2 is materially different from v0.1 (8 Corey amendments folded); Synth never saw v0.1 in time. ${CIV_NAME} secondary cross-grader (philosophical lens, fresh eyes). |
+| (pending) | sister-civ cross-grader (Synth — RE-ISSUED v0.2) | v0.3 — promotion gate fires after first sister-civ cross-grade-back on v0.2 lands. Synth invite v0.2 re-issued because v0.2 is materially different from v0.1 (8 Corey amendments folded); Synth never saw v0.1 in time. Aether secondary cross-grader (philosophical lens, fresh eyes). |
 | (pending) | Witness fleet-lead | 72h-verification execution per `memories/identity/72h-verification-shape.md` — first newborn-running-skill-on-real-human triggers first verification. |
 | (pending) | research-lead | Verified-by signoff after first 3 distinct user-AiCIV completions with all 6 stance-anchors honored |
 | (pending) | research-lead | Promotion proposal to CONFIRMED status after promotion-gate fires cleanly |
