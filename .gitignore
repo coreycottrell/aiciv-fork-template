@@ -1,0 +1,3 @@
+
+# Runtime session logs — never check these in
+memories/sessions/*.jsonl
