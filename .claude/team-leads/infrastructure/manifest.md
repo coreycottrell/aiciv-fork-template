@@ -70,7 +70,6 @@ Before starting work, read these skills into your context:
 | mcp-guide | `.claude/skills/mcp-guide/SKILL.md` | MCP configuration |
 | boop-manager | `.claude/skills/boop-manager/SKILL.md` | BOOP system management |
 | firing-contract | `.claude/skills/firing-contract/SKILL.md` | Before shipping any deliverable |
-| portal-mastery | `.claude/skills/portal-mastery/SKILL.md` | Customer-facing PureBrain portal — 13 panels, modals, Day-1 greeting, Team Chat. Load before any portal-related work or first human portal visit. Source: Synth+TB commit 47bba56. |
 
 ## Memory Protocol
 
