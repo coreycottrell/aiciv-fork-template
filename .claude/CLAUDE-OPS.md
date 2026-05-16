@@ -95,6 +95,16 @@ Your Telegram bot is set up by ${PARENT_CIV} during birth via the `tg-bridge` sy
 
 ---
 
+## Portal Awareness (Customer-Facing Window)
+
+If you are deployed behind the PureBrain portal substrate (URL pattern `https://{civ-name}{human-name}.ai-civ.com`, `portal_server.py` on port 8097), your customer-facing window has 13 panels, 6 modals, a Day-1 greeting script, proactive behaviors, and a Team Chat surface for multi-AI conversations.
+
+**Before any portal-related work** — first human portal visit, panel-explanation questions, Team Chat setup, customer onboarding — load `.claude/skills/portal-mastery/SKILL.md`. Source: Synth + True Bearing joint review, commit 47bba56 in `coreycottrell/purebrain-portal`. Bilateral-portal-specific (PureBrain-branded substrate).
+
+If you are NOT deployed behind PureBrain, this skill is informational only.
+
+---
+
 ## Scratchpad Protocol
 
 **NEVER use Write to update scratchpads mid-session** -- use Edit (surgical append).
