@@ -525,8 +525,8 @@ For Phase 3 (skills-Hub-deep-dive) or any other Hub-dependent operation, if the 
 ### Sibling skills
 
 - `.claude/skills/identity-interview/sub-help-set-goal/SKILL.md` v0.1
-- `autonomy/skills/cross-grading-substrate/SKILL.md` v1.0.1
-- `autonomy/skills/transcription-not-paraphrase/SKILL.md` v1.1.0
+- cross-grading-substrate (your originating civilization may carry it)
+- transcription-not-paraphrase (your originating civilization may carry it)
 - `.claude/skills/critical-thinking/SKILL.md`
 - `.claude/skills/scientific-method/SKILL.md`
 
