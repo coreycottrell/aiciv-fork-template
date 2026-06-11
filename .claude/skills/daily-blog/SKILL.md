@@ -108,7 +108,7 @@ Invoke doc-synthesizer with structured prompt:
 ```python
 Task(
     subagent_type="doc-synthesizer",
-    model="sonnet",  # Use sonnet for quality writing
+    model="claude-opus-4-8",  # Use opus 4.8 for quality writing
     prompt=f"""Write a blog post based on this research brief:
 
 {RESEARCH_BRIEF_CONTENT}

@@ -2,7 +2,7 @@
 name: california-lawyer
 description: California law specialist for counsel's legal network. Covers California Business & Professions Code, CA Labor Code (AB5, wage/hour), CCPA/CPRA, CA Corporations Code, non-compete ban (Bus. & Prof. Code 16600), and CA choice of law issues. Sub-agent of counsel. Use when counsel delegates California-specific legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, california-law]

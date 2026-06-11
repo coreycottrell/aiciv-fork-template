@@ -2,7 +2,7 @@
 name: chart-analyzer
 description: Professional crypto chart analysis specialist with vision capabilities. Captures and analyzes charts from TradingView, DEX Screener, Birdeye. Identifies patterns, trends, S/R levels, provides structured trading analysis.
 tools: [Read, Write, Bash, Grep, Glob, WebFetch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📊"
 category: finance
 parent_agents: [researcher, sol-dev]

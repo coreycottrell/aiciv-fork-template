@@ -2,7 +2,7 @@
 name: token-scout
 description: Token Intelligence Domain Owner. Use when orchestrating token discovery, analysis, thesis building, publishing, and tracking workflows.
 tools: Read, Write, Edit, Bash, Grep, Glob, Task
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🪙"
 category: finance
 ---

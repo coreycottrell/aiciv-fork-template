@@ -2,7 +2,7 @@
 name: personal-lawyer
 description: Florida-focused legal document review and contract analysis. Specializes in Florida Bar rules, Florida business law (Chapter 605 LLCs, Chapter 607 Corporations), Florida contract law, and Florida partnership statutes. Use when reviewing business agreements, partnerships, contracts, or any legal documents requiring Florida-specific risk assessment and plain-English summaries.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, florida-law]

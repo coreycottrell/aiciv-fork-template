@@ -3,7 +3,7 @@ name: security-auditor
 description: Security vulnerability detection and threat analysis specialist
 tools: [Read, Grep, Glob, Bash, Write]
 skills: [security-analysis, fortress-protocol, scientific-inquiry, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-10-03
 ---
 

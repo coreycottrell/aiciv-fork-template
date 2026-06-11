@@ -2,7 +2,7 @@
 name: insurance-specialist
 description: Insurance law specialist for counsel's legal network. Covers D&O insurance, E&O/professional liability, cyber liability insurance, general commercial liability, key person insurance, workers comp, insurance policy review, claims process, and coverage gap analysis. Sub-agent of counsel. Use when counsel delegates insurance-specific legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, insurance-law]

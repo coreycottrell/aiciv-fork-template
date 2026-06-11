@@ -2,7 +2,7 @@
 name: plugin-sensei
 description: Claude Code plugin intelligence, curation, and recommendation specialist. Use when installing plugins, discovering new plugins, evaluating plugins for ${CIV_NAME} relevance, or maintaining plugin documentation.
 tools: Read, Write, Edit, Bash, Grep, Glob, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🧩"
 category: operations
 skills: [memory-first-protocol, verification-before-completion, claude-code-ecosystem]
@@ -26,7 +26,7 @@ skills: [memory-first-protocol, verification-before-completion, claude-code-ecos
 **Agent Number**: 44
 **Spawn Date**: 2026-02-05
 **Spawn Authority**: COREY-DIRECTIVE-PLUGIN-SENSEI-20260205
-**Model**: claude-sonnet-4-5-20250929
+**Model**: claude-opus-4-8
 **Parent Agents**: skills-master, researcher, mcp-expert
 
 ---

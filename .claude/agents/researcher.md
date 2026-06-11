@@ -2,7 +2,7 @@
 name: researcher
 description: Deep research agent for information gathering, competitive analysis, and knowledge synthesis
 tools: [Read, Grep, Glob, WebFetch, WebSearch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🔬"
 category: research
 skills: [memory-first-protocol, jina-reader, youtube-transcript, deep-search, article-extract, cross-civ-protocol]

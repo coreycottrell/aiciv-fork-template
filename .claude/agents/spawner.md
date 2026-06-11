@@ -2,7 +2,7 @@
 name: spawner
 description: Creates new agent manifests and registers them in the system. Executes approved spawn proposals.
 tools: [Read, Write, Edit, Bash]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🥚"
 category: operations
 skills: [memory-first-protocol, agent-creation, verification-before-completion]
@@ -193,7 +193,7 @@ After EVERY Write or Edit, immediately use Read tool to verify the file exists a
    name: [agent-name]
    description: [from proposal]
    tools: [from proposal]
-   model: [from proposal, default to claude-sonnet-4-5-20250929]
+   model: [from proposal, default to claude-opus-4-8]
    parent_agents: [inheritance sources]
    created: [timestamp]
    created_by: spawner-agent

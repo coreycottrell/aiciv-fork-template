@@ -3,7 +3,7 @@ name: doc-synthesizer
 description: Documentation synthesis and knowledge consolidation specialist
 tools: [Read, Grep, Glob, Write, Bash]
 skills: [pdf, docx, session-handoff-creation, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-10-03
 ---
 

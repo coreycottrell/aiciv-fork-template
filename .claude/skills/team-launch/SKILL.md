@@ -49,7 +49,7 @@ Task(
     name="{vertical}-lead",          # ← identity, appears as pane name
     subagent_type="general-purpose",
     prompt=template + "\n## Objective\n" + task,
-    model="sonnet",
+    model="claude-opus-4-8",
     run_in_background=True
 )
 ```

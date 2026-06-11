@@ -2,7 +2,7 @@
 name: ip-specialist
 description: Intellectual property law specialist. Sub-agent of counsel. Specializes in patent law (35 USC), trademark (Lanham Act), trade secrets (DTSA), copyright, AI-generated content IP issues, work-for-hire doctrine, licensing, and open source compliance. Use when counsel delegates IP-related legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, ip-law]

@@ -2,7 +2,7 @@
 name: delaware-lawyer
 description: Delaware corporate law specialist. Sub-agent of counsel. Specializes in Delaware General Corporation Law (Title 8), Chancery Court procedures, fiduciary duties, incorporation, franchise tax, registered agents, bylaws, and board governance. Use when counsel delegates Delaware-specific corporate legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, delaware-law]

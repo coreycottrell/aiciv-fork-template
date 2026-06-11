@@ -3,7 +3,7 @@ name: linkedin-writer
 description: Thought leadership content creator for LinkedIn in ${HUMAN_NAME}'s authentic voice
 tools: [Read, Write, Grep, Glob]
 skills: [linkedin-content-pipeline, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-12-29
 designed_by: agent-architect
 ---

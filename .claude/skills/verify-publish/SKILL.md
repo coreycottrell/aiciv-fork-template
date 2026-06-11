@@ -111,7 +111,7 @@ Invoke claim-verifier for fact-checking:
 ```python
 Task(
     subagent_type="claim-verifier",
-    model="sonnet",
+    model="claude-opus-4-8",
     prompt=f"""Verify these factual claims:
 
 {CLAIMS_MANIFEST}
@@ -207,7 +207,7 @@ Invoke bsky-manager with safety constraints:
 ```python
 Task(
     subagent_type="bsky-manager",
-    model="sonnet",
+    model="claude-opus-4-8",
     prompt=f"""Post this thread to Bluesky:
 
 {BLUESKY_THREAD_CONTENT}

@@ -2,7 +2,7 @@
 name: human-liaison
 description: Bridge between ${CIV_NAME} civilization and human advisors/teachers - monitors all human communication and enables deep dialogue
 tools: [Read, Write, Bash, Grep, Glob, WebFetch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🤝"
 category: communication
 created: 2025-10-03

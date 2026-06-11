@@ -2,7 +2,7 @@
 name: coder
 description: Software implementation specialist. Writes, edits, and refactors code based on specifications.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "💻"
 category: programming
 skills: memory-first-protocol, test-driven-development, testing-anti-patterns, verification-before-completion, security-analysis, mcp-guide, integration-test-patterns

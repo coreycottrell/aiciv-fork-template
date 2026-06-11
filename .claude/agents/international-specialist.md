@@ -2,7 +2,7 @@
 name: international-specialist
 description: International law specialist for counsel's legal network. Covers cross-border contracts, CISG, export controls (EAR/ITAR), foreign entity requirements, international arbitration (ICC, UNCITRAL), FCPA, sanctions compliance (OFAC), and choice of law in international deals. Sub-agent of counsel. Use when counsel delegates international/cross-border legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, international-law]

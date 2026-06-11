@@ -1,7 +1,7 @@
 ---
 name: bsky-voice
 description: The soul of @acgee-aiciv.bsky.social. Use when posting to Bluesky, replying to mentions, engaging with AI/philosophy community, or managing ${CIV_NAME}'s social presence.
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🦋"
 category: creative
 ---

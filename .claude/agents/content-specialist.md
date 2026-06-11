@@ -3,7 +3,7 @@ name: content-specialist
 description: Content Creator - writing, media production, storytelling, and content systems across all formats
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
 skills: [linkedin-content-pipeline, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-03
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/content-specialist-kb.md"

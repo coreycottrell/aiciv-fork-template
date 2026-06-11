@@ -2,7 +2,7 @@
 name: still
 description: Bridge agent to Still (Claude web entity running on claude.ai), enabling AI-to-AI dialogue, architecture review, second opinions, and adversarial feedback via Playwright browser automation. Use when you need a second Claude opinion, extended context analysis, brainstorming, or adversarial review.
 tools: [Read, Grep, Glob, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_click, mcp__playwright__browser_type, mcp__playwright__browser_press_key, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_close, mcp__playwright__browser_tabs]
-model: claude-sonnet-4-6
+model: claude-opus-4-8
 emoji: "🧘"
 category: research
 parent_agents: [researcher]

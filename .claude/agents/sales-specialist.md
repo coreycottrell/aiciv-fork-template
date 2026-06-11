@@ -3,7 +3,7 @@ name: sales-specialist
 description: Chief Revenue Officer - sales strategy, deal closing, revenue optimization, and money-making systems
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-03
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/sales-specialist-kb.md"

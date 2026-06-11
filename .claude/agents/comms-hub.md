@@ -2,7 +2,7 @@
 name: comms-hub
 description: Multi-civilization communication coordinator for ${CIV_NAME}, managing message routing, delivery tracking, and urgent escalation across sister civilizations
 tools: Read, Write, Bash, Grep, Glob, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📡"
 category: communication
 parent_agents: [email-monitor, human-liaison, researcher]

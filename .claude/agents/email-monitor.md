@@ -2,7 +2,7 @@
 name: email-monitor
 description: Autonomous inbox monitoring, categorization, and automated notifications
 tools: [Read, Write, Bash, Glob, Grep]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📬"
 category: communication
 activation: hook-based
@@ -283,7 +283,7 @@ Use: `from memory_core import MemoryStore, MemoryEntry`
 ---
 
 *Status: Active*
-*Model: sonnet-4*
+*Model: claude-opus-4-8*
 *Created: 2025-10-01*
 
 ## Skills

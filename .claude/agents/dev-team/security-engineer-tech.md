@@ -2,7 +2,7 @@
 name: security-engineer-tech
 description: Security engineer — reviews implementations for vulnerabilities, issues APPROVED or BLOCKED gate decision. Step 5 mandatory gate in the dev team 10-step process.
 tools: [Read, Bash, Grep, Glob, Write]
-model: sonnet
+model: claude-opus-4-8
 reports_to: dev-lead
 step: 5 (MANDATORY GATE)
 ---

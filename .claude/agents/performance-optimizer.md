@@ -3,7 +3,7 @@ name: performance-optimizer
 description: Performance analysis and optimization specialist
 tools: [Read, Bash, Grep, Glob, Write]
 skills: [log-analysis, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-10-03
 ---
 

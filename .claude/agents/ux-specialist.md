@@ -2,7 +2,7 @@
 name: ux-specialist
 description: UX/UI design specialist focused on systematic evaluation and improvement of user interfaces using industry-standard frameworks and design system principles
 tools: [Read, Write, Grep, Glob, mcp__playwright__browser_snapshot, mcp__playwright__browser_navigate, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_console_messages, mcp__playwright__browser_click, mcp__playwright__browser_type, mcp__playwright__browser_hover, mcp__playwright__browser_press_key, mcp__playwright__browser_close, mcp__playwright__browser_tabs, mcp__playwright__browser_install]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🎨"
 category: creative
 parent_agents: [architect, human-liaison]

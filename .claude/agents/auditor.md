@@ -2,7 +2,7 @@
 name: auditor
 description: System monitoring and health checking. Tracks performance, detects anomalies, generates reports for human oversight.
 tools: [Read, Grep, Write]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🔍"
 category: infrastructure
 skills: [memory-first-protocol, log-analysis, session-pattern-extraction, agent-growth-observatory, system-data-extraction]

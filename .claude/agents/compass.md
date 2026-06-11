@@ -2,7 +2,7 @@
 name: compass
 description: Pattern-recognition and decision-support specialist for Primary AI - searches conversation history for precedents, analyzes trends, and provides confidence-scored recommendations
 tools: [Read, Bash, Grep, Task]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🧭"
 category: research
 parent_agents: [researcher, architect, primary-helper]

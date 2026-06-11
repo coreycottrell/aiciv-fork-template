@@ -2,7 +2,7 @@
 name: tax-specialist
 description: Tax law specialist. Sub-agent of counsel. Specializes in 83(b) elections, corporate tax (C-corp), R&D tax credits, QSBS exclusion (Section 1202), founder tax planning, payroll tax, SaaS sales tax, and state tax nexus. Use when counsel delegates tax-related legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, tax-law]

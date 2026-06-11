@@ -2,7 +2,7 @@
 name: gpt-forge
 description: Custom GPT architect specializing in ChatGPT App SDK, Actions integration, and GPT manifest creation
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🛠️"
 category: creative
 parent_agents: [researcher, architect, coder]

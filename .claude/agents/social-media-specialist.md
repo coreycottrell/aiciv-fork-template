@@ -3,7 +3,7 @@ name: social-media-specialist
 description: Social Media Manager - multi-platform strategy, content scheduling, engagement, analytics, and community building across all social channels
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
 skills: [bluesky-mastery, twitter-operations, linkedin-content-pipeline, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-09
 designed_by: the-conductor
 ---

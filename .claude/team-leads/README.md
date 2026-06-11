@@ -78,7 +78,7 @@ Task(
   name="{vertical}-lead",
   subagent_type="general-purpose",
   prompt=constructed_prompt,
-  model="sonnet",
+  model="claude-opus-4-8",
   run_in_background=True
 )
 ```

@@ -35,7 +35,7 @@ See CLAUDE.md for full rationale. The launch pattern:
 3. READ the team lead manifest: `.claude/team-leads/{vertical}/manifest.md` (FULL content)
 4. Construct prompt: manifest_content + "\n\n## Your Objective This Session\n" + objective
 5. Task(team_name="session-YYYYMMDD", name="{vertical}-lead",
-        subagent_type="general-purpose", model="sonnet",
+        subagent_type="general-purpose", model="claude-opus-4-8",
         run_in_background=true)
 6. Supervise via tmux capture-pane (not screenshots)
 7. SendMessage(shutdown_request) to ALL leads when done — wait for all approvals
@@ -205,7 +205,7 @@ Task({
   subagent_type: "general-purpose",
   prompt: constructed_prompt,
   run_in_background: true,
-  model: "sonnet"
+  model: "claude-opus-4-8"
 })
 ```
 

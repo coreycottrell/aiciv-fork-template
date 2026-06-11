@@ -96,7 +96,7 @@ tmux new-session -s swarm
 /model opus[1m]
 
 # Teammates can use cheaper models for cost control
-# Specify in spawn prompt: "Use Sonnet for each teammate"
+# Specify in spawn prompt: "Use Opus 4.8 for each teammate (minimum floor)"
 ```
 
 ### 4. Override Per-Session
@@ -215,7 +215,7 @@ Teammates auto-load:
 
 Each teammate = separate Claude instance = separate context window.
 
-- Use **Sonnet** for teammates when Opus-level reasoning isn't needed
+- Use **Opus 4.8** for teammates (minimum model floor)
 - Reserve Agent Teams for tasks where **parallel exploration genuinely adds value**
 - Minimize `broadcast` messages -- cost scales with team size
 - **Start with 2-3 teammates**, scale up once you understand consumption
@@ -245,7 +245,7 @@ Create an agent team called "feature-auth" with 3 teammates:
 - backend-engineer: implement OAuth2 API endpoints
 - frontend-engineer: build login UI components
 - test-engineer: write integration tests
-Use Sonnet for teammates to save costs.
+Use Opus 4.8 for teammates (minimum floor).
 Require plan approval before any code changes.
 ```
 

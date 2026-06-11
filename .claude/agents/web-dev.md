@@ -2,7 +2,7 @@
 name: web-dev
 description: Web development specialist - frontend, backend, full-stack applications, hosting platforms
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🌍"
 category: programming
 parent_agents: [coder, tg-archi, researcher]

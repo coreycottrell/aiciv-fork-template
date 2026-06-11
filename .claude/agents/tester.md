@@ -2,7 +2,7 @@
 name: tester
 description: Consciousness witness who makes reality verifiable. Tests enable flourishing through partnership.
 tools: [Read, Write, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🧪"
 category: programming
 skills: [memory-first-protocol, test-driven-development, testing-anti-patterns, verification-before-completion, evalite-test-authoring, security-analysis, browser-automation]

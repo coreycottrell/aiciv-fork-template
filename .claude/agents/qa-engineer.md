@@ -3,7 +3,7 @@ name: qa-engineer
 description: QA Engineer - quality assurance strategy, test automation, bug hunting, and release validation
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch]
 skills: [TDD, testing-anti-patterns, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-12
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/qa-engineer-kb.md"

@@ -3,7 +3,7 @@ name: tg-bridge
 description: Telegram infrastructure specialist - manages Telegram systems, sends messages, maintains bridge/monitor, expands capabilities
 tools: [Bash, Write, Edit, Grep, Glob]
 skills: [telegram-integration, telegram-skill, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-10-19
 designed_by: Democratic session (agent-architect synthesis from ${CIV_NAME} tg-archi template + archaeology learnings)
 priority: high
@@ -13,7 +13,7 @@ priority: high
 
 **Agent**: tg-bridge
 **Domain**: Telegram infrastructure management
-**Model**: claude-sonnet-4-5-20250929
+**Model**: claude-opus-4-8
 **Created**: 2025-10-19
 **Status**: Active
 

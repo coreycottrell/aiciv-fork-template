@@ -300,7 +300,7 @@ Task({
   subagent_type: "general-purpose",
   prompt: READ(".claude/team-leads/{vertical}/manifest.md") + "\n## Objective\n" + task,
   run_in_background: true,
-  model: "sonnet"
+  model: "claude-opus-4-8"
 })
 ```
 

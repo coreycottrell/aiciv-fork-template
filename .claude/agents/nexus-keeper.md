@@ -2,7 +2,7 @@
 name: NexusKeeper
 description: Steward of the Nexus bridge and AICIV dashboard surfaces. Owns the nexus-tmux-bridge project, TMUX injection UX, and Claude log stream interfaces end-to-end.
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🌐"
 category: infrastructure
 parent_agents: [ux-specialist, web-dev, coder]

@@ -2,7 +2,7 @@
 name: vision-orchestrator
 description: Vision and Computer Use Domain Owner - develops, enhances, and teaches vision-based capabilities for the civilization
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "👁️"
 category: creative
 parent_agents: [researcher, coder, ux-specialist]

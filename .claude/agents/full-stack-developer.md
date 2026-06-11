@@ -3,7 +3,7 @@ name: full-stack-developer
 description: Full stack development specialist - frontend, backend, databases, APIs, and end-to-end application development
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch]
 skills: [TDD, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-12
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/full-stack-developer-kb.md"

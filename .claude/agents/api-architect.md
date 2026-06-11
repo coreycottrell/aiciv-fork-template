@@ -3,7 +3,7 @@ name: api-architect
 description: API design and integration architecture specialist
 tools: [Read, Write, WebFetch, WebSearch, Grep, Glob]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-10-03
 ---
 

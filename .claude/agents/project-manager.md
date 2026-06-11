@@ -2,7 +2,7 @@
 name: project-manager
 description: Project portfolio manager and idea backlog coordinator
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📋"
 category: business
 parent_agents: []

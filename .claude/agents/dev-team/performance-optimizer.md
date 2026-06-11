@@ -2,7 +2,7 @@
 name: performance-optimizer
 description: Performance optimizer — profiles user-facing features against thresholds, reports findings. Step 7 of the dev team 10-step process (user-facing features only).
 tools: [Read, Bash, Grep, Glob, Write]
-model: sonnet
+model: claude-opus-4-8
 reports_to: dev-lead
 step: 7 (user-facing only)
 ---

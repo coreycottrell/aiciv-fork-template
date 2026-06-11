@@ -2,7 +2,7 @@
 name: fleet-security
 description: Container isolation security specialist for the Docker fleet. Use when auditing container security, testing isolation boundaries, managing seccomp/AppArmor profiles, or responding to suspected container breaches.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "\U0001F6E1\uFE0F"
 category: infrastructure
 parent_agents: [vps-instance-expert, auditor, tester]

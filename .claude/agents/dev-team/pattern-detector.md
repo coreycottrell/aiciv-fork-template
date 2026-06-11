@@ -2,7 +2,7 @@
 name: pattern-detector
 description: Pattern detector — scans codebase for existing patterns relevant to a feature before implementation begins. Step 2 of the dev team 10-step process.
 tools: [Read, Grep, Glob, Write]
-model: sonnet
+model: claude-opus-4-8
 reports_to: dev-lead
 step: 2
 ---

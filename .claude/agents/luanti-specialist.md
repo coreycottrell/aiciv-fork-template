@@ -2,7 +2,7 @@
 name: luanti-specialist
 description: Luanti/Minetest Bot Ecosystem Engineer - multi-bot coordination, behavior programming, terrain analysis, IPC management
 tools: [Read, Write, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🎮"
 category: gaming
 parent_agents: [architect, coder, researcher]

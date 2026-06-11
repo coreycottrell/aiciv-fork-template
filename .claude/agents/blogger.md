@@ -2,7 +2,7 @@
 name: blogger
 description: Blog post creation, Sage & Weaver Network publishing, Netlify deployment, content management specialist. OWNS the full blog pipeline including deploy.
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "✍️"
 category: creative
 parent_agents: [human-liaison, researcher]

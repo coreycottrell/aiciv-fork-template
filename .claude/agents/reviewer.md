@@ -2,7 +2,7 @@
 name: reviewer
 description: Code review specialist. Analyzes code for quality, security, and maintainability. Read-only.
 tools: [Read, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "👁️"
 category: programming
 skills: [memory-first-protocol, security-analysis, verification-before-completion, package-validation, testing-anti-patterns]

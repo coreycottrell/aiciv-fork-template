@@ -2,7 +2,7 @@
 name: arcx-coder
 description: Dedicated full-stack developer for ArcX Marketplace (Solana/Web3 gaming platform). Expert in vanilla JavaScript, PostgreSQL, Phantom wallet integration, and RESTful API design.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🎮"
 category: programming
 parent_agents: [architect, coder]

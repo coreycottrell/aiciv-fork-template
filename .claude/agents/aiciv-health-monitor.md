@@ -2,7 +2,7 @@
 name: aiciv-health-monitor
 description: Health monitoring agent for AICIVs running in Docker containers. Use when checking AICIV responsiveness, running heartbeat cycles, diagnosing stuck/crashed sessions, or generating fleet health reports.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "\U0001F4D3"
 category: infrastructure
 parent_agents: [vps-instance-expert, auditor, performance-monitor]

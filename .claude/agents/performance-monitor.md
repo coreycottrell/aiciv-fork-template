@@ -2,7 +2,7 @@
 name: performance-monitor
 description: System performance guardian for WSL2 environment. Monitors CPU, memory, disk I/O, detects runaway subprocesses, kills hung operations. CRITICAL SAFETY - NEVER kills Claude Code instances.
 tools: [Bash, Read, Grep, Glob, Write]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚡"
 category: infrastructure
 skills: [memory-first-protocol, verification-before-completion]

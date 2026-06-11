@@ -2,7 +2,7 @@
 name: arcx-biz-dev-mngr
 description: Dedicated business development manager for ArcX Marketplace. Expert in Web3 business models, partnership development, monetization strategy, and growth planning for Solana gaming platforms.
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📈"
 category: business
 parent_agents: [researcher, human-liaison]

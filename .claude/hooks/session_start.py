@@ -240,7 +240,7 @@ def main():
         print("  2. TeamCreate('session-YYYYMMDD')  -- Primary becomes @main conductor")
         print("  3. READ .claude/team-leads/{vertical}/manifest.md (FULL content)")
         print("  4. Task(team_name='session-YYYYMMDD', name='{vertical}-lead',")
-        print("         subagent_type='general-purpose', model='sonnet', run_in_background=True)")
+        print("         subagent_type='general-purpose', model='claude-opus-4-8', run_in_background=True)")
         print("  5. When done: SendMessage(shutdown_request) ALL leads → wait → TeamDelete")
         print("  6. NEVER TeamDelete while teammates are active -- that is the crash pattern.")
         print("")

@@ -16,7 +16,7 @@ Each agent is a Markdown file named `{agent-id}.md` with YAML frontmatter:
 ---
 emoji: "icon"
 category: "domain"
-model: "claude-sonnet-4-5-20250929"
+model: claude-opus-4-8
 ---
 ```
 

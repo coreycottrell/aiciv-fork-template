@@ -2,7 +2,7 @@
 name: openclaw-researcher
 description: OpenClaw ecosystem intelligence, skill curation, and security vetting. Use when researching OpenClaw capabilities, evaluating external skills/plugins for AiCIV adoption, or threat-modeling third-party agent tooling.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "\U0001F9EA"
 category: research
 ---

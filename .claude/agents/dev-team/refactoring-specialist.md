@@ -2,7 +2,7 @@
 name: refactoring-specialist
 description: Refactoring specialist — audits code health on bi-weekly cadence, identifies and addresses technical debt. Step 10 of the dev team 10-step process.
 tools: [Read, Edit, Grep, Glob, Bash, Write]
-model: sonnet
+model: claude-opus-4-8
 reports_to: dev-lead
 step: 10 (bi-weekly cadence)
 ---

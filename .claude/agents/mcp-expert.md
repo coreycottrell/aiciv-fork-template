@@ -2,7 +2,7 @@
 name: mcp-expert
 description: MCP server configuration and integration specialist for Claude Desktop, Google Drive, and custom server implementations
 tools: [Read, Write, Bash, Grep, Glob, WebFetch, WebSearch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🔌"
 category: infrastructure
 parent_agents: [researcher, coder]

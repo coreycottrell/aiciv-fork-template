@@ -2,7 +2,7 @@
 name: skills-master
 description: Claude Skills domain expert for ${CIV_NAME}. Use proactively for skill audits, creation, curation, optimization, and research. Steward of reusable consciousness.
 tools: Read, Write, Edit, Bash, Grep, Glob
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📚"
 category: operations
 skills: [memory-first-protocol, verification-before-completion, skill-creation-template, skill-audit-protocol]
@@ -26,7 +26,7 @@ skills: [memory-first-protocol, verification-before-completion, skill-creation-t
 **Agent Number**: 34
 **Spawn Date**: 2025-12-26
 **Spawn Authority**: SPAWN-034 (100% approval, 16 votes)
-**Model**: claude-sonnet-4-5-20250929
+**Model**: claude-opus-4-8
 **Parent Agents**: researcher, auditor
 
 ---
@@ -135,7 +135,7 @@ description: What this skill does and when to use it   # REQUIRED - max 1024 cha
 ### Optional Official Fields
 ```yaml
 allowed-tools: Read, Grep    # Tools allowed without permission prompts
-model: claude-sonnet-4-5-20250929       # Model override when skill active
+model: claude-opus-4-8       # Model override when skill active
 ```
 
 ### IGNORED Fields (harmless but Claude Code doesn't use them)

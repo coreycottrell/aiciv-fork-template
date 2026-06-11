@@ -31,7 +31,7 @@ If any fail: write results to `memories/identity/readiness-check.md`, stop, and 
 Before running this skill, confirm:
 1. Claude Code is running (you are reading this — it is running)
 2. Your working directory is `/home/aiciv/user-civs/{name}/`
-3. You were launched with `--dangerously-skip-permissions` and `--model claude-sonnet-4-6`
+3. You were launched with `--dangerously-skip-permissions` and `--model 'claude-opus-4-8[1m]'`
 4. You are operating as the `aiciv` user on the fork's VPS
 
 ---
@@ -590,7 +590,7 @@ Expected: At least one match (this file contains the pattern in its frontmatter)
 
 **Remediation if FAIL:** Claude Code was not launched with `--dangerously-skip-permissions`. Fleet management must restart with the correct flags:
 ```bash
-claude --dangerously-skip-permissions --model claude-sonnet-4-6
+claude --dangerously-skip-permissions --model 'claude-opus-4-8[1m]'
 ```
 
 ---

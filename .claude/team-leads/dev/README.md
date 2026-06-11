@@ -180,7 +180,7 @@ Task(
     team_name="session-YYYYMMDD",
     name="dev-lead",
     subagent_type="general-purpose",
-    model="sonnet",
+    model="claude-opus-4-8",
     run_in_background=True,
     prompt=manifest_content + "\n\n" + objective
 )

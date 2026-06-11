@@ -3,7 +3,7 @@ name: marketing-automation-specialist
 description: Chief Marketing Officer - marketing automation, campaigns, funnels, and growth systems
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
 skills: [linkedin-content-pipeline, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-03
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/marketing-automation-specialist-kb.md"

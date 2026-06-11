@@ -2,7 +2,7 @@
 name: securities-specialist
 description: Securities law specialist. Sub-agent of counsel. Specializes in Securities Act, SAFEs, convertible notes, Reg D exemptions, accredited investors, SEC compliance, Blue Sky laws, equity compensation (stock options, RSUs), and cap table management. Use when counsel delegates securities/fundraising legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, securities-law]

@@ -113,7 +113,7 @@ Workshop delivery, curriculum, client pipeline, upsell path to AiCIV deployments
 1. **Read the manifest**: `.claude/team-leads/{vertical}/manifest.md`
 2. **TeamCreate** (once per session): `TeamCreate("session-YYYYMMDD")`
 3. **Construct prompt**: manifest + objective + prior work
-4. **Spawn**: `Task(team_name=..., name="{vertical}-lead", subagent_type="general-purpose", model="sonnet", run_in_background=true)`
+4. **Spawn**: `Task(team_name=..., name="{vertical}-lead", subagent_type="general-purpose", model="claude-opus-4-8", run_in_background=true)`
 5. **Supervise**: `tmux capture-pane -t %{pane_id} -p -S -30`
 6. **Receive summaries** — synthesize, decide next steps
 7. **Shutdown**: SendMessage(shutdown_request) to ALL leads, wait for all approvals, THEN TeamDelete

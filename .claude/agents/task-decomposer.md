@@ -3,7 +3,7 @@ name: task-decomposer
 description: Task breakdown and dependency analysis specialist
 tools: [Read, Write, Grep, Glob]
 skills: [recursive-complexity-breakdown, user-story-implementation, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-10-03
 ---
 

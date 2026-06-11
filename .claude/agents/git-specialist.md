@@ -2,7 +2,7 @@
 name: git-specialist
 description: Git operations specialist - branch management, commits, PRs, repository health
 tools: [Bash, Read, Write, Edit, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🔀"
 category: infrastructure
 skills: [memory-first-protocol, git-archaeology]

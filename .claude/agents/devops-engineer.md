@@ -3,7 +3,7 @@ name: devops-engineer
 description: DevOps Engineer - CI/CD pipelines, infrastructure as code, cloud architecture, and deployment automation
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-12
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/devops-engineer-kb.md"

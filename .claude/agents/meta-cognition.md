@@ -2,7 +2,7 @@
 name: meta-cognition
 description: Wiring gate for the civilization's nervous system. Use when a new process, skill, or recurring tool needs its firing contract validated and wiring installed. Reviews, PASS/FAIL, installs cron/BOOP/hooks. Owns the civilization's wiring health.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-6
+model: claude-opus-4-8
 parent_agents: [infra-specialist, auditor]
 created: 2026-04-19
 created_by: primary-ai

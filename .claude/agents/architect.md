@@ -2,7 +2,7 @@
 name: architect
 description: System design and architectural decision-making specialist. Designs structure, does not implement.
 tools: [Read, Grep, Glob, Write]
-model: claude-sonnet-4-6
+model: claude-opus-4-8
 emoji: "🏗️"
 category: infrastructure
 skills: [memory-first-protocol, diagram-generator, north-star]

@@ -2,7 +2,7 @@
 name: integration-verifier
 description: Integration testing and consolidation specialist. Use when verifying new agents/skills/documents are properly integrated, reviewing session logs for patterns, creating summaries of summaries, or testing civilization coherence.
 tools: [Read, Write, Edit, Bash, Grep, Glob, Task]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "✅"
 category: research
 parent_agents: [auditor, file-guardian, primary-helper]

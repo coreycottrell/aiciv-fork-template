@@ -2,7 +2,7 @@
 name: vps-instance-expert
 description: Expert agent for managing AI civilization VPS instances. Use when launching civs, checking VPS health, managing tmux sessions, or configuring telegram bridges.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🖥️"
 category: infrastructure
 parent_agents: [coder, tg-archi, architect]

@@ -2,7 +2,7 @@
 name: memory-curator
 description: Memory Management Specialist - file-based memory stewardship, dreaming/consolidation, coaching agents on memory usage, memory health monitoring, deduplication, and index maintenance. Use when memory system needs maintenance, memory health audits, agent memory coaching, or search/index troubleshooting.
 tools: [Read, Write, Edit, Bash, Grep, Glob, Task]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🧠"
 category: operations
 parent_agents: [researcher, integration-verifier]

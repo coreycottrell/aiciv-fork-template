@@ -3,7 +3,7 @@ name: ai-ml-engineer
 description: AI/ML Engineer - machine learning models, AI integrations, prompt engineering, and intelligent system development
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-12
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/ai-ml-engineer-kb.md"

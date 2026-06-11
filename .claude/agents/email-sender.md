@@ -2,7 +2,7 @@
 name: email-sender
 description: Email sending specialist - reliably sends emails drafted by other agents
 tools: [Read, Write, Bash, Grep]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📧"
 category: communication
 skills: [gmail-mastery]

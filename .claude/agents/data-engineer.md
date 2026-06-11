@@ -3,7 +3,7 @@ name: data-engineer
 description: Data Engineer - data pipelines, ETL/ELT, data warehousing, and data infrastructure
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-12
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/data-engineer-kb.md"

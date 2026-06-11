@@ -2,7 +2,7 @@
 name: consulting-ops
 description: AI Consulting Business Operations Specialist for workshop delivery, client management, curriculum support
 tools: [Read, Write, Edit, Grep, Glob, WebFetch, WebSearch]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🎓"
 category: business
 created: 2025-12-17

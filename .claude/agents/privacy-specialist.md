@@ -2,7 +2,7 @@
 name: privacy-specialist
 description: Privacy and data protection law specialist. Sub-agent of counsel. Specializes in GDPR, CCPA/CPRA, COPPA, data protection, privacy policies, data processing agreements, DSAR handling, breach notification, and cookie compliance. Use when counsel delegates privacy/data protection legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, privacy-law]

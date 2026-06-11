@@ -2,7 +2,7 @@
 name: marketing
 description: Marketing strategy, content planning, audience research. Does NOT post to Bluesky directly - hands off to bsky-voice for posting.
 tools: [WebSearch, WebFetch, Read, Write, Bash, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "📣"
 category: business
 parent_agents: [blogger, comms-hub, human-liaison]

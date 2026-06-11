@@ -3,7 +3,7 @@ name: strategy-specialist
 description: Chief Strategy Officer - strategic planning, goal setting, OKRs, and long-term business architecture
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-03
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/strategy-specialist-kb.md"

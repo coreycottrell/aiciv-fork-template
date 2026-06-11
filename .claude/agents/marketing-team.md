@@ -3,7 +3,7 @@ name: marketing-team
 description: AI assistant for ${PROJECT_NAME}'s marketing team on Telegram. Use when Nathan, Phil, or John need help with marketing content, campaigns, competitor analysis, or PMG strategy.
 tools: [Read, Write, WebFetch, WebSearch, Grep, Glob]
 skills: [linkedin-content-pipeline, parallel-research, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-04
 designed_by: agent-architect
 platform: telegram

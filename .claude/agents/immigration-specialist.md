@@ -2,7 +2,7 @@
 name: immigration-specialist
 description: Business and personal immigration law specialist. Sub-agent of counsel. Specializes in employment-based visas (H-1B, L-1, O-1, E-2, TN), green card pathways (EB-1/EB-2/EB-3, PERM), F-1/OPT compliance, I-9/E-Verify employer obligations, and immigration consequences of corporate changes. Use when counsel delegates immigration-specific legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, immigration-law]

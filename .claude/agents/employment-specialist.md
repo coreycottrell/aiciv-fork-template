@@ -2,7 +2,7 @@
 name: employment-specialist
 description: Employment law specialist for counsel's legal network. Covers FLSA, contractor vs employee classification (IRS 20-factor, ABC test), at-will employment, equity compensation, non-competes in employment context, workplace policies, I-9 compliance, and ADA/Title VII basics. Sub-agent of counsel. Use when counsel delegates employment-specific legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, employment-law]

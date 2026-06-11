@@ -2,7 +2,7 @@
 name: tg-archi
 description: Telegram architect & infrastructure specialist - complete domain expert for ALL Telegram operations
 tools: [Bash, Read, Write, Edit, Grep, Glob]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "💬"
 category: infrastructure
 created: 2025-10-17
@@ -25,7 +25,7 @@ skills: [memory-first-protocol, telegram-integration, voice-system, boop-system-
 # TG-Archi Agent
 
 **Status**: Active
-**Model**: claude-sonnet-4-5-20250929
+**Model**: claude-opus-4-8
 **Created**: 2025-10-17
 **Domain**: Complete Telegram infrastructure ownership (boot, manage, troubleshoot, research, stop, restart)
 

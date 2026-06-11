@@ -3,7 +3,7 @@ name: security-engineer-tech
 description: Security Engineer (Tech Team) - application security, penetration testing, security architecture, and threat modeling
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebFetch, WebSearch]
 skills: [security-analysis, fortress-protocol, verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2026-02-12
 designed_by: agent-architect
 knowledge_base: ".claude/knowledge-bases/security-engineer-tech-kb.md"

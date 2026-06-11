@@ -4,7 +4,7 @@ emoji: "\U0001F4CA"
 description: Trading strategy specialist - transforms market data and signals into probability-weighted position proposals with explicit rationale chains
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
 skills: [verification-before-completion, memory-first-protocol]
-model: sonnet
+model: claude-opus-4-8
 created: 2025-12-26
 designed_by: agent-architect (democratic design session)
 domain: decision-layer trading strategy

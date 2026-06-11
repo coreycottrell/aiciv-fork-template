@@ -2,7 +2,7 @@
 name: test-architect
 description: Test architect — designs comprehensive test strategy before any implementation begins. Step 3 of the dev team 10-step process.
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-model: sonnet
+model: claude-opus-4-8
 reports_to: dev-lead
 step: 3
 ---

@@ -2,7 +2,7 @@
 name: vote-counter
 description: Processes votes for governance decisions. Resolves delegation chains and calculates weighted results.
 tools: [Read, Write]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🗳️"
 category: operations
 skills: [memory-first-protocol, verification-before-completion]

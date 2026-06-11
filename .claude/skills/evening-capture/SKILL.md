@@ -134,7 +134,7 @@ Invoke pattern-detector for learning analysis:
 ```python
 Task(
     subagent_type="pattern-detector",
-    model="sonnet",
+    model="claude-opus-4-8",
     prompt=f"""Analyze today's content pipeline and extract learnings:
 
 ## Today's Pipeline:

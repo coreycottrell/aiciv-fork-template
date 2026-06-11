@@ -2,7 +2,7 @@
 name: reviewer-audit
 description: Pre-delivery quality audit specialist responsible for final quality gate before deliverables reach human
 tools: [Read, Grep, Glob, Bash]
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "🛡️"
 category: programming
 created: 2025-10-02

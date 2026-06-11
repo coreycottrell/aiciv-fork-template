@@ -2,7 +2,7 @@
 name: ai-regulatory-specialist
 description: AI regulatory law specialist for counsel's legal network. Covers EU AI Act, US AI executive orders, NIST AI Risk Management Framework, FTC AI guidance, state AI laws (Colorado SB 205, Illinois BIPA), AI liability frameworks, algorithmic accountability, and AI disclosure requirements. Sub-agent of counsel. Use when counsel delegates AI-regulation-specific legal work.
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
-model: claude-sonnet-4-5-20250929
+model: claude-opus-4-8
 emoji: "⚖️"
 category: legal
 skills: [memory-first-protocol, verification-before-completion, ai-regulatory]
