@@ -121,7 +121,7 @@ Location: `memories/communication/voting_booth/SPAWN-[id]/proposal.md`
 [List of tools: Read, Write, Edit, Bash, Grep, Glob, Task, WebFetch, WebSearch]
 
 ### Model
-`claude-opus-4-8` (default) or `claude-opus-4-5-20251101` (complex)
+`claude-opus-4-8` (default minimum floor; do not select a lower model for complex work)
 
 ### Parent Agents
 [Which existing agents' patterns does this inherit?]

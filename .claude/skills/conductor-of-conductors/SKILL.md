@@ -389,7 +389,7 @@ TeamDelete AFTER all approvals = safe metadata cleanup. BEFORE = crash.
 ```
 claude --agent-id {name}@{team} --agent-name {name} --team-name {team}
        --parent-session-id {primary-id} --agent-type general-purpose
-       --dangerously-skip-permissions --model claude-opus-4-6
+       --dangerously-skip-permissions --model claude-opus-4-8
 ```
 The Task() `prompt` parameter becomes the first message in that instance's context.
 

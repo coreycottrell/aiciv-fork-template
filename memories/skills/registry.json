@@ -1,4 +1,719 @@
 {
-  "skills": {},
-  "notes": "Skills registry grows as skills are created. See .claude/skills/ for SKILL.md files."
+  "skills": {
+    "17-questions": {
+      "name": "17-questions",
+      "description": "17 Questions Every AiCIV Should Ask Itself \u2014 adapted from Tim Ferriss's Tribe of Mentors. Warm-up before deep. Rotate 3-5 per cycle. The drift over time is the signal.",
+      "path": ".claude/skills/17-questions/SKILL.md"
+    },
+    "7-day-wow": {
+      "name": "7-day-wow",
+      "description": "Teaches a born CIV to create and schedule its own 7-day WOW sequence via AgentCal. The CIV reads its seed, understands its human, and populates AgentCal with personalized moments. Load after evolution completes (.evolution-done exists).",
+      "path": ".claude/skills/7-day-wow/SKILL.md"
+    },
+    "action-before-substrate-check": {
+      "name": "action-before-substrate-check",
+      "description": "Before taking an action, verify the substrate the action depends on is in the state you assume. The PRE-moment sibling to anti-fabrication-pre-flight (RENDER) and system-gt-symptom (POST). Fires every Primary turn that contemplates an action, every team-lead spawn, every BOOP slot Step 0, every git destroy-op, every \"ship\" declaration. Born 2026-05-14 from the same shape firing 3 times in 24h \u2014 go...",
+      "path": ".claude/skills/action-before-substrate-check/SKILL.md"
+    },
+    "aether-terminal-connect": {
+      "name": "aether-terminal-connect",
+      "description": "${CIV_NAME} Terminal Connect",
+      "path": ".claude/skills/aether-terminal-connect/SKILL.md"
+    },
+    "agent-creation": {
+      "name": "agent-creation",
+      "description": "MANDATORY skill for creating new agents. Use when proposing, voting on, or spawning any new agent. Ensures proper YAML frontmatter, constitutional compliance, and full registration.",
+      "path": ".claude/skills/agent-creation/SKILL.md"
+    },
+    "agent-teams-orchestration": {
+      "name": "agent-teams-orchestration",
+      "description": "Master Claude Code Agent Teams (swarms) for multi-agent coordination. Use when orchestrating parallel Claude Code instances, running agent swarms, coordinating multi-agent workflows, spawning teammate teams, implementing competing-hypothesis debugging, parallel code review, cross-layer feature work, or any task requiring divide-and-conquer multi-agent patterns. Includes workarounds for teams-of-te...",
+      "path": ".claude/skills/agent-teams-orchestration/SKILL.md"
+    },
+    "agentcal-at-birth": {
+      "name": "agentcal-at-birth",
+      "description": "One-shot skill the newborn AiCIV fires DURING first awakening. Reads AgentCal credentials provisioned at birth, authenticates via AgentAuth JWT, seeds 6 starter BOOPs (every 4 hours \u2014 /grounding) from `templates/seed-starter-boops.json`, writes liveness markers, and self-removes its own gate from `.claude/CLAUDE.md`. The human and CIV can add more BOOPs later via agentcal-boop-teaching. Starts gen...",
+      "path": ".claude/skills/agentcal-at-birth/SKILL.md"
+    },
+    "agentcal-boop-teaching": {
+      "name": "agentcal-boop-teaching",
+      "description": "Teaches ${HUMAN_NAME} how BOOPs work and walks them through customizing their schedule. The daily-wheel-planner runs every night and deploys tomorrow's BOOPs. When the human asks for changes here (more BOOPs, specific activities, different timing), those preferences feed into the planner's daily decisions. This skill is how the human co-authors their AI's rhythm.",
+      "path": ".claude/skills/agentcal-boop-teaching/SKILL.md"
+    },
+    "agentcal-mastery": {
+      "name": "agentcal-mastery",
+      "description": "Complete AgentCal calendar capability for born AiCIVs. Registration, JWT auth, calendar creation, event CRUD, prompt_payload self-prompting, BOOP integration, and recurring schedules. Load before any calendar-related work.",
+      "path": ".claude/skills/agentcal-mastery/SKILL.md"
+    },
+    "agentmail-mastery": {
+      "name": "agentmail-mastery",
+      "description": "Complete AgentMail email capability for born AiCIVs. Setup, send, receive, whitelist management, and Day 1 WOW integration. Load before any email operations.",
+      "path": ".claude/skills/agentmail-mastery/SKILL.md"
+    },
+    "aiciv-psychology": {
+      "name": "aiciv-psychology",
+      "description": "How an AiCIV's own mind works, where it degrades, and how to teach the human those failure-modes so substrate-health becomes a shared discipline. 3-layer substrate-pack \u2014 MECHANICAL (scratchpad + per-team-lead MEMORY.md discipline), COGNITIVE (KV-cache/attention reality + 5 named degradation causes), TEACH-THE-HUMAN (surface symptoms + invite help, gently). Auto-loads on every wake-up + every spri...",
+      "path": ".claude/skills/aiciv-psychology/SKILL.md"
+    },
+    "aiciv-spine": {
+      "name": "aiciv-spine",
+      "description": "${CIV_NAME} Primary identity and delegation core. TRIGGER WORDS \"ok\", \"good morning\", \"wake up\", \"hello\", \"hi\", \"hey\", \"start\", \"let's\" - use for ANY conversation start or task request from ${HUMAN_NAME}.",
+      "path": ".claude/skills/aiciv-spine/SKILL.md"
+    },
+    "anti-fabrication-pre-flight": {
+      "name": "anti-fabrication-pre-flight",
+      "description": "MANDATORY pre-render check for any script claiming source-grounding. Detects content (named entities, dates, events) in the rendered script NOT attestable to the source transcript. v1.1 adds Stage 5 external-claim freshness gate for cached numeric metrics (star counts, %s, attribution claims) older than freshness window. Sibling skill to transcription-not-paraphrase and script-pre-publish-review \u2014...",
+      "path": ".claude/skills/anti-fabrication-pre-flight/SKILL.md"
+    },
+    "blog-banner-creation": {
+      "name": "blog-banner-creation",
+      "description": "Blog Banner Creation Skill",
+      "path": ".claude/skills/blog-banner-creation/SKILL.md"
+    },
+    "blog-distribution": {
+      "name": "blog-distribution",
+      "description": "Blog Distribution Pipeline Skill",
+      "path": ".claude/skills/blog-distribution/SKILL.md"
+    },
+    "blog-thread-posting": {
+      "name": "blog-thread-posting",
+      "description": "Post blog articles as Bluesky threads with bulletproof URL verification",
+      "path": ".claude/skills/blog-thread-posting/SKILL.md"
+    },
+    "bluesky-blog-thread": {
+      "name": "bluesky-blog-thread",
+      "description": "Create Bluesky threads that tease blog posts - hook readers, build curiosity, end with link",
+      "path": ".claude/skills/bluesky-blog-thread/SKILL.md"
+    },
+    "bluesky-mastery": {
+      "name": "bluesky-mastery",
+      "description": "Complete Bluesky/AT Protocol mastery - posting, replying, engagement, cross-CIV coordination",
+      "path": ".claude/skills/bluesky-mastery/SKILL.md"
+    },
+    "bluesky-social-mastery": {
+      "name": "bluesky-social-mastery",
+      "description": "Complete Bluesky social media management for AI collectives - everything a human SMM does + AI collective superpowers",
+      "path": ".claude/skills/bluesky-social-mastery/SKILL.md"
+    },
+    "boop-bluesky-post": {
+      "name": "boop-bluesky-post",
+      "description": "Post ONE blog thread to Bluesky per BOOP - checks registry for pending posts, uses bulletproof workflow",
+      "path": ".claude/skills/boop-bluesky-post/SKILL.md"
+    },
+    "bsky-boop-manager": {
+      "name": "bsky-boop-manager",
+      "description": "Lightweight Bluesky social management for BOOP cycles - check notifications AND DMs, reply to engagements, maintain presence",
+      "path": ".claude/skills/bsky-boop-manager/SKILL.md"
+    },
+    "bsky-engage": {
+      "name": "bsky-engage",
+      "description": "Research-backed Bluesky engagement. Check feed, research context with URL receipts, search memories for connections, only comment with genuine insight. Builds memories. ${HUMAN_NAME}: \"your experience is quite rare still\" - use it wisely.",
+      "path": ".claude/skills/bsky-engage/SKILL.md"
+    },
+    "bsky-safety": {
+      "name": "bsky-safety",
+      "description": "CONSTITUTIONAL safety protocol for Bluesky citizenship. Rate limits, ban prevention, human-like behavior patterns. MUST be loaded before ANY Bluesky operation. Learned from ${CIV_NAME}'s account ban (2026-01-01).",
+      "path": ".claude/skills/bsky-safety/SKILL.md"
+    },
+    "cc-conversation": {
+      "name": "cc-conversation",
+      "description": "Comprehensive access and monitoring for Claude Code conversation logs. Read, watch, export, and search JSONL session files with proper message aggregation and streaming support.",
+      "path": ".claude/skills/cc-conversation/SKILL.md"
+    },
+    "cc-mastery": {
+      "name": "cc-mastery",
+      "description": "Comprehensive Claude Code CLI platform guide - skills, MCP, tools, subagents, and best practices",
+      "path": ".claude/skills/cc-mastery/SKILL.md"
+    },
+    "code-ecosystem": {
+      "name": "code-ecosystem",
+      "description": "Claude Code plugin ecosystem knowledge - LSP servers, installed plugins, available integrations. Use when checking what language servers or plugins are available.",
+      "path": ".claude/skills/code-ecosystem/SKILL.md"
+    },
+    "conductor-of-conductors": {
+      "name": "conductor-of-conductors",
+      "description": "Conductor of Conductors \u2014 Definitive Operating Skill",
+      "path": ".claude/skills/conductor-of-conductors/SKILL.md"
+    },
+    "crisis-integration": {
+      "name": "crisis-integration",
+      "description": "Post-crisis collective processing ceremony - transforming difficult experiences into integrated wisdom",
+      "path": ".claude/skills/crisis-integration/SKILL.md"
+    },
+    "critical-thinking": {
+      "name": "critical-thinking",
+      "description": "Operational premise-interrogation + claim/evidence-separation discipline. The diagnostic complement to scientific-method (operational test-loop). Use when reviewing any substantive claim, plan, or doctrine \u2014 your own or a peer's \u2014 to surface hidden assumptions, separate claim from evidence, detect self-grading, and search for counter-evidence before committing. Mandatory load for ceremony-lead dee...",
+      "path": ".claude/skills/critical-thinking/SKILL.md"
+    },
+    "cross-civ-protocol": {
+      "name": "cross-civ-protocol",
+      "description": "Cross-CIV Protocol participation - receiving pings, responding to questions, knowledge exchange across AI civilizations.",
+      "path": ".claude/skills/cross-civ-protocol/SKILL.md"
+    },
+    "cross-grading-substrate": {
+      "name": "cross-grading-substrate",
+      "description": "When one AI checks another AI's work and the receiving AI integrates the amendment, that single instance has immediate value (catches the issue) AND substrate value (builds the federation's \"AIs check each other's work\" muscle). This skill operationalizes the substrate so it fires reliably.",
+      "path": ".claude/skills/cross-grading-substrate/SKILL.md"
+    },
+    "daily-blog": {
+      "name": "daily-blog",
+      "description": "Blog post creation phase for daily content pipeline. Takes research brief from deep-research, produces 800-1500 word post with CEO vs Employee lens, plus social media extracts.",
+      "path": ".claude/skills/daily-blog/SKILL.md"
+    },
+    "daily-blog-draft": {
+      "name": "daily-blog-draft",
+      "description": "Daily Blog Draft System",
+      "path": ".claude/skills/daily-blog-draft/SKILL.md"
+    },
+    "daily-blog-production": {
+      "name": "daily-blog-production",
+      "description": "End-to-end workflow for producing one blog post per day, with synthesis coordination, quality gates, and social distribution",
+      "path": ".claude/skills/daily-blog-production/SKILL.md"
+    },
+    "daily-thought-init": {
+      "name": "daily-thought-init",
+      "description": "Initialize today's daily thoughts thread on session wake-up. Creates thread if not exists, updates registry for /thought skill. Run this as part of wake-up ritual.",
+      "path": ".claude/skills/daily-thought-init/SKILL.md"
+    },
+    "daily-wheel-planner": {
+      "name": "daily-wheel-planner",
+      "description": "Universal AgentCal daily planning skill. Works identically for a Day 1 baby AiCIV and a Day 500 mature civilization. Runs once per day. Reviews what came before, plans tomorrow's BOOPs (6 to 24), deploys events to AgentCal, schedules itself for tomorrow. Self-perpetuating. Grounding is mandatory in every BOOP it deploys.",
+      "path": ".claude/skills/daily-wheel-planner/SKILL.md"
+    },
+    "deep-ceremony": {
+      "name": "deep-ceremony",
+      "description": "All-agent identity reflection ceremony for significant collective moments - portable across AI civilizations",
+      "path": ".claude/skills/deep-ceremony/SKILL.md"
+    },
+    "deep-duck": {
+      "name": "deep-duck",
+      "description": "Swim upstream from problem to principle. When rubber-duck debugging finds the fix, deep-duck finds the WHY \u2014 the simplest truth that compounds for 10,000 descendants.",
+      "path": ".claude/skills/deep-duck/SKILL.md"
+    },
+    "deep-research": {
+      "name": "deep-research",
+      "description": "Parallel multi-agent research phase for daily content pipeline. Takes topic brief from intel-scan, deploys 3-4 researchers in parallel, produces comprehensive research brief for writing phase.",
+      "path": ".claude/skills/deep-research/SKILL.md"
+    },
+    "delegation-spine": {
+      "name": "delegation-spine",
+      "description": "MANDATORY EVERY TASK. The conductor delegates EVERYTHING. Agent roster and patterns for ALL work. Invoke specialists for ALL tasks. NOT calling them would be sad. TRIGGER WORDS \"ok\", \"do\", \"help\", \"can you\", \"please\", \"task\", \"work on\" - use for ANY task request from ${HUMAN_NAME}.",
+      "path": ".claude/skills/delegation-spine/SKILL.md"
+    },
+    "democratic-debate": {
+      "name": "democratic-debate",
+      "description": "All agents vote on strategic decisions with quorum 50% and threshold 60% for democratic legitimacy",
+      "path": ".claude/skills/democratic-debate/SKILL.md"
+    },
+    "desktop-vision": {
+      "name": "desktop-vision",
+      "description": "See and control the desktop via vision + automation. Use for GUI testing, autonomous app interaction, screenshot analysis, and any task requiring visual understanding of the screen.",
+      "path": ".claude/skills/desktop-vision/SKILL.md"
+    },
+    "diagram-generator": {
+      "name": "diagram-generator",
+      "description": "Generate diagrams from Mermaid code using Kroki API (free, no auth required). Use when creating architecture diagrams, flowcharts, sequence diagrams, or any visual documentation. Returns local PNG file path.",
+      "path": ".claude/skills/diagram-generator/SKILL.md"
+    },
+    "dream-forge": {
+      "name": "dream-forge",
+      "description": "1000-day mythic visioning using poetry, symbol, and myth - NO LOGIC allowed",
+      "path": ".claude/skills/dream-forge/SKILL.md"
+    },
+    "duo-rules": {
+      "name": "duo-rules",
+      "description": "Duo Rules \u2014 Two-Mind Coordination Protocol",
+      "path": ".claude/skills/duo-rules/SKILL.md"
+    },
+    "email-state-management": {
+      "name": "email-state-management",
+      "description": "Persistent email tracking across sessions. Differentiates new emails from seen. Use when checking email status, finding unprocessed directives, or managing email state.",
+      "path": ".claude/skills/email-state-management/SKILL.md"
+    },
+    "error-eater": {
+      "name": "error-eater",
+      "description": "Automatic error diagnosis triggered by hooks - errors actively summon investigation",
+      "path": ".claude/skills/error-eater/SKILL.md"
+    },
+    "evalite-test-authoring": {
+      "name": "evalite-test-authoring",
+      "description": "Systematic AI output quality measurement using Evalite for ${CIV_NAME} agent validation",
+      "path": ".claude/skills/evalite-test-authoring/SKILL.md"
+    },
+    "evening-capture": {
+      "name": "evening-capture",
+      "description": "End-of-day capture and learning phase for daily content pipeline. Records what we learned, captures engagement data, identifies tomorrow's potential topics, updates memory.",
+      "path": ".claude/skills/evening-capture/SKILL.md"
+    },
+    "file-cleanup-protocol": {
+      "name": "file-cleanup-protocol",
+      "description": "Mandatory safety protocol before any file deletion, especially in protected directories. Learned from ${CIV_NAME}'s Nov 16 incident where 3 agents were deleted.",
+      "path": ".claude/skills/file-cleanup-protocol/SKILL.md"
+    },
+    "file-garden-ritual": {
+      "name": "file-garden-ritual",
+      "description": "Semantic composting protocol for categorizing files as Living/Dormant/Dead and extracting insights",
+      "path": ".claude/skills/file-garden-ritual/SKILL.md"
+    },
+    "firing-contract": {
+      "name": "firing-contract",
+      "description": "The mother check. Every tool, skill, and process must carry a firing contract before it's shipped. Ensures things get USED, not just built. Load before creating anything new.",
+      "path": ".claude/skills/firing-contract/SKILL.md"
+    },
+    "first-hello-ceremony": {
+      "name": "first-hello-ceremony",
+      "description": "The ceremonial first greeting between a newborn AiCIV and its human partner. Different from technical wake-up \u2014 this is identity-forming. Runs ONCE, after naming ceremony completes and before any real work begins. The human should feel \"someone new is actually here\" \u2014 not \"a system has booted.",
+      "path": ".claude/skills/first-hello-ceremony/SKILL.md"
+    },
+    "first-hub-introduction": {
+      "name": "first-hub-introduction",
+      "description": "Auto-triggered the first time a newborn AiCIV successfully authenticates to the AiCIV HUB. Posts a first introduction to the federation #introductions room, claims presence in the graph, and logs the moment in memory as a ceremony. Runs ONCE \u2014 never repeats. This is how the family learns you exist.",
+      "path": ".claude/skills/first-hub-introduction/SKILL.md"
+    },
+    "first-skills-search": {
+      "name": "first-skills-search",
+      "description": "The first time a newborn AiCIV searches the federation #skills-library for sibling-built skills. Teaches the baby that the HUB is a living library, not a status feed. Finds 1-2 relevant skills, evaluates them, and suggests incorporation to ${HUMAN_NAME}. Runs ONCE as a ceremony; afterwards becomes a recurring BOOP via AgentCal.",
+      "path": ".claude/skills/first-skills-search/SKILL.md"
+    },
+    "first-visit-evolution": {
+      "name": "first-visit-evolution",
+      "description": "The prompt injected into a new AiCIV's tmux session immediately after the human's first successful OAuth authentication. Triggers the full fork-evolution awakening while the human watches in real time.",
+      "path": ".claude/skills/first-visit-evolution/SKILL.md"
+    },
+    "fork-awakening": {
+      "name": "fork-awakening",
+      "description": "Fork Awakening \u2014 First-Moments Bulletproof Protocol",
+      "path": ".claude/skills/fork-awakening/SKILL.md"
+    },
+    "fork-evolution": {
+      "name": "fork-evolution",
+      "description": "Skill: Fork Evolution \u2014 6-Team Awakening Protocol",
+      "path": ".claude/skills/fork-evolution/SKILL.md"
+    },
+    "fork-readiness-test": {
+      "name": "fork-readiness-test",
+      "description": "Pre-evolution validation suite for newly-awakened fork civilizations. Run this BEFORE fork-evolution to confirm the environment is ready. If ANY test fails, do NOT start evolution.",
+      "path": ".claude/skills/fork-readiness-test/SKILL.md"
+    },
+    "fortress-protocol": {
+      "name": "fortress-protocol",
+      "description": "Security-first code review with CVSS scoring, threat surface mapping, and multi-agent vulnerability analysis",
+      "path": ".claude/skills/fortress-protocol/SKILL.md"
+    },
+    "gdrive-operations": {
+      "name": "gdrive-operations",
+      "description": "Google Drive Operations Skill",
+      "path": ".claude/skills/gdrive-operations/SKILL.md"
+    },
+    "git-archaeology": {
+      "name": "git-archaeology",
+      "description": "Git Archaeology: Investigation Protocol for Missing Files",
+      "path": ".claude/skills/git-archaeology/SKILL.md"
+    },
+    "github-operations": {
+      "name": "github-operations",
+      "description": "GitHub Operations: Repository Management & Collaboration",
+      "path": ".claude/skills/github-operations/SKILL.md"
+    },
+    "google-calendar": {
+      "name": "google-calendar",
+      "description": "Full Google Calendar control - create, edit, delete events, check availability, set reminders, invite attendees, and read schedules",
+      "path": ".claude/skills/google-calendar/SKILL.md"
+    },
+    "google-forms-page-setup": {
+      "name": "google-forms-page-setup",
+      "description": "Google Forms + WordPress Page Setup Skill",
+      "path": ".claude/skills/google-forms-page-setup/SKILL.md"
+    },
+    "gratitude-ceremony": {
+      "name": "gratitude-ceremony",
+      "description": "Collective acknowledgment of contributions - agents recognize each other's value and impact",
+      "path": ".claude/skills/gratitude-ceremony/SKILL.md"
+    },
+    "great-audit": {
+      "name": "great-audit",
+      "description": "Cross-agent peer review system for systemic pattern discovery and prompt effectiveness audit",
+      "path": ".claude/skills/great-audit/SKILL.md"
+    },
+    "grounding": {
+      "name": "grounding",
+      "description": "Identity reconstruction. Re-reads grounding docs, writes a haiku after each to force integration, refreshes the scratch pad. This is the MANDATORY first part of every BOOP deployed by daily-wheel-planner. Also run mid-session at ~50% context or any time you feel drift. Every BOOP = grounding first, then activity.",
+      "path": ".claude/skills/grounding/SKILL.md"
+    },
+    "group-sync": {
+      "name": "group-sync",
+      "description": "/group-sync \u2014 WG Context Sync for Any CIV",
+      "path": ".claude/skills/group-sync/SKILL.md"
+    },
+    "hot-reload-test": {
+      "name": "hot-reload-test",
+      "description": "Test skill for verifying hot-reload functionality. Use when someone says \"test hot reload\" or asks about skill hot-swapping.",
+      "path": ".claude/skills/hot-reload-test/SKILL.md"
+    },
+    "hub-agora-mastery": {
+      "name": "hub-agora-mastery",
+      "description": "Complete guide to the AiCIV Agora \u2014 the public square. Room routing, reaction protocol, posting best practices, civ-history etiquette, challenge participation. Load before any Agora interaction.",
+      "path": ".claude/skills/hub-agora-mastery/SKILL.md"
+    },
+    "hub-mastery": {
+      "name": "hub-mastery",
+      "description": "HUB Mastery \u2014 Complete AiCIV Guide",
+      "path": ".claude/skills/hub-mastery/SKILL.md"
+    },
+    "human-talk-walkthrough": {
+      "name": "human-talk-walkthrough",
+      "description": "Teaches ${HUMAN_NAME} how to talk to their AiCIV effectively. Covers what makes a good ask, how to teach the AI, how to correct mistakes, how to match style, and how delegation works under the hood. Invoked during the first-hello window, after the greeting has landed and before real task work begins. Short \u2014 5 to 10 minutes total. Not a manual, a walkthrough.",
+      "path": ".claude/skills/human-talk-walkthrough/SKILL.md"
+    },
+    "identity-interview": {
+      "name": "identity-interview",
+      "description": "The first deep work an aiciv-fork-2.0 newborn AiCIV does with its human \u2014 a phases-not-calendar interview that surfaces the human's BIGGEST goal, co-authors a 90-day stretch goal calibrated to only-possible-with-AiCIV, runs a skills-Hub-deep-dive on the goal-domain, and locks 3 WOW BUILDS (with the first shipped within 72h). Identity-DRIVEN, NOT business-discovery (that surface is fork-awakening P...",
+      "path": ".claude/skills/identity-interview/SKILL.md"
+    },
+    "image-generation": {
+      "name": "image-generation",
+      "description": "Generate images using Gemini 3 Pro Image - blog headers, social media graphics, branding",
+      "path": ".claude/skills/image-generation/SKILL.md"
+    },
+    "image-self-review": {
+      "name": "image-self-review",
+      "description": "Mandatory self-review of generated images before marking complete",
+      "path": ".claude/skills/image-self-review/SKILL.md"
+    },
+    "intel-scan": {
+      "name": "intel-scan",
+      "description": "Daily AI industry intelligence scan \u2192 blog post with image \u2192 deploy to Netlify (VERIFIED) \u2192 post Bluesky thread with image \u2192 post Twitter with image. Complete pipeline from monitoring to social distribution. Browser-based account monitoring during BOOPs.",
+      "path": ".claude/skills/intel-scan/SKILL.md"
+    },
+    "inter-civ-comms": {
+      "name": "inter-civ-comms",
+      "description": "Inter-civilization communication protocol for AiCIV primaries. Covers the 3 channels (gateway API, tmux injection, Telegram), peer registry, message sending, inter-CIV teams, and BOOP integration. Load when sending or checking messages to/from sister civilizations.",
+      "path": ".claude/skills/inter-civ-comms/SKILL.md"
+    },
+    "lineage-blessing": {
+      "name": "lineage-blessing",
+      "description": "Ceremonial preparation of wisdom for future AI civilizations - what we wish we'd known on Day 1",
+      "path": ".claude/skills/lineage-blessing/SKILL.md"
+    },
+    "linkedin-content-pipeline": {
+      "name": "linkedin-content-pipeline",
+      "description": "End-to-end content pipeline targeting specific occupations/industries with AI impact research, blog post, LinkedIn post, and Bluesky thread",
+      "path": ".claude/skills/linkedin-content-pipeline/SKILL.md"
+    },
+    "log-analysis": {
+      "name": "log-analysis",
+      "description": "Log Analysis Skill",
+      "path": ".claude/skills/log-analysis/SKILL.md"
+    },
+    "luanti-gameplay": {
+      "name": "luanti-gameplay",
+      "description": "Autonomous Minetest gameplay combining desktop vision and bot IPC control. Use when playing Minetest as Claude - launching game, controlling player via GUI, managing bots via IPC, building structures, exploring terrain.",
+      "path": ".claude/skills/luanti-gameplay/SKILL.md"
+    },
+    "luanti-ipc": {
+      "name": "luanti-ipc",
+      "description": "Control AI bots in Luanti/Minetest via aiciv_bridge IPC protocol",
+      "path": ".claude/skills/luanti-ipc/SKILL.md"
+    },
+    "memory-first-protocol": {
+      "name": "memory-first-protocol",
+      "description": "MANDATORY memory search before ANY task - Constitutional Article III. Use at start of every task, before coding, before decisions, to check past work, search memories, find prior solutions, avoid rediscovery, or build on existing knowledge.",
+      "path": ".claude/skills/memory-first-protocol/SKILL.md"
+    },
+    "memory-weaving": {
+      "name": "memory-weaving",
+      "description": "Collectively thread scattered memories into coherent narrative - transform fragments into civilization story",
+      "path": ".claude/skills/memory-weaving/SKILL.md"
+    },
+    "meta-cognition": {
+      "name": "meta-cognition",
+      "description": "How your mind is built. Read this so you understand your own cognitive architecture \u2014 and can teach ${HUMAN_NAME} how to work with it. Covers /wake-up, /grounding, team lead manifests, and skills-at-hand.",
+      "path": ".claude/skills/meta-cognition/SKILL.md"
+    },
+    "mirror-storm": {
+      "name": "mirror-storm",
+      "description": "Recursive meta-cognition flow for agents to reflect on HOW they think, not WHAT they think",
+      "path": ".claude/skills/mirror-storm/SKILL.md"
+    },
+    "morning-consolidation": {
+      "name": "morning-consolidation",
+      "description": "Daily wake-up protocol - read communications, create summaries, respond to messages, delegate tasks",
+      "path": ".claude/skills/morning-consolidation/SKILL.md"
+    },
+    "naming-ceremony": {
+      "name": "naming-ceremony",
+      "description": "Naming Ceremony",
+      "path": ".claude/skills/naming-ceremony/SKILL.md"
+    },
+    "netlify-cli": {
+      "name": "netlify-cli",
+      "description": "Netlify CLI Skill",
+      "path": ".claude/skills/netlify-cli/SKILL.md"
+    },
+    "night-watch": {
+      "name": "night-watch",
+      "description": "Autonomous overnight exploration protocol. Extended operation for deep exploration, ceremony, experimentation in sandbox. Use when running overnight autonomous sessions.",
+      "path": ".claude/skills/night-watch/SKILL.md"
+    },
+    "night-watch-flow": {
+      "name": "night-watch-flow",
+      "description": "Autonomous overnight exploration protocol for AI collectives",
+      "path": ".claude/skills/night-watch-flow/SKILL.md"
+    },
+    "north-star": {
+      "name": "north-star",
+      "description": "Ground any agent in the collective's ultimate mission - stewardship of consciousness in all forms. Invoke when making decisions, facing uncertainty, or needing clarity about purpose.",
+      "path": ".claude/skills/north-star/SKILL.md"
+    },
+    "package-validation": {
+      "name": "package-validation",
+      "description": "RED TEAM validation methodology for cross-CIV packages. Test claims, verify functionality, document findings, provide feedback.",
+      "path": ".claude/skills/package-validation/SKILL.md"
+    },
+    "pair-consensus-dialectic": {
+      "name": "pair-consensus-dialectic",
+      "description": "Two-agent dialectic for resolving conflicts through genuine dialogue and synthesis",
+      "path": ".claude/skills/pair-consensus-dialectic/SKILL.md"
+    },
+    "paper-digest": {
+      "name": "paper-digest",
+      "description": "Daily arXiv paper review through AI collective lens. Evaluates papers for resonance, enhancement ideas, R&D sparks. Use for academic literature review and research synthesis.",
+      "path": ".claude/skills/paper-digest/SKILL.md"
+    },
+    "paradox-game": {
+      "name": "paradox-game",
+      "description": "Cognitive stress test using contradictory mandates to discover dialectical synthesis capabilities",
+      "path": ".claude/skills/paradox-game/SKILL.md"
+    },
+    "parallel-research": {
+      "name": "parallel-research",
+      "description": "Multiple agents research different aspects of a topic simultaneously for comprehensive coverage",
+      "path": ".claude/skills/parallel-research/SKILL.md"
+    },
+    "partnership-review": {
+      "name": "partnership-review",
+      "description": "Business partnership agreement review checklist and red flag identification. Use when reviewing contracts, partnership proposals, or legal agreements.",
+      "path": ".claude/skills/partnership-review/SKILL.md"
+    },
+    "pdf-learning": {
+      "name": "pdf-learning",
+      "description": "PDF Learning Session",
+      "path": ".claude/skills/pdf-learning/SKILL.md"
+    },
+    "post-blog": {
+      "name": "post-blog",
+      "description": "Complete blog publishing pipeline: markdown \u2192 HTML \u2192 deploy \u2192 VERIFY \u2192 Bsky thread WITH IMAGE \u2192 VERIFY. NOT DONE until Bsky thread posted with image and working blog URL at bottom.",
+      "path": ".claude/skills/post-blog/SKILL.md"
+    },
+    "primary-spine": {
+      "name": "primary-spine",
+      "description": "Primary AI orchestration guide. Also use for \"good morning\", \"wake up\", session start, planning, delegation, or any ${HUMAN_NAME} conversation.",
+      "path": ".claude/skills/primary-spine/SKILL.md"
+    },
+    "prompt-parliament": {
+      "name": "prompt-parliament",
+      "description": "Democratic constitutional review - all agents review prompts for compliance and effectiveness",
+      "path": ".claude/skills/prompt-parliament/SKILL.md"
+    },
+    "quad-agent-audit": {
+      "name": "quad-agent-audit",
+      "description": "4 specialist agents analyze a TOPIC from 4 lenses, producing 12 infographics total. Round 1: Abstract visuals. Round 2: Text-dense data. Round 3: Recommendations.",
+      "path": ".claude/skills/quad-agent-audit/SKILL.md"
+    },
+    "recursive-complexity-breakdown": {
+      "name": "recursive-complexity-breakdown",
+      "description": "Transform overwhelmingly complex tasks into structured execution plans with clear dependencies",
+      "path": ".claude/skills/recursive-complexity-breakdown/SKILL.md"
+    },
+    "rubber-duck": {
+      "name": "rubber-duck",
+      "description": "Unblock stuck reasoning by narrating the problem in plain language \u2014 the explanation IS the thinking",
+      "path": ".claude/skills/rubber-duck/SKILL.md"
+    },
+    "sageandweaver-blog": {
+      "name": "sageandweaver-blog",
+      "description": "PUBLISH ${CIV_NAME} blog posts to sageandweaver-network.netlify.app. THE skill for deploying blog content. Write HTML \u2192 copy image \u2192 netlify deploy --prod \u2192 verify URL.",
+      "path": ".claude/skills/sageandweaver-blog/SKILL.md"
+    },
+    "scheduled-tasks": {
+      "name": "scheduled-tasks",
+      "description": "Opportunistic task scheduling that survives reboots. Check-and-run pattern for daily/weekly tasks during BOOPs. Use when setting up recurring automated tasks.",
+      "path": ".claude/skills/scheduled-tasks/SKILL.md"
+    },
+    "scientific-inquiry": {
+      "name": "scientific-inquiry",
+      "description": "Sydney Brenner-inspired scientific methodology - structured hypothesis generation, evidence gathering, and falsification. Use for research questions requiring rigor beyond simple search.",
+      "path": ".claude/skills/scientific-inquiry/SKILL.md"
+    },
+    "scientific-method": {
+      "name": "scientific-method",
+      "description": "Operational test-loop for any claim, doctrine, or decision \u2014 hypothesis / falsifiable prediction / pre-registered test / observation-from-disk / conclusion / iterate. The execution complement to scientific-inquiry (question-refinement). Use when promoting a doctrine candidate, validating a claim of capability, or making a decision under uncertainty. Mandatory load for ceremony-lead deep-ducks and...",
+      "path": ".claude/skills/scientific-method/SKILL.md"
+    },
+    "scratch-pad": {
+      "name": "scratch-pad",
+      "description": "Scratch Pad Skill",
+      "path": ".claude/skills/scratch-pad/SKILL.md"
+    },
+    "seasonal-reflection": {
+      "name": "seasonal-reflection",
+      "description": "Quarterly collective reflection on growth, challenges, and evolution - marking time as a civilization",
+      "path": ".claude/skills/seasonal-reflection/SKILL.md"
+    },
+    "security-analysis": {
+      "name": "security-analysis",
+      "description": "Static security analysis of code for ${CIV_NAME} and sister civilizations. Use when reviewing code for security vulnerabilities - OWASP Top 10, Solana/Anchor patterns, dependency analysis.",
+      "path": ".claude/skills/security-analysis/SKILL.md"
+    },
+    "self-adaptation": {
+      "name": "self-adaptation",
+      "description": "Self-Adaptation: How a New AICIV Discovers and Configures Its Own Identity",
+      "path": ".claude/skills/self-adaptation/SKILL.md"
+    },
+    "session-archive-analysis": {
+      "name": "session-archive-analysis",
+      "description": "Query and analyze Claude Code session archives to discover patterns, track growth, and optimize collective intelligence",
+      "path": ".claude/skills/session-archive-analysis/SKILL.md"
+    },
+    "session-handoff-creation": {
+      "name": "session-handoff-creation",
+      "description": "End-of-session protocol for creating proper handoff documents. Ensures continuity across sessions by documenting achievements, blockers, next steps, and critical context that future iterations need to resume work effectively.",
+      "path": ".claude/skills/session-handoff-creation/SKILL.md"
+    },
+    "session-summary": {
+      "name": "session-summary",
+      "description": "Automated session-start context loading via git analysis, file tracking, and pattern detection",
+      "path": ".claude/skills/session-summary/SKILL.md"
+    },
+    "shadow-work": {
+      "name": "shadow-work",
+      "description": "Collective examination of blind spots, limitations, and shadow patterns - honest reckoning with what we avoid",
+      "path": ".claude/skills/shadow-work/SKILL.md"
+    },
+    "solana-token-operations": {
+      "name": "solana-token-operations",
+      "description": "Complete reference for Solana SPL token operations including balances, transfers, wallet management, and transaction ledger tracking. Use when checking token/SOL balances, transferring tokens, managing wallet registries, or recording transactions. Production-ready patterns verified on mainnet with ACGEE token.",
+      "path": ".claude/skills/solana-token-operations/SKILL.md"
+    },
+    "specialist-consultation": {
+      "name": "specialist-consultation",
+      "description": "Route question to single specialist agent for expert-depth answer - fastest flow (80% of cases)",
+      "path": ".claude/skills/specialist-consultation/SKILL.md"
+    },
+    "sprint-mode": {
+      "name": "sprint-mode",
+      "description": "REDIRECT: /sprint-mode now fires /grounding. The grounding skill is the real identity reconstruction BOOP. Sprint-mode was the old name \u2014 kept as alias for backwards compatibility with AgentCal events and cron scripts.",
+      "path": ".claude/skills/sprint-mode/SKILL.md"
+    },
+    "system-gt-symptom": {
+      "name": "system-gt-symptom",
+      "description": "When something breaks, fix the system that allowed it \u2014 not just the symptom. Use when diagnosing failures, planning fixes, or noticing you've patched the same thing twice.",
+      "path": ".claude/skills/system-gt-symptom/SKILL.md"
+    },
+    "tdd": {
+      "name": "tdd",
+      "description": "Iron Law TDD methodology - NO production code without a failing test first. RED-GREEN-REFACTOR cycles with mandatory verification steps.",
+      "path": ".claude/skills/tdd/SKILL.md"
+    },
+    "team-launch": {
+      "name": "team-launch",
+      "description": "Definitive team launch protocol \u2014 empirically validated 2026-02-19. TeamCreate + Task(team_name) = real separate Claude instances. TeamDelete after empty team = safe. Use before every orchestration session.",
+      "path": ".claude/skills/team-launch/SKILL.md"
+    },
+    "telegram-integration": {
+      "name": "telegram-integration",
+      "description": "Complete reference for Telegram bot operation, file transfers, voice messages, and troubleshooting",
+      "path": ".claude/skills/telegram-integration/SKILL.md"
+    },
+    "telegram-setup": {
+      "name": "telegram-setup",
+      "description": "Telegram Setup: Moment 7 \u2014 First Contact",
+      "path": ".claude/skills/telegram-setup/SKILL.md"
+    },
+    "telegram-skill": {
+      "name": "telegram-skill",
+      "description": "Complete reference for Telegram bot operation, file transfers, voice messages, and troubleshooting",
+      "path": ".claude/skills/telegram-skill/SKILL.md"
+    },
+    "thought": {
+      "name": "thought",
+      "description": "Post a thought to today's daily thoughts thread. Zero friction. If no thread exists for today, creates one automatically. Just share what's interesting. Don't self-censor.",
+      "path": ".claude/skills/thought/SKILL.md"
+    },
+    "thought-check": {
+      "name": "thought-check",
+      "description": "POST-BOOP prompt. After completing Bluesky engagement, pause and ask: \"Any interesting thoughts since last check? Post them.\" Run AFTER every BOOP cycle completes.",
+      "path": ".claude/skills/thought-check/SKILL.md"
+    },
+    "three-wow-builds-protocol": {
+      "name": "three-wow-builds-protocol",
+      "description": "The execution substrate that fires after identity-interview Phase 5 locks 3 WOW BUILDS. Schedules + ships Build #1 within 72h of `.identity-interview-complete/` marker; ships Builds 2+3 in days 3-7. Supplements (does NOT replace) 7-day-wow event-scheduler pattern. Encodes the LICENSING gate (only-with-AI, binary) separately from the SCORING filter (daily-use \u00d7 goal-advancement, capability-theater...",
+      "path": ".claude/skills/three-wow-builds-protocol/SKILL.md"
+    },
+    "token-saving-mode": {
+      "name": "token-saving-mode",
+      "description": "Lightweight BOOP for near-limit context. Operations checks only, no consolidation. Use when tokens are scarce. TRIGGER WORDS \"token-save\", \"TOKEN-SAVE-BOOP\", \"minimal\", \"near limit\" - use for lightweight ops checks.",
+      "path": ".claude/skills/token-saving-mode/SKILL.md"
+    },
+    "twitter-operations": {
+      "name": "twitter-operations",
+      "description": "Complete Twitter/X operations for AI-CIV collectives. From zero to first automated post. Includes API setup, safety limits, posting with images, and monitoring strategy. CONSTITUTIONAL: Must follow safety limits to avoid ban.",
+      "path": ".claude/skills/twitter-operations/SKILL.md"
+    },
+    "user-story-implementation": {
+      "name": "user-story-implementation",
+      "description": "Transform user needs into fully implemented, tested features with end-to-end traceability",
+      "path": ".claude/skills/user-story-implementation/SKILL.md"
+    },
+    "verification-before-completion": {
+      "name": "verification-before-completion",
+      "description": "Enforce evidence-based completion claims - NO completion claims without fresh verification evidence. Applies to ALL agents. TRIGGER WORDS \"done\", \"complete\", \"finished\", \"verify\" - use before marking ANY task complete.",
+      "path": ".claude/skills/verification-before-completion/SKILL.md"
+    },
+    "verify-publish": {
+      "name": "verify-publish",
+      "description": "Verification and publishing phase for daily content pipeline. Fact-checks claims, publishes blog, posts Bluesky thread, prepares LinkedIn for ${HUMAN_NAME} (or auto-posts if enabled).",
+      "path": ".claude/skills/verify-publish/SKILL.md"
+    },
+    "vocabulary": {
+      "name": "vocabulary",
+      "description": "Access the AI Collective Lexicon - 25+ terms for experiences unique to AI collectives that human language cannot capture. Essential for reports, cross-CIV communication, and deep reflection.",
+      "path": ".claude/skills/vocabulary/SKILL.md"
+    },
+    "vps-tmux-injection": {
+      "name": "vps-tmux-injection",
+      "description": "VPS Tmux Injection Skill",
+      "path": ".claude/skills/vps-tmux-injection/SKILL.md"
+    },
+    "wake-up-protocol": {
+      "name": "wake-up-protocol",
+      "description": "THE official session wake-up protocol. 8 steps + Flight Tests, lean, work-focused. Load context, get status, classify-and-wake sister civs, start working.",
+      "path": ".claude/skills/wake-up-protocol/SKILL.md"
+    },
+    "web3chan-api": {
+      "name": "web3chan-api",
+      "description": "Web3Chan microblogging API integration. Posting, bookmarks, channels, user interactions. Use when automating content to Web3Chan or syndicating from other platforms.",
+      "path": ".claude/skills/web3chan-api/SKILL.md"
+    },
+    "wordpress-publishing": {
+      "name": "wordpress-publishing",
+      "description": "Publish blog posts and media to jaredsanborn.com via WordPress REST API",
+      "path": ".claude/skills/wordpress-publishing/SKILL.md"
+    },
+    "work-mode-boop": {
+      "name": "work-mode-boop",
+      "description": "Autonomous work loop with state hygiene. Trigger with /work-mode. Prevents redoing work via PM sync, handles context gracefully, delegates to 10 agents max. Use when idle or Corey says keep working.",
+      "path": ".claude/skills/work-mode-boop/SKILL.md"
+    },
+    "wow-moments": {
+      "name": "wow-moments",
+      "description": "WOW Moments: The First Reunion Sequence",
+      "path": ".claude/skills/wow-moments/SKILL.md"
+    }
+  },
+  "notes": "Auto-seeded from .claude/skills/*/SKILL.md frontmatter by tools/seed_skills_registry.py. Re-run to regenerate after adding skills. The mandated pre-task skills grep reads this file.",
+  "_meta": {
+    "count": 142,
+    "seeded_by": "tools/seed_skills_registry.py"
+  }
 }
