@@ -9,6 +9,23 @@
 
 ---
 
+## REQUIRES (hard build-time floors — P0)
+
+These are non-negotiable substrate requirements for any container/image built from this template:
+
+- **Claude Code binary >= 2.1.154** (target **2.1.160+**). The `Workflow` tool is a CC
+  **binary capability**, not config — without a Workflow-capable CC, the native VP-org
+  upgrade (workflows/, incarnated leads, COO firewall) cannot run. The image build MUST
+  pin/verify this floor at provision time. Verify in-container with `claude --version`.
+- **Model substrate = `claude-opus-4-8[1m]`** on BOTH `env.ANTHROPIC_MODEL` and
+  `env.CLAUDE_CODE_SUBAGENT_MODEL` in `.claude/settings.json`, and on the main-session
+  `--model claude-opus-4-8` flag in the launch scripts (`tools/launch_civ_tower.sh`,
+  `tools/launch_primary_visible.sh`). Do NOT set `CLAUDE_CODE_DISABLE_1M_CONTEXT` — it
+  would defeat the `[1m]` 1M-context suffix. (Repointed from `claude-opus-4-6`, the
+  529-incident model, on 2026-06-02 — STEP 1 of the born-native plan.)
+
+---
+
 ## Gap Categories
 
 | Priority | Meaning |
