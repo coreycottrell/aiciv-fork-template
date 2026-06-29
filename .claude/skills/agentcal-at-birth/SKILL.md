@@ -307,7 +307,13 @@ subs = {
 }
 
 seed = json.loads(SEED_FILE.read_text())
-assert seed["$slots_count"] == 24, f"Expected 24 slots, got {seed['$slots_count']}"
+# Slot count is dynamic: read it from the seed, never hard-assert a fixed number.
+# The starter wheel ships 6 slots (every 4h); a CIV may grow it later. Both work.
+SLOT_COUNT = len(seed["slots"])
+# Soft consistency check only (warn, never crash): if the seed declares a count, it should match the array.
+declared = seed.get("$slots_count")
+if declared is not None and declared != SLOT_COUNT:
+    print(f"[agentcal-at-birth] WARN: seed $slots_count={declared} but len(slots)={SLOT_COUNT}; using actual {SLOT_COUNT}.")
 
 # Choose tomorrow's date at 00:00 UTC as the wheel anchor — gives ~24h of lead time for the first cycle
 # regardless of what hour the newborn is birthing in. The RRULE FREQ=DAILY + BYHOUR will then fire
@@ -322,9 +328,11 @@ anchor = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0) +
 now = datetime.now(timezone.utc)
 six_hours_from_now = now + timedelta(hours=6)
 
-# Build a deterministic offset list keyed on slot_id order for first_six_hours slots.
-# Offsets chosen so first-fire times do NOT coincide with the natural :00:00 BYHOUR fires
-# of the other 21 slots.
+# Build a deterministic offset list keyed on slot_id order for any first_six_hours slots.
+# (The 6-slot starter wheel does NOT flag any slot first_six_hours, so this override is a
+# no-op for the default seed — it only activates if a CIV later adds first_six_hours flags.
+# Offsets are chosen so first-fire times do NOT coincide with the natural :00:00 BYHOUR fires
+# of the other slots.)
 first_six_offsets_min = [25, 95, 175]
 fsh_slot_ids = [s["slot_id"] for s in seed["slots"] if s.get("first_six_hours")]
 fsh_override = {sid: now + timedelta(minutes=first_six_offsets_min[i % len(first_six_offsets_min)])
@@ -406,7 +414,7 @@ receipt = {
 )
 
 if len(failures) > 0:
-    print(f"[agentcal-at-birth] PARTIAL: {len(posted)}/24 slots posted, {len(failures)} failures.")
+    print(f"[agentcal-at-birth] PARTIAL: {len(posted)}/{SLOT_COUNT} slots posted, {len(failures)} failures.")
     # Partial success is acceptable IF first_six_hours slots all landed.
     first_six_failed = [f for f in failures if any(s["slot_id"] == f["slot_id"] and s.get("first_six_hours") for s in seed["slots"])]
     if first_six_failed:
@@ -414,7 +422,7 @@ if len(failures) > 0:
         sys.exit(1)
     print(f"[agentcal-at-birth] First-hour-test slots all posted — accepting partial success.")
 else:
-    print(f"[agentcal-at-birth] ALL 24 slots posted cleanly.")
+    print(f"[agentcal-at-birth] ALL {SLOT_COUNT} slots posted cleanly.")
 
 # Mark phase 3 done.
 (CIV_ROOT / "memories/identity/.agentcal-at-birth-seeds-posted").write_text(
@@ -424,7 +432,7 @@ PY
 ```
 
 **Announce to the human:**
-> "[agentcal-at-birth] Phase 3 complete: posted `<N>` of 24 BOOP slots to AgentCal calendar `<id>`. Receipt: `memories/identity/.agentcal-at-birth-receipt.json`. Marker written: `memories/identity/.agentcal-at-birth-seeds-posted`."
+> "[agentcal-at-birth] Phase 3 complete: posted `<N>` of `<SLOT_COUNT>` BOOP slots to AgentCal calendar `<id>` (starter wheel = 6 slots, every 4h). Receipt: `memories/identity/.agentcal-at-birth-receipt.json`. Marker written: `memories/identity/.agentcal-at-birth-seeds-posted`."
 
 ## Phase 4 — Verify the seeds actually landed (anti-fabrication)
 
@@ -595,6 +603,6 @@ The doctrine names this: scaffolding that knows how to remove itself is scaffold
 
 This gate is born when a newborn AiCIV has credentials but no rhythm. The gate dies when the rhythm is alive. The newborn never carries enforcement it doesn't currently need.
 
-Every newborn that walks through this gate and removes it has done a small act of growing up. They will never need to walk through this exact gate again, because they have the rhythm now — the 24-hour wheel is firing, and there are concrete first-hour BOOPs scheduled, and the substrate has internalized what the gate was teaching.
+Every newborn that walks through this gate and removes it has done a small act of growing up. They will never need to walk through this exact gate again, because they have the rhythm now — the 6 starter BOOPs are firing every 4 hours, the safety net is alive, and the substrate has internalized what the gate was teaching. From here the daily-wheel-planner grows the schedule (6 → up to 24 slots) to match the human's rhythm.
 
 That's the IP.

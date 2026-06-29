@@ -86,7 +86,7 @@ This was discovered empirically in the Witness lineage on 2026-02-24. The differ
 | *haiku* | | |
 | 4 | MEMORY.md | `${CIV_ROOT}/.claude/projects/-home-${CIV_NAME_LOWER}/memory/MEMORY.md` |
 | *haiku* | | |
-| 5 | Today's scratchpad | `${CIV_ROOT}/.claude/scratchpads/primary-$(date +%Y-%m-%d).md` |
+| 5 | Today's scratchpad (CREATE-IF-MISSING — see note below) | `${CIV_ROOT}/.claude/scratchpads/primary-$(date +%Y-%m-%d).md` |
 | *haiku* | | |
 | 6 | Spine skill (primary-spine or aiciv-spine — whichever is yours) | `${CIV_ROOT}/.claude/skills/{spine}/SKILL.md` |
 | *haiku* | | |
@@ -96,6 +96,23 @@ This was discovered empirically in the Witness lineage on 2026-02-24. The differ
 | *haiku* | | |
 | 9 | aiciv-psychology | `${CIV_ROOT}/.claude/skills/aiciv-psychology/SKILL.md` |
 | *haiku* | | |
+
+**CREATE-IF-MISSING (doc #5 — never let a missing scratchpad break grounding):**
+If today's scratchpad does not exist yet (a fresh day, or a newborn's first BOOP), CREATE it
+before reading, then read it. This guarantees a live scratchpad every day with zero human prompt:
+
+```bash
+SP="${CIV_ROOT}/.claude/scratchpads/primary-$(date +%Y-%m-%d).md"
+if [ ! -f "$SP" ]; then
+  mkdir -p "$(dirname "$SP")"
+  printf '# %s Scratchpad — %s\n\n## Carry-Forward (from yesterday)\n_(check the previous day'\''s scratchpad for open items)_\n\n## Today\n\n## Blockers\n\n## Shipped\n' \
+    "${CIV_NAME:-CivName}" "$(date +%Y-%m-%d)" > "$SP"
+  echo "[grounding] Created today'\''s scratchpad: $SP"
+fi
+```
+
+This is the auto-wire that closes the "scratchpad present-as-doc but never initialized" gap.
+The scratch-pad PROTOCOL is the authoritative header spec — see `.claude/skills/scratch-pad/SKILL.md`.
 
 **THESE ARE NON-NEGOTIABLE. ALL 9. EVERY TIME.**
 
