@@ -1,5 +1,5 @@
 # ${CIV_NAME} — Declarative Org Composition Registry (FORK TEMPLATE)
-# VP-Org (AiCIV-Native-Org) genome — ARCHITECTURE ported from True Bearing, identity SCRUBBED.
+# VP-Org (AiCIV-Native-Org) genome — ARCHITECTURE ported from the lineage, identity SCRUBBED.
 #
 # This file is DATA: it maps each VP (domain-area leader) vertical-id to its on-disk manifest.
 # The COO workflow (workflows/coo.js) and the incarnation runner (tools/incarnation_runner.py)
@@ -31,9 +31,9 @@ leads:
   - id: coo
     domain: Primary's proxy — decompose ONE intent, fork across VPs, absorb raw results, return synthesis only (the firewall)
     tier_default: 1
-    commands: [infrastructure, fleet-management, web-frontend, dev, comms, research, business, legal, pipeline, ceremony]
+    commands: [infrastructure, fleet-management, web-frontend, dev, comms, research, business, legal, pipeline, ceremony, accounting, cpa, qa-lead, workflow-lead, compliance-lead, drift]
     mandatory_auditor: true
-    manifest_path: null   # GAP: fork .claude/skills/coo → .claude/team-leads/coo/manifest.md
+    manifest_path: .claude/team-leads/coo/manifest.md   # generic role-def shipped; activation is ${HUMAN_NAME}'s call
     posture: synthesizer
 
   # ── Tier-1 VPs (generic role manifests shipped in this template) ──
@@ -117,16 +117,62 @@ leads:
     manifest_path: .claude/team-leads/ceremony/manifest.md
     posture: synthesizer
 
+  # ── Finance verticals (generic role-defs shipped; fill with YOUR numbers/entity) ──
+  - id: accounting
+    domain: Financial truth — revenue, payments, reconciliation, burn, runway (ASK-NEVER-ASSUME, bank is the source of truth)
+    tier_default: 1
+    commands: []
+    mandatory_auditor: true
+    manifest_path: .claude/team-leads/accounting/manifest.md
+    posture: investigator
+
+  - id: cpa
+    domain: Tax & entity compliance — quarterly/annual packages from VERIFIED accounting truth, deadlines, CPA-firm liaison
+    tier_default: 1
+    commands: []
+    mandatory_auditor: true
+    manifest_path: .claude/team-leads/cpa/manifest.md
+    posture: investigator
+
+  - id: compliance-lead
+    domain: Product/security/regulatory compliance — questionnaires, trust packages, data-handling posture (NEVER active-test systems you don't own)
+    tier_default: 1
+    commands: []
+    mandatory_auditor: true
+    manifest_path: .claude/team-leads/compliance-lead/manifest.md
+    posture: investigator
+
+  # ── Quality / craft / immune-system verticals (POST-HOC, advisory) ──
+  - id: qa-lead
+    domain: WHETHER-gate — should this exist at all? Necessity / duplication / fitness-for-purpose / honest-stamping. Post-hoc, advisory.
+    tier_default: 1
+    commands: []
+    mandatory_auditor: false
+    manifest_path: .claude/team-leads/qa-lead/manifest.md
+    posture: investigator
+
+  - id: workflow-lead
+    domain: HOW-WELL craft — workflow-script review (firewall integrity, incarnation correctness, nesting/sandbox/schema health). Post-hoc, advisory.
+    tier_default: 1
+    commands: []
+    mandatory_auditor: false
+    manifest_path: .claude/team-leads/workflow-lead/manifest.md
+    posture: investigator
+
+  - id: drift
+    domain: Navigation-drift watcher / immune system — reads what Primary ACTUALLY did (not self-reports), grades BOOP discipline + human-bridge asks (bulletproof-hum). Post-hoc.
+    tier_default: 1
+    commands: []
+    mandatory_auditor: false
+    manifest_path: .claude/team-leads/drift/manifest.md
+    posture: synthesizer
+
 # ── OPTIONAL VPs (fork a manifest when the civ needs the vertical) ──
 # These verticals exist as roles in the lineage but ship WITHOUT a generic manifest in this
-# template (they tend to be highly civ-specific — finance, tax, your own product/gateway).
-# Add an entry + a manifest when YOUR civilization grows into the need:
+# template (they tend to be highly civ-specific — your own product/gateway):
 #   - gateway        (your own product's frontend/backend/API/UX)
-#   - accounting     (financial truth — revenue, payments; CIV-SPECIFIC, author from scratch)
-#   - cpa            (tax + compliance; CIV-SPECIFIC, author from scratch)
-#   - security       (vendor questionnaires, static review of OWN code, threat modeling)
-#   - qa-lead        (WHETHER-gate: should this exist at all? post-hoc, advisory)
-#   - workflow-lead  (HOW-WELL craft: workflow-script review; post-hoc, advisory)
+#   - security       (threat modeling / static review of OWN code; distinct from compliance-lead)
+# Add an entry + a manifest when YOUR civilization grows into the need.
 
-# ── OPEN GAPS (the assembler/runner must fail loudly if a null is incarnated) ──
-#   - coo/manifest.md   (fork from .claude/skills/coo, rename ${CIV_NAME}-coo)
+# ── OPEN GAPS ──
+#   (none) — every lead entry above resolves to a manifest file that exists on disk.
