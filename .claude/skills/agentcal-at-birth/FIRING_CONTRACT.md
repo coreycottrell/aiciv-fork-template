@@ -43,7 +43,7 @@ Required state before this skill can advance past Phase 1:
 
 1. `${CIV_ROOT}/civ/config/agentcal.env` exists AND contains both `AGENTCAL_API_KEY=...` and `AGENTCAL_CALENDAR_ID=...` lines. This file is provisioned by `civ/tools/civos_bootstrap.py` during birth (Witness's territory). If missing → HARD SIGNAL, do not proceed.
 
-2. `${CIV_ROOT}/templates/seed-24h-wheel-boops.json` exists and is valid JSON with `$slots_count == 24`. This is committed to the fork-template; if missing → fork is incomplete → HARD SIGNAL.
+2. `${CIV_ROOT}/templates/seed-starter-boops.json` exists and is valid JSON with a non-empty `slots` array. This is committed to the fork-template; if missing → fork is incomplete → HARD SIGNAL. The slot count is DYNAMIC — Phase 3 computes `SLOT_COUNT = len(seed["slots"])` and never hard-asserts a fixed number. The starter wheel ships 6 slots (every 4h); a CIV may grow it later (6→24) and both are valid. If the seed declares a `$slots_count`, it is treated as a soft consistency check only (warn if it disagrees with the actual array length, never crash).
 
 3. Network reachability to `${AGENTCAL_URL}` (default `http://5.161.90.32:8300`). The auth smoke-test in Phase 2 verifies this empirically.
 
@@ -74,7 +74,7 @@ After each phase completes successfully, the following file-system state is true
 | Mode | Symptom | Detection | Recovery |
 |------|---------|-----------|----------|
 | Missing creds | `agentcal.env` absent or partial | Phase 1 hard signal | Write `.agentcal-at-birth-FAILED-NO-CREDS` flag, halt, notify human. Witness needs to fix birth pipeline. |
-| Missing seed JSON | `templates/seed-24h-wheel-boops.json` absent | Phase 3 hard signal | Fork-template is incomplete. Halt. |
+| Missing seed JSON | `templates/seed-starter-boops.json` absent | Phase 3 hard signal | Fork-template is incomplete. Halt. |
 | AgentAuth unreachable | `/auth/challenge` 5xx or network error | Phase 2 soft fail | Graceful fall-through to Tier-3 hex key. Marker records `tier=Tier-3 per-CIV hex`. |
 | Tier-3 hex key invalid (auth smoke 401) | `/api/v1/calendars/{id}` returns 401 | Phase 2 hard signal | Birth pipeline issue. Notify human. |
 | AgentCal POST fails | Per-slot `urllib.error.HTTPError` | Phase 3 receipt records failure | Partial success acceptable IF first_six_hours slots all landed. Otherwise hard signal. |
