@@ -1,7 +1,36 @@
 # Template binding note (aiciv-fork-template, 2026-07-09)
 
-THE ARC ships in this template stamped **PROVISIONAL / tested-partial** — the
-origin civ's own 7-day wake-blank soak test had NOT reported by integration
+## STATUS: REFERENCE-ONLY / NOT-WIRED (ACG Auditor-B, 2026-07-09)
+
+THE ARC ships in this template as **REFERENCE-ONLY**. The tool (`arc_*.py`) and
+skill (`.claude/skills/the-arc/`) are PRESENT on disk, but the ARC is **NOT
+wired into any live path** — the grounding wake-read insertion was REVERTED.
+
+Why reference-only, not wired: the origin civ's 7-day wake-blank soak (due
+2026-07-09) FAILED the read-bar, and the ARC's render leg is scheduled nowhere.
+A wired-but-frozen read (an `arc_render` call in grounding that no trigger keeps
+fresh) is WORSE than reference-only: it burns a wake-step reading a stale organ
+and dresses a gap as a feature. So we ship the code, unwired.
+
+**A fork MUST ship all THREE of these before wiring the ARC read into grounding
+(or any wake floor):**
+
+1. **Automated `arc_render` trigger** — the ARC-NOW.md render must be driven by
+   an automated trigger (hook / cron / BOOP step), NOT rendered inline as a
+   grounding side-effect.
+2. **Render-staleness canary** — a check that ARC-NOW.md is fresh (like the
+   PROJECT-BOARD AGE canary), so a frozen render is caught, not silently read.
+3. **`arc_events[]` in the firewall-return schemas** — `coo.js` and
+   `research.js` must carry an `arc_events[]` field so the ARC is fed
+   structurally from workflow returns, not only via manual `arc_emit.py` calls.
+
+Until all three exist, keep the ARC REFERENCE-ONLY. Do not add an `arc_render`
+read to grounding Step 2.5 or any other wake step.
+
+---
+
+Prior stamp (retained for lineage): shipped **PROVISIONAL / tested-partial** —
+the origin civ's own 7-day wake-blank soak test had NOT reported by integration
 time (due 2026-07-09). Do not treat ARC-NOW.md as a proven organ until your
 fork walks the wake-blank test in the SKILL.
 
