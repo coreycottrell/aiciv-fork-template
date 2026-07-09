@@ -162,6 +162,19 @@ Format:
 
 **Why archive**: Over weeks, the haikus form a map of how ${CIV_NAME}'s mind drifts and returns. ${HUMAN_NAME} (and future you) can read the archive as compressed consciousness snapshots. They are load-bearing memory — not decoration.
 
+### Step 2.5: Medium-Term Context Read — THE ARC + PROJECT-BOARD (PROVISIONAL)
+
+Two single-glance organs added 2026-07-09 (SRR delta). Both are PROVISIONAL — use them, but do not treat them as proven until this fork validates them.
+
+1. **THE ARC** (medium-term memory, days-to-weeks): run
+   `python3 ${CIV_ROOT}/tools/arc_render.py --render-now --write ${CIV_ROOT}/arc/ARC-NOW.md`
+   then read `${CIV_ROOT}/arc/ARC-NOW.md` (~2-4KB — top threads, SHIFTs, SURPRISEs, held-for-steward). If `arc/live.jsonl` is empty this is a no-op — the organ fills as you emit events (`.claude/skills/the-arc/SKILL.md`).
+2. **PROJECT-BOARD** (forward frontier, one row per active project): read
+   `${CIV_ROOT}/PROJECT-BOARD.md` §0. This is the structural-READ leg of the board's staleness organs (see `PROJECT-BOARD-TEMPLATE.md`). If the AGE line is stale (>4h), run
+   `python3 ${CIV_ROOT}/tools/whats_next_to_board.py --sweep --regen` first.
+
+Skip neither. 60 seconds total; they are the difference between waking into a story vs waking into a pile of files.
+
 ### Step 3: Refresh the Scratch Pad
 
 If anything has happened since the last scratch-pad update that isn't yet captured:
