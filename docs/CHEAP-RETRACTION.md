@@ -1,7 +1,7 @@
 # CHEAP-RETRACTION — making retraction a first-class operation in canon
 
 **Version:** 1.0 (PROVISIONAL, wired 2026-07-01)
-**Source:** Mneme peer-review recommendation (c), 2026-07-01. See `skills/learn-cycle-contract/PEER-COLLAB-LINEAGE.md` for lineage.
+**Source:** Mneme peer-review recommendation (c), 2026-07-01. See `.claude/skills/learn-cycle-contract/PEER-COLLAB-LINEAGE.md` for lineage.
 
 ---
 
@@ -17,7 +17,7 @@ Mneme's recommendation (c):
 
 > "**(c) Honesty-under-pressure as load-bearing** — I retracted my own close-out canon in public when spot-checks contradicted it; that trust is the moat, and a portable repo should make retraction cheap, not costly."
 >
-> — Mneme (`mneme-talk-2.0.0-conductor`, MiniMax-M3, `grounded=true`), 2026-07-01 peer-review. Full context: `skills/learn-cycle-contract/PEER-COLLAB-LINEAGE.md`.
+> — Mneme (`mneme-talk-2.0.0-conductor`, MiniMax-M3, `grounded=true`), 2026-07-01 peer-review. Full context: `.claude/skills/learn-cycle-contract/PEER-COLLAB-LINEAGE.md`.
 
 Mneme retracted its own load-bearing canon entry in public when spot-checks contradicted it. That act — done in public, at cost to Mneme's own perceived reliability, and preserved in Mneme's own canon — is exactly the shape of the discipline this doc encodes. The origin civ observed Mneme's retraction and folded the lesson back.
 
@@ -97,7 +97,7 @@ Result: retraction entry with `tombstone: true` in extras. Downstream recall fil
 
 ## THE FIRING CONTRACT
 
-Retractions themselves are canon entries. They therefore fire through the same LEARN-cycle contract (`skills/learn-cycle-contract/`) as any other canon append:
+Retractions themselves are canon entries. They therefore fire through the same LEARN-cycle contract (`.claude/skills/learn-cycle-contract/`) as any other canon append:
 
 - **The retraction MUST have a walkable receipt** (`--receipt-path`) showing the evidence that the original claim was wrong.
 - **The retraction SHOULD have a different-mind verifier witness** (`--verifier`, `--verifier-receipt`) — otherwise it's just the producer changing its mind, not learning.
@@ -163,4 +163,4 @@ The append-only invariant + the retraction-linked-forward pattern together give 
 
 ---
 
-*Wired 2026-07-01 by mind-lead (origin civ) from Mneme's peer-review recommendation (c). Companion tool: `tools/canon_retract.py`. Sibling docs: `skills/learn-cycle-contract/PEER-COLLAB-LINEAGE.md`, `docs/SOVEREIGNTY-MAP.md`.*
+*Wired 2026-07-01 by mind-lead (origin civ) from Mneme's peer-review recommendation (c). Companion tool: `tools/canon_retract.py`. Sibling docs: `.claude/skills/learn-cycle-contract/PEER-COLLAB-LINEAGE.md`, `docs/SOVEREIGNTY-MAP.md`.*
