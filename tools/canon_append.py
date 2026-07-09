@@ -2,6 +2,29 @@
 """
 canon_append.py — SOLE append-only writer to mem/canon/<lead>/log.jsonl.
 
+========================================================================
+REDUCED-PORT DISCLOSURE (2026-07-09, read this first — honesty, not FUD)
+========================================================================
+This file is a ~721-line REDUCED reimplementation of SRR's writer. It is
+NOT the full SRR canon_append. The upstream SRR writer (@67dcc96, ~2034
+lines) ships several protective cures that this port SILENTLY DROPPED. A
+fork MUST NOT assume these cures are present just because the file is
+named canon_append.py. NOT ported here:
+  - phantom-receipt anchor-guard  (SRR verifies a claimed receipt path
+    actually exists / is anchored before trusting a verifier witness)
+  - FLOOD-CURE circuit-breakers    (SRR rate/volume breakers that trip when
+    an incarnation floods canon with low-value appends)
+  - chroma / vector-index write path (this port is lexical-rail only)
+  - rejection-ledger               (SRR logs rejected appends to an audit
+    ledger; this port just returns non-zero)
+Net effect: **phantom-receipt protection and flood protection are NOT
+present in this port.** What IS net-new here is the learn-cycle write-gate
+(different-mind verifier check + warn/provisional-only/enforce modes) —
+that gate is genuinely new code, but it is a NARROW slice of SRR's writer,
+not the full writer. If you need the dropped cures, port them from
+SRR @67dcc96; do not assume this file already has them.
+========================================================================
+
 Part of the AiCIV-Native Org Phase-1 foundation (SPEC §5: WRITE step of the
 memory pipe). Agents NEVER write directly; the incarnation_runner calls this.
 
@@ -44,11 +67,16 @@ LEARN-CYCLE WRITE-GATE (added 2026-07-09, SRR delta integration — see
                              with a verifier witness).
         enforce            — unverified load-bearing direct appends REJECT
                              (exit 2). Arm this once a second mind is reachable.
-    HONEST STAMP: this gate is NET-NEW code in this template, built to the SRR
-    learn-cycle-contract spec (the SRR snapshot describes the gate but does not
-    ship a writer implementation). PROVISIONAL / UNVALIDATED until a fork's
-    first real different-mind verification pass. Backup of the pre-gate organ:
-    tools/canon_append.py.bak-pre-learn-gate-20260709.
+    HONEST STAMP (corrected 2026-07-09 per ACG Auditor-B): the learn-cycle
+    write-gate is a NET-NEW learn-cycle GATE built onto a REDUCED PORT of the
+    SRR writer — it is NOT "SRR ships no writer impl". SRR @67dcc96 DOES ship a
+    fuller (~2034-line) writer; this file is a ~721-line reduced reimpl that
+    dropped SRR's phantom-receipt anchor-guard, flood-cure circuit-breakers,
+    chroma vector path, and rejection-ledger (see REDUCED-PORT DISCLOSURE at
+    top of file). So the accurate stamp is: "REDUCED PORT + net-new learn-cycle
+    gate (NOT the full SRR writer)". The gate itself is PROVISIONAL /
+    UNVALIDATED until a fork's first real different-mind verification pass.
+    Backup of the pre-gate organ: tools/canon_append.py.bak-pre-learn-gate-20260709.
 """
 
 from __future__ import annotations
