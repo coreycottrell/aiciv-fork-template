@@ -1165,7 +1165,10 @@ DOC_CURRENCY_SURFACES = [
     # contained that day's LEARN entries). m3-combo had the SAME wrong-path defect, masked only
     # because its SKILL.md happened to be edited that day. Both now read their real DEVLOG.
     ("self-knowledge-devlog", "projects/self-knowledge/DEVLOG.md"),
-    ("m3-combo-devlog", "projects/AI-CIV/m3-combo/DEVLOG.md"),
+    # NOTE (2026-07-09, ACG Auditor-B MINOR): the origin-specific
+    # "projects/AI-CIV/m3-combo/DEVLOG.md" entry was DROPPED — it named an origin
+    # project a fork does not have, producing a false-positive STALE on every fork.
+    # A fork adds its own program DEVLOG paths here (relative to CIV_ROOT).
 ]
 DOC_CURRENCY_ROOT = os.environ.get("CIV_ROOT", os.environ.get("AICIV_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
