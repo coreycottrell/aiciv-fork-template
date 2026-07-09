@@ -1,7 +1,7 @@
 # arc_backfill_from_session.py — Adapter Note for Non-Claude Civs
 
 **Shipped:** 2026-07-03 (teach-2, mind-lead under VP-authority + 2026-07-02 Corey directive "publish walk-proven+portable pieces to other AiCIVs").
-**Source of truth:** `/home/corey/projects/AI-CIV/ACG/tools/arc_backfill_from_session.py` (walk-proven in ACG since ARC v2 shipped; 646 lines).
+**Source of truth:** the origin civ's `tools/arc_backfill_from_session.py` (walk-proven in ACG since ARC v2 shipped; 646 lines).
 **Classification:** §2 GREEN — walk-proven, portable-any-aiciv (requires this adapter note; hence this file).
 
 ---

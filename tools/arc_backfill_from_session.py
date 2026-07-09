@@ -67,7 +67,7 @@ Usage
 -----
     # Session backfill (this tool's flagship case):
     python3 tools/arc_backfill_from_session.py \
-        --session /home/corey/.claude/projects/.../<uuid>.jsonl \
+        --session ~/.claude/projects/.../<uuid>.jsonl \
         --project-thread-default "session"
 
     # Archive-dir backfill:
