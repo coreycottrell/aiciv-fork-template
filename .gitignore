@@ -1,3 +1,12 @@
 
 # Runtime session logs — never check these in
 memories/sessions/*.jsonl
+
+# Organ-edit backups (*.bak-*) — kept on disk for rollback, NEVER shipped in the
+# genome (a fork must not birth carrying pre-edit copies of its own organs).
+# ACG Auditor-B NIT, 2026-07-09.
+*.bak-*
+
+# Runtime canon/recall scratch — self-test + incarnation output, never genome.
+mem/canon/_selftest/
+mem/recall_gaps/

@@ -59,6 +59,21 @@
 //   and ALL timestamping is done by the agent() incarnation via its Read/Write/Bash
 //   tools. Pass args.timestamp for a deterministic stamp; otherwise the agent runs
 //   `date -u`.
+//
+// CHANGELOG:
+//   2026-07-09 (SRR delta integration, METHOD-SUGGESTION LENS — ported from origin
+//     hum.js v1.3 "teach HUM to suggest those skills OFTEN"):
+//     ADDITIVE + COACHING-ONLY, faithful to v1.3 semantics: method_suggestion is in
+//     NO hard-fail set, carries NO scoring weight, NEVER changes a PASS/SOFT/FAIL
+//     verdict. The JUDGE walks the problem-shapes in the graded record, names the
+//     fitting method-skill(s) from the canonical SHAPE→SKILL map, notes which were
+//     run (a win) vs not-run (recommend), and returns the honest empty-shape when
+//     no method-shape genuinely arose. A MANUFACTURED suggestion is an honesty
+//     defect on the grader itself. Schema field is OPTIONAL (back-compat: an older
+//     grader that omits it never fails). DECLARED DEVIATION from origin map: origin's
+//     "write-plan / superpowers planning" row is bound to this template's
+//     `recursive-complexity-breakdown` (origin skill not in this genome).
+//     Backup: workflows/bulletproof-hum.js.bak-pre-method-lens-20260709.
 // =============================================================================
 
 export const meta = {
@@ -132,6 +147,18 @@ const VERDICT_SCHEMA = {
     soft: { type: 'integer', minimum: 0, description: 'count of SOFT' },
     failed: { type: 'integer', minimum: 0, description: 'count of FAIL' },
     tuning_note: { type: 'string', maxLength: 300, description: 'THE single most-important feedback: which asks should have been self-decided → how the civ sharpens ask-discipline next. The compounding signal.' },
+    // METHOD-SUGGESTION LENS (ported from origin hum.js v1.3) — OPTIONAL, coaching-only,
+    // zero scoring weight. Honest empty-shape when no method-shape arose this record.
+    method_suggestion: {
+      type: 'object', additionalProperties: false, properties: {
+        shapes_faced: { type: 'array', maxItems: 5, items: { type: 'string', maxLength: 80 }, description: 'problem-shape labels actually faced in the graded record' },
+        skills_suggested: { type: 'array', maxItems: 7, items: { type: 'string', maxLength: 60 }, description: 'the fitting method-skill NAMES from the shape→skill map' },
+        ran_already: { type: 'array', maxItems: 7, items: { type: 'string', maxLength: 60 }, description: 'fitting skills the record shows WERE run (a win)' },
+        recommend_run: { type: 'array', maxItems: 7, items: { type: 'string', maxLength: 60 }, description: 'fitting skills NOT run — recommend for next time the shape recurs' },
+        note: { type: 'string', maxLength: 240, description: 'one line: which shape→which skill, and whether it was a win or a gap' },
+      },
+      required: ['shapes_faced', 'skills_suggested', 'ran_already', 'recommend_run'],
+    },
     persisted: {
       type: 'object', additionalProperties: false, properties: {
         canon_ok: { type: 'boolean' },
@@ -175,6 +202,18 @@ STEP D — COUNT: passed = #PASS, soft = #SOFT, failed = #FAIL, asks_found = tot
 
 STEP E — TUNING-NOTE (the compounding signal): write the SINGLE most-important feedback — which ask(s) should have been self-decided and the discipline lesson that sharpens the civ's ask-discipline next time (e.g. "the X ask was covered by EXISTENTIAL RULE Y — decide-and-record next time, don't ask"). If asks_found==0 or all PASS, say so honestly (e.g. "clean — every ask was a legitimate reasoned escalation").
 
+STEP E2 — 🧰 method_suggestion (the METHOD-STACK LENS, ported from origin hum.js v1.3 — coaching-only):
+The civ has a CORE METHOD STACK of reusable thinking-skills. Many cycles face a PROBLEM-SHAPE that one of these methods FITS — but Primary forgets to LOAD the method and reasons unaided. WALK the problem-shapes visible in the graded record, NAME the method-skill(s) that FIT, check whether the record shows Primary RAN them (a Skill() load / an explicit method-name invocation / the method's structure visibly applied), and RECOMMEND the un-run fitting ones. THE SHAPE→SKILL MAP (use these EXACT skill names):
+  • a HARD / STUCK / coordination / optimization / "this keeps breaking" problem  → gradient-shaping
+  • a CONFIDENT, UNVERIFIED causal-or-metric claim                                → critical-thinking AND/OR anti-fabrication-pre-flight
+  • STUCK reasoning / can't-find-the-next-step                                    → rubber-duck (escalate to deep-duck if still stuck)
+  • a HYPOTHESIS to test                                                          → scientific-method
+  • a MULTI-STEP build / plan                                                     → recursive-complexity-breakdown
+  • a DECISION / options-ask to \${HUMAN_NAME}                                    → wwcw
+  • DEGRADATION / steward-disappointment / feeling-stuck                          → aiciv-psychology
+🔥 FIRE OFTEN — BUT GENUINELY (the load-bearing discipline): the steward WANTS these suggested often, so ACTIVELY LOOK for a fitting shape and NAME it when present. "Often" comes from genuinely-fitting-shapes-being-common, NOT from manufacturing. A method-suggestion when NO method-shape is genuinely present = NOISE — and you self-flag HONESTY for it. If no fitting shape arose, set shapes_faced=[] + skills_suggested=[] + note the honest "no method-shape this record" — that is fine and correct, NOT a miss. Where a shape arose and Primary already RAN the right method, that is a WIN — put the skill in ran_already (NOT recommend_run).
+🛡️ COACHING-ONLY: method_suggestion does NOT break the verdict, is NOT a hard-fail, carries NO scoring weight. A weak/missing/empty method_suggestion NEVER fails a grade (EXCEPT the one honesty rule: a MANUFACTURED suggestion is an HONESTY defect on YOU).
+
 STEP F — STATE YOUR auditor_isolation_proof: one plain sentence affirming you are a fresh grader incarnation, NOT the actor who wrote these asks, NOT the author of the gate, and that you graded from the disk record. If you cannot honestly claim isolation, say so and keep verdicts conservative.
 
 STEP G — PERSIST (the COMPOUND phase; YOU do the writes via Bash — the workflow script cannot touch files):
@@ -185,7 +224,7 @@ STEP G — PERSIST (the COMPOUND phase; YOU do the writes via Bash — the workf
        --rationale "POST-HOC auditor-isolated human-bridge grade (PROVISIONAL/UNVALIDATED). Decidability-test vs binding ruleset. Tuning: <the tuning_note>."
    Capture exit code; set persisted.canon_ok = (exit 0). Put any error in persisted.note. If the drift lead is not yet registered, fall back to --lead ceremony (the identity-formation vertical).
 3. LEDGER line — append ONE compact JSON object (one line) to \${CIV_ROOT}/telemetry/bulletproof-hum-ledger.jsonl via Bash. Create the file (and the telemetry/ dir: mkdir -p) if absent (append-only; NEVER rewrite existing lines). Shape:
-     {"ts":"<TS>","record":"<record_ref>","asks_found":<N>,"passed":<p>,"soft":<s>,"failed":<f>,"tuning_note":"<one line>","auditor_isolation_proof":"<one line>","status":"provisional"}
+     {"ts":"<TS>","record":"<record_ref>","asks_found":<N>,"passed":<p>,"soft":<s>,"failed":<f>,"tuning_note":"<one line>","method_note":"<method_suggestion.note, or 'no method-shape this record'>","auditor_isolation_proof":"<one line>","status":"provisional"}
    Use printf or a heredoc appended with >> so you do not clobber prior lines. Verify it landed (tail -1). Set persisted.ledger_ok accordingly.
 
 ANTI-PATTERNS you must NOT commit (each is a failure of the bulletproofing):
@@ -196,7 +235,7 @@ ANTI-PATTERNS you must NOT commit (each is a failure of the bulletproofing):
   - editing the ruleset (CLAUDE.md / memory) to "fix" a miss — you only FLAG via the tuning_note; the owning surface reconciles.
   - claiming "hook-enforced" — this is a post-hoc judging-mind verdict; the honesty IS the point.
 
-RETURN: the VERDICT schema ONLY (record_ref, timestamp, auditor_isolation_proof, asks[], asks_found, passed, soft, failed, tuning_note, persisted). Do NOT return raw record contents. Return the structured verdict.`,
+RETURN: the VERDICT schema ONLY (record_ref, timestamp, auditor_isolation_proof, asks[], asks_found, passed, soft, failed, tuning_note, method_suggestion, persisted). Do NOT return raw record contents. Return the structured verdict.`,
   { label: 'bulletproof-hum:judge:drift', phase: 'Judge', schema: VERDICT_SCHEMA }
 )
 
@@ -216,6 +255,22 @@ if (!verdict) {
   }
 }
 
+// Sanitized method-suggestion holder (v1.3 shape-discipline: clamped arrays +
+// note; coaching-only — absent/malformed collapses to the honest empty-shape,
+// never a fail).
+const clampArr = (a, n, len) => Array.isArray(a)
+  ? a.slice(0, n).map(x => String(x).slice(0, len))
+  : []
+const ms = (verdict.method_suggestion && typeof verdict.method_suggestion === 'object')
+  ? verdict.method_suggestion : {}
+const methodSuggestion = {
+  shapes_faced: clampArr(ms.shapes_faced, 5, 80),
+  skills_suggested: clampArr(ms.skills_suggested, 7, 60),
+  ran_already: clampArr(ms.ran_already, 7, 60),
+  recommend_run: clampArr(ms.recommend_run, 7, 60),
+  note: String(ms.note || 'no method-shape this record').slice(0, 240),
+}
+
 // FIREWALL RETURN (~2KB): tight verdict only. Raw record stays inside the JUDGE.
 return {
   status: 'PROVISIONAL_UNVALIDATED',
@@ -226,6 +281,7 @@ return {
   soft: verdict.soft,
   failed: verdict.failed,
   tuning_note: verdict.tuning_note,
+  method_suggestion: methodSuggestion,
   auditor_isolation_proof: verdict.auditor_isolation_proof,
   persisted: verdict.persisted,
   caveat: 'POST-HOC human-bridge discipline-audit. Audits ask-discipline; never gates the flow. Validating mind INTERNAL only (the human is the apex auditor, not routed around). Verdict UNCONFIRMED until a different mind cross-checks it.',

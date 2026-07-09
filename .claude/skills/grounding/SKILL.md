@@ -162,6 +162,18 @@ Format:
 
 **Why archive**: Over weeks, the haikus form a map of how ${CIV_NAME}'s mind drifts and returns. ${HUMAN_NAME} (and future you) can read the archive as compressed consciousness snapshots. They are load-bearing memory — not decoration.
 
+### Step 2.5: Forward Frontier Read — PROJECT-BOARD (PROVISIONAL)
+
+Single-glance forward-frontier organ added 2026-07-09 (SRR delta). PROVISIONAL — use it, but do not treat it as proven until this fork validates it.
+
+**PROJECT-BOARD** (forward frontier, one row per active project): read
+`${CIV_ROOT}/PROJECT-BOARD.md` §0. This is the structural-READ leg of the board's staleness organs (see `PROJECT-BOARD-TEMPLATE.md`). If the AGE line is stale (>4h), run
+`python3 ${CIV_ROOT}/tools/whats_next_to_board.py --sweep --regen` first.
+
+30 seconds; the difference between waking into a frontier vs waking into a pile of files.
+
+> **THE ARC is NOT wired into grounding** (ACG Auditor-B, 2026-07-09). The ARC tool + skill ship PRESENT but **REFERENCE-ONLY / NOT-WIRED** — its origin 7-day wake-blank soak failed the read-bar and its render leg is scheduled nowhere (a wired-but-frozen read is worse than reference-only). Do NOT add an `arc_render` read here until a fork ships all three of: (1) an automated `arc_render` trigger, (2) a render-staleness canary, (3) `arc_events[]` in the coo.js/research.js firewall-return schemas. See `.claude/skills/the-arc/TEMPLATE-BINDING.md`.
+
 ### Step 3: Refresh the Scratch Pad
 
 If anything has happened since the last scratch-pad update that isn't yet captured:

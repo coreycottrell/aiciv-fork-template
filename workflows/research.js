@@ -42,13 +42,26 @@ WRITE the brief to \${CIV_ROOT}/deliverables/research/<TODAYS_DATE>-daily-brief-
 - Any SECURITY flags.
 - A SOURCES list (all URLs).
 
-DELIVER (firewall digest — NOT the raw brief):
-- FILE PATH written + confirm it exists (wc -c).
-- The 5 finding titles + their source URLs (so Primary can spot-verify a real URL is present on each).
-- A one-line self-attestation: "every finding cites a real retrieved URL: yes/no" — be honest; if any finding lacks a real source, say which.
-- Write memory_delta to \${CIV_ROOT}/.claude/team-leads/research/memory/<TODAYS_DATE>-daily-brief.md and confirm path.
+DELIVER (firewall digest — NOT the raw brief) via the enforced schema:
+- digest: FILE PATH written + byte-count confirmation, the 5 finding titles + their source URLs (so Primary can spot-verify a real URL is present on each), a one-line self-attestation "every finding cites a real retrieved URL: yes/no" (be honest; if any finding lacks a real source, say which), and the memory_delta path you wrote to \${CIV_ROOT}/.claude/team-leads/research/memory/<TODAYS_DATE>-daily-brief.md.
+- whats_next (docs/whats-next-contract.md §26): YOU are the doer-mind — judge the forward frontier of the research project this run advanced: {project, phase, pct, next_move, blocked_on}. A recurring daily brief typically uses project "research-daily-brief" with next_move = the single most valuable follow-up your sweep surfaced. If this run advanced no ongoing project (pure probe), return whats_next: null — an explicit honest omission, never an invented project.
 Report-up ONLY this digest.`,
-  { label: 'research-vp:daily-brief', phase: 'Sweep' }
+  { label: 'research-vp:daily-brief', phase: 'Sweep',
+    // §26 whats_next contract: REQUIRED-or-explicitly-null, never silent.
+    // Verbatim-carried to PROJECT-BOARD.md by tools/whats_next_to_board.py.
+    schema: { type:'object', additionalProperties:false, properties:{
+      digest:{type:'string', maxLength: 4000},
+      whats_next:{ anyOf: [
+        { type:'object', additionalProperties:false, properties:{
+            project:{type:'string', maxLength: 80},
+            phase:{type:'string', maxLength: 200},
+            pct:{type:'integer', minimum: 0, maximum: 100},
+            next_move:{type:'string', maxLength: 400},
+            blocked_on:{type:'string', maxLength: 120},
+          }, required:['project','phase','pct','next_move','blocked_on'] },
+        { type:'null' },
+      ] },
+    }, required:['digest','whats_next'] } }
 )
 
 return brief

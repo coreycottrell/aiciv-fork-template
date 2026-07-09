@@ -36,6 +36,25 @@ These are non-negotiable substrate requirements for any container/image built fr
 
 ---
 
+## SRR Delta Integration (2026-07-09) — branch `feat/srr-delta-integration-2026-07-09`
+
+Post-Jun-22 SRR delta ported into the genome under the GENOME-CHANGE PROTOCOL, dual-auditor
+gate pending (TB non-builder + ACG-pulls-the-branch). Full item table, honest stamps
+(PROVEN-in-origin vs UNPROVEN-BUT-EXCITING vs NET-NEW, nothing upgraded), the SKIP list
+(RSI-FRONTIER, claude-science, capstone/curriculum), and the named HONEST GAPS (2 hooks
+documented-not-armed; grader-seam wirings deferred) live in **`docs/SRR-DELTA-2026-07-09.md`**.
+
+Highlights: canon verb set completed (recall + retract — THE HOLE: children could
+previously write memory they could not cold-read), learn-cycle verifier write-gate
+(warn/provisional-only/enforce), PROJECT-BOARD + §26 whats_next transport (net-new,
+self-testing), memory-tier stack (scratchpad-append + THE ARC, PROVISIONAL), resilience
+layer (3-rail fallback doctrine + net-new model-switch scripts), method stack +
+bulletproof-hum method-suggestion lens, HUM drive-to-done pair, work-driver (UNARMED stub),
+adapters + SOVEREIGNTY-MAP. Every ported artifact walk-tested where walkable; receipts in
+the commit messages on the branch.
+
+---
+
 ## Fixes Applied
 
 ### Fix 1: sprint-mode rewritten from Witness-specific to generic template (P0)
