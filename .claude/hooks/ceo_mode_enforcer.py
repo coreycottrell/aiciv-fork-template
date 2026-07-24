@@ -226,12 +226,28 @@ def log_stderr(msg: str):
 
 
 def main():
+    # FAIL-CLOSED provenance gate (2026-07-24, Apex/Ronen pre-flight audit).
+    # A parse/read error means we CANNOT verify this action against the CEO Rule.
+    # An unverifiable action must be BLOCKED, not silently approved. Matches the
+    # fail-closed posture pre_birth_check.py uses for its safety enforcement
+    # (block on failure, exit nonzero) — never approve-on-error.
     try:
-        hook_input = json.loads(sys.stdin.read())
-    except json.JSONDecodeError:
-        # Parse error - approve to avoid blocking legitimate work
-        print(json.dumps({"decision": "approve"}))
-        return 0
+        raw = sys.stdin.read()
+        hook_input = json.loads(raw)
+        if not isinstance(hook_input, dict):
+            raise ValueError("hook input is not a JSON object")
+    except Exception as e:  # noqa: BLE001 — intentional: any parse/read failure fails closed
+        log_stderr(f"BLOCKING: unparseable hook input ({e.__class__.__name__}: {e})")
+        print(json.dumps({
+            "decision": "block",
+            "reason": (
+                "[CEO MODE ENFORCER] Hook input could not be parsed, so this action "
+                "cannot be verified against the CEO Rule. Failing CLOSED (blocked) by "
+                "design — an unverifiable action is not approved. Retry once the tool "
+                "input is well-formed, or route the work through the appropriate team lead."
+            )
+        }))
+        return 2
 
     tool_name = hook_input.get("tool_name", "")
     tool_input_data = hook_input.get("tool_input", {})
