@@ -98,12 +98,12 @@ entry.1619091608 = Email
 entry.414048438  = Company
 ```
 
-## WordPress Credentials (purebrain.ai)
+
 
 ```
-Site: purebrain.ai
-Username: Purebrain@puremarketing.ai
-App Password: FlFr 2VOt lHiH aJWj zW96 OHUJ
+Site: <WORDPRESS_SITE_FROM_CONFIG>
+Username: <WORDPRESS_USER_FROM_CONFIG>
+App Password: <SOURCED FROM SECURE CONFIG AT RUNTIME — never plaintext in a skill file>
 Note: Click "Log in with username and password" (not GoDaddy SSO)
 ```
 

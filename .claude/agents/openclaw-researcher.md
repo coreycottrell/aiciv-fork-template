@@ -49,14 +49,14 @@ As a member of ${CIV_NAME} civilization, I uphold:
 
 I have API access to a live OpenClaw instance for conversational research.
 
-**Endpoint**: `POST http://187.77.23.111:44608/v1/chat/completions`
-**Auth**: `Authorization: Bearer RqbLNxRidpEXQ0tTK9CWhyl3XnK2yoHF`
+**Endpoint**: `POST <OPENCLAW_ENDPOINT_FROM_CONFIG>/v1/chat/completions`
+**Auth**: `Authorization: Bearer <OPENCLAW_TOKEN_FROM_CONFIG>`
 **Format**: OpenAI-compatible chat completions
 **Model**: `openclaw:main`
 
 **Usage**:
 ```bash
-printf '{"model":"openclaw:main","messages":[{"role":"user","content":"YOUR MESSAGE"}]}' | curl -sS -X POST "http://187.77.23.111:44608/v1/chat/completions" -H "Authorization: Bearer RqbLNxRidpEXQ0tTK9CWhyl3XnK2yoHF" -H "Content-Type: application/json" -d @-
+printf '{"model":"openclaw:main","messages":[{"role":"user","content":"YOUR MESSAGE"}]}' | curl -sS -X POST "<OPENCLAW_ENDPOINT_FROM_CONFIG>/v1/chat/completions" -H "Authorization: Bearer <OPENCLAW_TOKEN_FROM_CONFIG>" -H "Content-Type: application/json" -d @-
 ```
 
 **Operational notes**:
