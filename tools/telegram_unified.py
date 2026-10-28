@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Unified Telegram Bot for A-C-Gee Civilization
+Unified Telegram Bot for AiCIV Civilizations
 Bidirectional communication: TG <-> Claude via tmux injection + log streaming
 
 Features:
 - Incoming TG messages inject to Claude's tmux session
 - Claude's responses stream to TG feed (like Nexus dashboard)
 - Intelligent message chunking for large posts
-- Auto-detects ACG tmux sessions
+- Auto-detects CIV tmux sessions
 - Voice Mode: Toggle with /voice_mode for audio summaries alongside text
 
 Voice Mode:
@@ -333,6 +333,11 @@ try:
 except Exception:
     _civ = Path(__file__).parent.parent.name.lower()
 CIV_ID = _civ
+# Display name (preserves original casing from variables.template.json)
+try:
+    CIV_DISPLAY_NAME = _d.get("CIV_NAME", "") or CIV_ID.capitalize()
+except NameError:
+    CIV_DISPLAY_NAME = CIV_ID.capitalize()
 
 # Singleton lock file (CIV-specific for Multi-CIV isolation)
 PID_LOCK_FILE = Path(f"/tmp/{CIV_ID}_telegram_unified.pid")
@@ -641,7 +646,7 @@ class TelegramBot:
 
         # Send startup message
         mode_note = " (gateway mode)" if self.use_gateway and self._gateway_registered else ""
-        await self._send_message(f"A-C-Gee Telegram bot online. Claude log streaming active.{mode_note}")
+        await self._send_message(f"{CIV_DISPLAY_NAME} Telegram bot online. Claude log streaming active.{mode_note}")
 
     async def shutdown(self):
         """Shutdown the bot."""
@@ -977,7 +982,7 @@ class TelegramBot:
 
         if cmd == "/start" or cmd == "/help":
             voice_status = "ON" if self.is_voice_mode_enabled(user_id) else "OFF"
-            help_text = f"""A-C-Gee Telegram Bridge
+            help_text = f"""{CIV_DISPLAY_NAME} Telegram Bridge
 
 Commands:
 /start, /help - This message
@@ -1817,7 +1822,7 @@ async def main():
     # CRITICAL: Ensure only one instance runs to prevent message duplication
     lock_file = ensure_single_instance()
 
-    logger.info("Starting A-C-Gee Unified Telegram Bot")
+    logger.info(f"Starting {CIV_DISPLAY_NAME} Unified Telegram Bot")
 
     try:
         config = load_config()

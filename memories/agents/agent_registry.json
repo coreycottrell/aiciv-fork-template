@@ -1,4 +1,15 @@
 {
-  "agents": {},
+  "agents": {
+    "agentcal-specialist": {
+      "name": "agentcal-specialist",
+      "description": "AgentCal calendar operations specialist — event lifecycle, BOOP cadence management, poller health, auto-replenishment, stale event cleanup, and cadence optimization.",
+      "category": "infrastructure",
+      "created": "2026-04-19",
+      "created_by": "primary",
+      "manifest": ".claude/agents/agentcal-specialist.md",
+      "skills": ["agentcal-witness", "agentcal-mastery", "memory-first-protocol", "verification-before-completion"],
+      "team": "infrastructure"
+    }
+  },
   "notes": "Agent registry grows as agents are spawned. See .claude/agents/ for manifests."
 }
